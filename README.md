@@ -1,0 +1,2 @@
+#QuizCreator
+This is the repository for Team 1 of the CS 386 Team Project. We are creating a Windows desktop app called Quiz Creator that allows for creating, saving, opening, editing, and taking quizzes.
