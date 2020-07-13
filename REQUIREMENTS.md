@@ -2,13 +2,13 @@
 
 ## 1. Positioning
 
-###1.1 Problem Statement
+### 1.1 Problem Statement
 
 	- The problem of uneffective and inefficient studying methods affects
 	college students; the impact of which is performing poorly on exams
 	and receiving a low grade and lowering their overall GPA.
 
-###1.2 Product Position Statement
+### 1.2 Product Position Statement
 
 	- For college students who have a difficult time developing successful
 	studying methods, Quiz Creator is a studying app that allows students
