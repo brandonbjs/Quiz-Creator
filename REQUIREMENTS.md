@@ -37,6 +37,8 @@
 
 ## 5. MVP
 
+For developing the minimum viable product for this application, our strategy is to first develop a simple, barebones program and add features one at a time. We will first implement our functional requirements stated above. By implementing only the functional requirements in our MVP, we can gather early feedback from users about our application without wasting any time on less important features. We will use this early feedback to decide which features we should validate and which we should change.
+
 ## 6. Use cases
 
 ### 6.1 Use case diagram
