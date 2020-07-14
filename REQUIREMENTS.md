@@ -28,7 +28,7 @@
 
 ## 5. MVP
 
-## 6. USe cases
+## 6. Use cases
 
 ### 6.1 Use case diagram
 
