@@ -20,6 +20,15 @@
 
 ### 1.3 Value proposition
 
+	- Quiz Creator is a desktop app that allows students and educators to effortlessly create, 
+	edit, sort, and administer quizzes while emphasizing privacy and security so that educators feel comfortable 
+	distributing their material amongst their students, without fear of acadmic dishonesty.
+
+	-Consumer Segment: Students who require repetition and constant testing as a means of study, without sacrificing
+	organization and simplicity. Educators who want to administer quizzes in lecture and then freely distribute the samme
+	material to their students afterwards without fear of their quiz questions being publicly accessable to students not 
+	enrolled in their class.
+
 ## 2. Stakeholders
 
 ## 3. Function requirements (features)
