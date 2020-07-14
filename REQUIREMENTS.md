@@ -24,7 +24,44 @@
 
 ## 3. Function requirements (features)
 
+1. Create Quizzes
+   1. Users must be able to create/store quizzes.
+
+1. Distribute Quizzes
+   1. Teachers and Business Users must be able to distribute/administer quizzes to examinees.
+
+1. Take Quizzes
+   1. Examinee must be able to open/take quizes.
+
+1. Get Results
+   1. Users must be able to get results after a quiz is taken.
+
+1. Easy Use
+   1. Non-tech savvy users must be able to create or take quizzes easily.
+
+1. Variety of Question Types
+   1. Creators must be able to include a variety of different types of questions. (i.e, Multiple Choice or Short Answer, text or image options)
+
+1. Study Aid
+   1. Students must be able to create flash cards to help with studying.
+
+
+
 ## 4. Non-functional requirements
+
+1. Usability.Learnability
+   1. 7 out of ten 10 Creators can create quizzes without help.
+
+1. Usability.Operability
+   1. 9 out of 10 Examinees are able to intuitively open and take quizzes without help.
+
+1. Security.Accountability
+   1. Administrators can verify if the examinee has completed the quiz.
+
+
+
+
+
 
 ## 5. MVP
 
