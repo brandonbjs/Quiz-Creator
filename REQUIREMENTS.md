@@ -173,4 +173,5 @@ For developing the minimum viable product for this application, our strategy is 
 
 ## 8. Trello
 	https://trello.com/b/GWmgwKc0/user-stories
-	![Trello board](/trellouserstories.png)
+	
+	<img src="/trellouserstories.png" >
