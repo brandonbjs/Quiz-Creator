@@ -70,7 +70,7 @@
 1. **Usability: Operability**
    * _9 out of 10_ Examinees are able to intuitively 
    open and take quizzes without help.
-   Constraint: 8/10; Baseline: 9/10; Target: 10/10;
+   * Constraint: 8/10; Baseline: 9/10; Target: 10/10;
 
 1. **Security: Accountability**
    * Administrators can verify if the examinee has completed 
