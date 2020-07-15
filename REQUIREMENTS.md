@@ -62,12 +62,13 @@ For developing the minimum viable product for this application, our strategy is 
 			2. If reconnection cannot be established, the system will display the message "Connection Lost"
 			3. Use case ends in failure condition
 	6 Post-conditions
-		7.1 Successful Completion
+		6.1 Successful Completion
 			A new quiz has been created and is accessible to the student
-		7.2 Failure Condition
+		6.2 Failure Condition
 			The student is redirected to the home page
 	7 Special Requirements
 		-The student must have filled all required forms before quiz can be saved
+	![Use Case example](https://github.com/bkm98/Quiz-Creator/blob/master/usecase1.png)
 	
 	Use-case: Set Quiz Security
 	1 Brief Description
@@ -84,11 +85,15 @@ For developing the minimum viable product for this application, our strategy is 
 		4. The instructor saves the privacy level 
 		5. The system saves the privacy level to the current quiz
 	5 Alternative Flows
-		5.1 
-	6 Key Scenarios
-	7 Post-conditions
-	8 Special Requirements
-	
+		5.1 The instructor quits before step 4
+			1. The options for quiz privacy close
+			2. Use case ends in failure condition
+	6 Post-conditions
+		6.1 Successful Completion
+			The quiz privacy is now modified
+		6.2 Failure Condition
+			The quiz privacy reverts to the previous setting
+	![Use case example](https://github.com/bkm98/Quiz-Creator/blob/master/usecase2.png)
 	
 	Use-case: Save Quizzes
 	1 Brief Description
@@ -101,12 +106,17 @@ For developing the minimum viable product for this application, our strategy is 
 	4 Basic Flow of Events
 		1. The student navigates to the quiz
 		2. The student selects 'Save Quiz'
-		3. 
+		3. The system saves the quiz to the student's account
 	5 Alternative Flows
-		5.1 
-	6 Key Scenarios
-	7 Post-conditions
-	8 Special Requirements
+		5.1 The student fails to save quiz
+			1. The system navigates back to the quiz page
+			2. Use case ends in failure condition
+	6 Post-conditions
+		6.1 Successful Completion
+			The quiz is now accessible from the student's available quizzes
+		6.2 Failure Condition
+			The quiz is not successfully saved to the student's account and cannot be accessed that way
+	![Use case example](https://github.com/bkm98/Quiz-Creator/blob/master/usecase3.png)
 
 ## 7. User stories
 	-As a student, I want to be able to categorize my quizzes so that I can easily 
