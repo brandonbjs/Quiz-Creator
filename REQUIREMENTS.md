@@ -33,40 +33,50 @@
 
 ## 3. Function requirements (features)
 
-1. Create Quizzes
-   1. Users must be able to create/store quizzes.
+1. **Create Quizzes**
+   * Users must be able to create/store quizzes.
 
-1. Distribute Quizzes
-   1. Teachers and Business Users must be able to distribute/administer quizzes to examinees.
+1. **Distribute Quizzes**
+   * Teachers and Business Users must be able to distribute and/or 
+   administer quizzes to examinees.
 
-1. Take Quizzes
-   1. Examinee must be able to open/take quizes.
+1. **Take Quizzes**
+   * Examinee must be able to open/take quizes.
 
-1. Get Results
-   1. Users must be able to get results after a quiz is taken.
+1. **Get Results**
+   * Users must be able to get results after a quiz is taken.
 
-1. Easy Use
-   1. Non-tech savvy users must be able to create or take quizzes easily.
+1. **Easy Use**
+   * Non-tech savvy users must be able to create or take quizzes 
+   easily.
 
-1. Variety of Question Types
-   1. Creators must be able to include a variety of different types of questions. (i.e, Multiple Choice or Short Answer, text or image options)
+1. **Variety of Question Types**
+   * Creators must be able to include a variety of different types 
+   of questions. (i.e, Multiple Choice or Short Answer, text or 
+   image options)
 
-1. Study Aid
-   1. Students must be able to create flash cards to help with studying.
+1. **Study Aid**
+   * Students must be able to create flash cards to help with 
+   studying.
 
 
 
 ## 4. Non-functional requirements
 
-1. Usability.Learnability
-   1. 7 out of ten 10 Creators can create quizzes without help.
+1. **Usability: Learnability**
+   * _7 out of 10_ Creators can create basic quizzes without help.
+   * Constraint: 5/10; Baseline: 7/10; Target: 9/10;
 
-1. Usability.Operability
-   1. 9 out of 10 Examinees are able to intuitively open and take quizzes without help.
+1. **Usability: Operability**
+   * _9 out of 10_ Examinees are able to intuitively 
+   open and take quizzes without help.
+   Constraint: 8/10; Baseline: 9/10; Target: 10/10;
 
-1. Security.Accountability
-   1. Administrators can verify if the examinee has completed the quiz.
-
+1. **Security: Accountability**
+   * Administrators can verify if the examinee has completed 
+   the quiz.
+   * Success: Administrator can get proof of quiz completion.
+   * Failure: No proof of completion is generated.
 
 
 
