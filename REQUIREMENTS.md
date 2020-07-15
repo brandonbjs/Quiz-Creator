@@ -30,7 +30,20 @@
 	enrolled in their class.
 
 ## 2. Stakeholders
-
+	- Students/Instuctors
+	The students and instructors are stakeholder's because they are our primary demographic in regards to using and testing 
+	the application. They will hopfully provide adequate feedback towards the features of our applicaiton so that we may 
+	improve in the future. 
+	- Clients
+	Universities or schools that wish to utalize our quiz application and utalize them in their education system. 
+	- Competitors
+	Quizlet, quiz-maker, typeform, and any built in quiz making software in the schools online portal such as BBlearn or 
+	Canvas. 
+	- Developers
+	This includes our team project group.
+	- Ana Paula Chaves Steinmacher
+	Oversees project development and provides requirments and guidlines that developers must follow.  
+	
 ## 3. Function requirements (features)
 
 1. **Create Quizzes**
