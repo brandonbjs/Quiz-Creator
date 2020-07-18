@@ -1,6 +1,15 @@
 # Analysis
 
 ## 1. System Description
+	- Quiz Creator is a desktop application that allows **students** and **professors** to create, edit, sort, search for and distribute **quizzes** for the purpose of studying. 
+	**Quizzes** that are created by **professors** are *password protected* to address the issue of academic integrity. This application addresses the problem of the ineffective 
+	and inefficient studying methods **students** may have, which causes them to receive a lower than desired grade. Our application is different from its competitors because the 
+	optional security prevents <ins>**questions and their answers**</ins> from being shared publicly.
+	
+	The key requirements of our system will allow **users** to create, distribute, search through, and take <ins>**quizzes**, while providing a variety of **questions**</ins>, and 
+	graded results on an easy to use and understandable platform. Any <ins>**quiz** added to a **course**</ins>, must be added by a **professor** and will always be *password protected*. 
+	<ins>**Quizzes** created by **students**</ins> are accessed locally and may not be shared or added to **courses** in order to help combat any academic integrity issues. **Professors** 
+	have the ability to view final **responses** and change grades with regards to **course** **quizzes**, while students may access their local <ins>**quiz responses**</ins> at any time. 
 
 ## 2. Model
 
