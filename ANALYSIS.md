@@ -12,7 +12,7 @@ graded results on an easy to use and understandable platform. Any <ins>**quiz** 
 have the ability to view final **responses** and change grades with regards to **course** **quizzes**, while students may access their local <ins>**quiz responses**</ins> at any time. 
 
 ## 2. Model
-
+[Click here to see UML Diagram](https://app.diagrams.net/#G1dIaeIQt3WW95NbKjzapSzt0srIdlORiP)
 ## 3. Class Responsibilities
 
 1.	**User**
