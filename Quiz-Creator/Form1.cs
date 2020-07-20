@@ -20,32 +20,39 @@ namespace Quiz_Creator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-            string database = "login_info";
-            string uid = "admin";
-            string password = "quizcreator";
-            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
-
-            MySqlConnection conn = new MySqlConnection(connectionString);
-
-            conn.Open();
-
-            string sql = "SELECT * FROM `login_info` WHERE username= '" + txtUsername.Text + "' AND password='" + txtPassword.Text + "';";
-
-            var cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            if (!rdr.Read())
+            try
             {
-                MessageBox.Show("Account not found.");
-            }
-            else
-            {
-                MessageBox.Show("Account found!");
-            }
+                string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
+                string database = "login_info";
+                string uid = "admin";
+                string password = "quizcreator";
+                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
 
-            conn.Close();
+                MySqlConnection conn = new MySqlConnection(connectionString);
+
+                conn.Open();
+
+                string sql = "SELECT * FROM `login_info` WHERE username= '" + txtUsername.Text + "' AND password='" + txtPassword.Text + "';";
+
+                var cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (!rdr.Read())
+                {
+                    MessageBox.Show("Account not found.");
+                }
+                else
+                {
+                    MessageBox.Show("Account found!");
+                }
+
+                conn.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error connecting to database");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
