@@ -1,6 +1,11 @@
 # Implementation 1
 
 ## 1. Introduction
+	Quiz Creator is a desktop app that allows students and educators to effortlessly create,
+	edit, sort, and administer quizzes while emphasizing privacy and security so that educators feel comfortable
+	distributing their material amongst their students, without fear of acadmic dishonesty.
+	Trello: https://trello.com/b/63mdFtER/task-board
+	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
 
