@@ -63,7 +63,7 @@
 	The application is free of gimics or flashy designs to prevent users from getting lost in the quiz making/taking 
 	process.
 
-	Additionally all windows are properly titled so that users will have no trouble navogating the applications multiple 
+	Additionally all windows are properly titled so that users will have no trouble navigating the applications multiple 
 	windows. 
 	
 	
