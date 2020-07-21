@@ -11,7 +11,7 @@
 ## 5. Deployment
 
 ## 6. Licensing
-	*The licensing we are going to use for this application is the Apache License
+	The licensing we are going to use for this application is the Apache License
 	2.0. We chose to adopt this license because The theoretical goal of the application
 	would be to market this app to educational institutions for commercial use.
 	This license makes the most sense because it allows the application to be distributed
