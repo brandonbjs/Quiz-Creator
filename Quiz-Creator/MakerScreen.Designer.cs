@@ -48,6 +48,7 @@
             this.listboxQuestions.Name = "listboxQuestions";
             this.listboxQuestions.Size = new System.Drawing.Size(242, 316);
             this.listboxQuestions.TabIndex = 0;
+            this.listboxQuestions.SelectedIndexChanged += new System.EventHandler(this.listboxQuestions_SelectedIndexChanged);
             // 
             // textboxTitle
             // 
@@ -112,6 +113,7 @@
             this.textboxPromptEdit.Name = "textboxPromptEdit";
             this.textboxPromptEdit.Size = new System.Drawing.Size(499, 135);
             this.textboxPromptEdit.TabIndex = 7;
+            this.textboxPromptEdit.Click += new System.EventHandler(this.textboxPromptEdit_Click);
             this.textboxPromptEdit.TextChanged += new System.EventHandler(this.textboxPromptEdit_TextChanged);
             // 
             // labelPromptEdit
@@ -130,6 +132,7 @@
             this.textboxAnswerEdit.Size = new System.Drawing.Size(116, 20);
             this.textboxAnswerEdit.TabIndex = 9;
             this.textboxAnswerEdit.TextChanged += new System.EventHandler(this.textboxAnswerEdit_TextChanged);
+            this.textboxAnswerEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxAnswerEdit_KeyPress);
             // 
             // labelAnswerEdit
             // 

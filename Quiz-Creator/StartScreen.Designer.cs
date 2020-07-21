@@ -70,6 +70,7 @@
             this.buttonEditLocal.TabIndex = 3;
             this.buttonEditLocal.Text = "Edit Local Quiz";
             this.buttonEditLocal.UseVisualStyleBackColor = true;
+            this.buttonEditLocal.Click += new System.EventHandler(this.buttonEditLocal_Click);
             // 
             // StartScreen
             // 
