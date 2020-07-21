@@ -10,13 +10,13 @@
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
-	-Take local quizes(author)
-	-Save local quizes(author)
-	-Create local quizes(author)
+	-Take local quizes(Bryan)
+	-Save local quizes(Jacob)
+	-Create local quizes(Steve)
 		a. Title Quizes
 		b. Create questions with answers
 		c. Add/remove questions
-	-Edit preexisting quizes(author)
+	-Edit preexisting quizes(Jacob)
 
 ## 3. Adopted technologies
 	C#: C# is a popular programming language and is the basis of the .NET Framework.
@@ -40,7 +40,9 @@
 	of windows forms in BBlearn collaborate.
 
 ## 5. Deployment
-
+	The current state of our MVP does not require the implmentation of a docker. We are considering the
+	use of a docker in the future if databases are intigrated. As of now all files are handled locally and 
+	the application is able to be run on any modern widows machine without reliance on external dependencies. 
 	
 ## 6. Licensing
 	The licensing we are going to use for this application is the Apache License
@@ -76,5 +78,5 @@
 	
 	
 ## 9. Lessons learned
-
+	
 ## 10. Demo

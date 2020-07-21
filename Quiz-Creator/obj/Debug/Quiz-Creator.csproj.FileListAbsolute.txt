@@ -41,7 +41,6 @@ C:\CS386\QuizCreator\Quiz-Creator\bin\Debug\System.Numerics.Vectors.dll
 C:\CS386\QuizCreator\Quiz-Creator\bin\Debug\MySql.Data.xml
 C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz-Creator.csprojAssemblyReference.cache
 C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz-Creator.exe.config
-C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz_Creator.Form1.resources
 C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz_Creator.Properties.Resources.resources
 C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.GenerateResource.cache
 C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CoreCompileInputs.cache
@@ -108,3 +107,7 @@ C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creato
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.MakerScreen.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.StartScreen.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.TakerScreen.resources
+C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz_Creator.LoginScreen.resources
+C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz_Creator.MakerScreen.resources
+C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz_Creator.StartScreen.resources
+C:\CS386\QuizCreator\Quiz-Creator\obj\Debug\Quiz_Creator.TakerScreen.resources
