@@ -1,9 +1,11 @@
 # Implementation 1
 
 ## 1. Introduction
-	Quiz Creator is a desktop app that allows students and educators to effortlessly create,
+	Quiz Creator is a desktop application that allows students and educators to effortlessly create,
 	edit, sort, and administer quizzes while emphasizing privacy and security so that educators feel comfortable
-	distributing their material amongst their students, without fear of acadmic dishonesty.
+	distributing their material amongst their students, without fear of acadmic dishonesty. In this first implementation
+	of our program, users can create a quiz and save it on their local machine. Users can also take quizzes they have
+	created, and recieve a score immediately upon submission.
 	Trello: https://trello.com/b/63mdFtER/task-board
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
@@ -38,6 +40,7 @@
 	of windows forms in BBlearn collaborate.
 
 ## 5. Deployment
+
 	
 ## 6. Licensing
 	The licensing we are going to use for this application is the Apache License
@@ -48,6 +51,11 @@
 	rather than large systems.
 
 ## 7. Readme File
+
+[link to README file](https://github.com/brandonbjs/Quiz-Creator/blob/master/README.md)
+[link to CONTRIBUTING file](https://github.com/brandonbjs/Quiz-Creator/blob/master/CONTRIBUTING.md)
+[link to LICENSE file](https://github.com/brandonbjs/Quiz-Creator/blob/master/LICENSE.md)
+[link to CODE_OF_CONDUCT file](https://github.com/brandonbjs/Quiz-Creator/blob/master/CODE_OF_CONDUCT.md)
 
 ## 8. Look and Feel
 	To avoid confusion of new users and further the ease of use we constructed a straight foward applicaiton
