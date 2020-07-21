@@ -31,7 +31,7 @@ namespace Quiz_Creator
 
             string[] fileLines = File.ReadAllLines(filename);
 
-            string[] fields = fileLines[0].Split(new string[] { "~> " }, StringSplitOptions.None);
+            string[] fields = fileLines[0].Split(new string[] { "~>" }, StringSplitOptions.None);
 
             string title = fields[0];
 
@@ -41,7 +41,7 @@ namespace Quiz_Creator
 
             for (int i = 2; i < fileLines.Length - 2; i++)
             {
-                fields = fileLines[i].Split(new string[] { "~> " }, StringSplitOptions.None);
+                fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
 
                 currentlyTakingQuiz.Questions.Add(new Question(qType.Fill_In, fields[1], fields[2]));
             }
@@ -50,6 +50,8 @@ namespace Quiz_Creator
             lastQuestionIndex = fileLines.Length - 5;
 
             textboxQuestion.Text = currentlyTakingQuiz.Questions[currentQuestionIndex].Prompt;
+
+            buttonBack.Enabled = false;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

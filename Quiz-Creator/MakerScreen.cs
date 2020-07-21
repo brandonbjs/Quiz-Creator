@@ -156,12 +156,12 @@ namespace Quiz_Creator
 
             System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
             // Write all fields/metadata to first line
-            SaveFile.WriteLine(currentlyMakingQuiz.Title + "~> " + currentlyMakingQuiz.DateModified + "~>");
+            SaveFile.WriteLine(currentlyMakingQuiz.Title + "~>" + currentlyMakingQuiz.DateModified + "~>");
             SaveFile.WriteLine();
             // Write each question (incl. answer) to it's own line
             foreach (Question item in currentlyMakingQuiz.Questions)
             {
-                SaveFile.WriteLine(item.QuestionType + "~> " + item.Prompt + "~> " + item.Answer + "~>");
+                SaveFile.WriteLine(item.QuestionType + "~>" + item.Prompt + "~>" + item.Answer + "~>");
             }
             SaveFile.WriteLine();
             SaveFile.WriteLine("~>END~>");
