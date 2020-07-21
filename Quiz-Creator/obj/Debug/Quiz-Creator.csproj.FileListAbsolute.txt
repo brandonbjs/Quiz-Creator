@@ -17,7 +17,6 @@ C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\bin\Debug\System.Nume
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\bin\Debug\MySql.Data.xml
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csprojAssemblyReference.cache
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz-Creator.exe.config
-C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.Form1.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.Properties.Resources.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.GenerateResource.cache
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CoreCompileInputs.cache
