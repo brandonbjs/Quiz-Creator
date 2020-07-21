@@ -103,3 +103,5 @@ C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator
 C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CopyComplete
 C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.exe
 C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.pdb
+C:\Users\Lion\source\repos\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.MakerScreen.resources
+C:\Users\Lion\source\repos\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.TakerScreen.resources

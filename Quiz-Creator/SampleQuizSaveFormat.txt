@@ -1,7 +1,7 @@
 ﻿Title~> Date~> Author~> Course~> Category~> Protected~> Password~>
 
-1~> Question~> Response~>
-2~> Question~> Response~>
-3~> Question~> Response~>
+questionType~> Question~> Answer~>
+questionType~> Question~> Answer~>
+questionType~> Question~> Answer~>
 
 ~>END~>

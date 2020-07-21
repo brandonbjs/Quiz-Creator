@@ -33,5 +33,11 @@ namespace Quiz_Creator
             var TakerScreen1 = new TakerScreen();
             TakerScreen1.Show();
         }
+
+        private void buttonEditLocal_Click(object sender, EventArgs e)
+        {
+            var MakerScreen1 = new MakerScreen("save.txt");
+            MakerScreen1.Show();
+        }
     }
 }
