@@ -86,7 +86,6 @@ namespace Quiz_Creator
         private void buttonSubmitQuestion_Click(object sender, EventArgs e)
         {
             // Submit Question (Same as Next, unless we are on the last question and/or all questions are filled out)
-
         }
 
         private void buttonSubmitQuiz_Click(object sender, EventArgs e)
