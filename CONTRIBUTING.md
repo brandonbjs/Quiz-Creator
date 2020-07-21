@@ -5,7 +5,9 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Steps for Creating Good Pull Requests
 1.Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+
 2.Update the README.md with details of any new changes.
+
 3.You may merge the pull request once you have discussed it with the other team members via slack.
 
 ## Code of Conduct
