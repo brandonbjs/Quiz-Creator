@@ -48,6 +48,10 @@
 	rather than large systems.
 
 ## 7. Readme File
+	code of conduct: https://github.com/brandonbjs/Quiz-Creator/blob/master/CODE_OF_CONDUCT.md
+	readme: https://github.com/brandonbjs/Quiz-Creator/blob/master/README.md
+	license:https://github.com/brandonbjs/Quiz-Creator/blob/master/LICENSE.md
+	contributing: 
 
 ## 8. Look and Feel
 	To avoid confusion of new users and further the ease of use we constructed a straight foward applicaiton
