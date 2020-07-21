@@ -11,7 +11,7 @@
 	-Take local quizes(author)
 	-Save local quizes(author)
 	-Create local quizes(author)
-		a. Title Quiz
+		a. Title Quizes
 		b. Create questions with answers
 		c. Add/remove questions
 	-Edit preexisting quizes(author)
