@@ -8,10 +8,28 @@
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
+	
 
 ## 3. Adopted technologies
+	C#: C# is a popular programming language and is the basis of the .NET Framework.
+	.Net Framework: This is a popular and powerful software development framework
+			for building and running applications on Windows. We chose it because
+			it offers quick deployment of applications and provides more scalability 
+			than others like it.
+	Windows Forms: Windows Forms is a free graphical class library included in
+			.NET framework. We are using it because it allows to easily 
+			create an easy to manage UI for our application.
+	Visual Studio: Visual Studio is an integrated development environment for use on Windows.
+			We chose it because it facilitated the use of the previous technologies listed
+			and allows us to work on the application together through the use of the live share
+			feature.
+	mySQL: mySQL is an open source database management system. We chose it because it is free to use
+		and it allows us to store quiz files for our application in a place other than the local machine.
 
-## 4. Learing/training
+## 4. Learning/training
+	To learn these technologies and the programming language that much of the group
+	was unfamiliar with we used resources on the internet, and Jacob gave us multiple tutorials / demos
+	of windows forms in BBlearn collaborate.
 
 ## 5. Deployment
 
