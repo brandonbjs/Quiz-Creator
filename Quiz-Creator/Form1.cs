@@ -59,5 +59,10 @@ namespace Quiz_Creator
         {
 
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
