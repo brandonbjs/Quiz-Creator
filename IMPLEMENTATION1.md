@@ -51,6 +51,10 @@
 	rather than large systems.
 
 ## 7. Readme File
+	code of conduct: https://github.com/brandonbjs/Quiz-Creator/blob/master/CODE_OF_CONDUCT.md
+	readme: https://github.com/brandonbjs/Quiz-Creator/blob/master/README.md
+	license:https://github.com/brandonbjs/Quiz-Creator/blob/master/LICENSE.md
+	contributing: https://github.com/brandonbjs/Quiz-Creator/blob/master/CONTRIBUTING.md
 
 [link to README file](https://github.com/brandonbjs/Quiz-Creator/blob/master/README.md)
 [link to CONTRIBUTING file](https://github.com/brandonbjs/Quiz-Creator/blob/master/CONTRIBUTING.md)
@@ -67,7 +71,7 @@
 	The application is free of gimics or flashy designs to prevent users from getting lost in the quiz making/taking 
 	process.
 
-	Additionally all windows are properly titled so that users will have no trouble navogating the applications multiple 
+	Additionally all windows are properly titled so that users will have no trouble navigating the applications multiple 
 	windows. 
 	
 	
