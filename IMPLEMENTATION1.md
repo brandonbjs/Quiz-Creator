@@ -78,5 +78,11 @@
 	
 	
 ## 9. Lessons learned
+	-Move away from saving by text files and towards a database. 
+	-Search for quizes by quiz names rather than text files. 
+	-How to properly manage a group activity using git hub and other collaboration tools
+	-Proper communication on both pushing and pullng as to not overwrite each other projects. 
+	-Have assignement done before last meeting. 
 	
 ## 10. Demo
+	
