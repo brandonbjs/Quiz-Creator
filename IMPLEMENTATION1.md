@@ -89,5 +89,5 @@
 	-Plan to use more pull requests for future implementations
 	
 ## 10. Demo
-	
+	Please Click "view raw" after clicking the link to view video.
 [Demo Video](https://github.com/brandonbjs/Quiz-Creator/blob/master/QuizCreatorPrototypeDemo.mp4)
