@@ -41,6 +41,8 @@ namespace Quiz_Creator
         public MakerScreen(string filename)
         {
             // Call this contructor with a filename to open a quiz for editing
+            // Note: the main functionality here should be moved to the Quiz Class for reueseability
+
             InitializeComponent();
 
             titleSuggest = "Untitled Quiz";
@@ -57,7 +59,7 @@ namespace Quiz_Creator
                 this.Close();
             }
 
-            textboxTitle.Text = titleSuggest;
+            textboxTitle.Text = currentlyMakingQuiz.Title;
 
             for (int i = 0; i < currentlyMakingQuiz.Questions.Count; i++)
             {
@@ -66,6 +68,10 @@ namespace Quiz_Creator
             if (currentlyMakingQuiz.Questions.Count <= 0)
             {
                 addBlankQuestion(0);
+            }
+            else
+            {
+                listboxQuestions.SelectedIndex = 0;
             }
         }
 
@@ -133,6 +139,10 @@ namespace Quiz_Creator
             else if (currentlyMakingQuiz.Questions.Count <= 0)
             {
                 addBlankQuestion(0);
+            }
+            else
+            {
+                listboxQuestions.SelectedIndex = 0;
             }
         }
 
