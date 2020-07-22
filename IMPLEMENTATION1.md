@@ -10,6 +10,7 @@
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
+	-Initial design features(Brandon, Jacob, Bryan, Steve)
 	-Take local quizes(Bryan)
 	-Save local quizes(Jacob)
 	-Create local quizes(Steve)
@@ -75,6 +76,10 @@
 
 	Additionally all windows are properly titled so that users will have no trouble navigating the applications multiple 
 	windows. 
+
+	Start Sreen UI Screenshot: https://github.com/brandonbjs/Quiz-Creator/blob/master/StartScreen.PNG
+	Maker Screen UI Screenshot: https://github.com/brandonbjs/Quiz-Creator/blob/master/MakerScreen.PNG
+	Taker Screen UI Screenshot: https://github.com/brandonbjs/Quiz-Creator/blob/master/TakerScreen.PNG
 	
 	
 ## 9. Lessons learned
@@ -83,6 +88,7 @@
 	-How to properly manage a group activity using git hub and other collaboration tools
 	-Proper communication on both pushing and pullng as to not overwrite each other projects. 
 	-Have assignement done before last meeting. 
+	-Plan to use more pull requests for future implementations
 	
 ## 10. Demo
 	
