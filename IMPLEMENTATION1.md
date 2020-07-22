@@ -76,11 +76,9 @@
 
 	Additionally all windows are properly titled so that users will have no trouble navigating the applications multiple 
 	windows. 
-
-	[Start Sreen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/StartScreen.PNG)
-	[Maker Screen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MakerScreen.PNG)
-	[Taker Screen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/TakerScreen.PNG)
-	
+[Start Sreen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/StartScreen.PNG)
+[Maker Screen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MakerScreen.PNG)
+[Taker Screen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/TakerScreen.PNG)	
 	
 ## 9. Lessons learned
 	-Move away from saving by text files and towards a database. 
