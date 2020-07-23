@@ -12,12 +12,15 @@ namespace Quiz_Creator
 
         public string Prompt;
         public string Answer;
+        public string Response;
+
 
         public Question(qType in_questionType, string in_prompt, string in_answer)
         {
             QuestionType = in_questionType;
             Prompt = in_prompt;
             Answer = in_answer;
+            Response = "";
         }
     }
 

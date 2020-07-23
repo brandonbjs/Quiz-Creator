@@ -8,7 +8,7 @@ We are creating a _Windows desktop app_ called **Quiz Creator** that allows for 
 * Jacob Cain
 * Bailey Mauss
 * Tyler Reise
-* Brandon Schaffer
+* Brandon Shaffer
 * Bryan Stahman
 
 ## Dev Notes

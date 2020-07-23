@@ -1,20 +1,23 @@
 # Implementation 1
 
 ## 1. Introduction
-	Quiz Creator is a desktop app that allows students and educators to effortlessly create,
+	Quiz Creator is a desktop application that allows students and educators to effortlessly create,
 	edit, sort, and administer quizzes while emphasizing privacy and security so that educators feel comfortable
-	distributing their material amongst their students, without fear of acadmic dishonesty.
+	distributing their material amongst their students, without fear of acadmic dishonesty. In this first implementation
+	of our program, users can create a quiz and save it on their local machine. Users can also take quizzes they have
+	created, and recieve a score immediately upon submission.
 	Trello: https://trello.com/b/63mdFtER/task-board
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
-	-Take local quizes(author)
-	-Save local quizes(author)
-	-Create local quizes(author)
+	-Initial design features(Brandon, Jacob, Bryan, Steve)
+	-Take local quizes(Bryan)
+	-Save local quizes(Jacob)
+	-Create local quizes(Steve)
 		a. Title Quizes
 		b. Create questions with answers
 		c. Add/remove questions
-	-Edit preexisting quizes(author)
+	-Edit preexisting quizes(Jacob)
 
 ## 3. Adopted technologies
 	C#: C# is a popular programming language and is the basis of the .NET Framework.
@@ -38,6 +41,9 @@
 	of windows forms in BBlearn collaborate.
 
 ## 5. Deployment
+	The current state of our MVP does not require the implmentation of a docker. We are considering the
+	use of a docker in the future if databases are intigrated. As of now all files are handled locally and 
+	the application is able to be run on any modern widows machine without reliance on external dependencies. 
 	
 ## 6. Licensing
 	The licensing we are going to use for this application is the Apache License
@@ -53,6 +59,11 @@
 	license:https://github.com/brandonbjs/Quiz-Creator/blob/master/LICENSE.md
 	contributing: https://github.com/brandonbjs/Quiz-Creator/blob/master/CONTRIBUTING.md
 
+[link to README file](https://github.com/brandonbjs/Quiz-Creator/blob/master/README.md)
+[link to CONTRIBUTING file](https://github.com/brandonbjs/Quiz-Creator/blob/master/CONTRIBUTING.md)
+[link to LICENSE file](https://github.com/brandonbjs/Quiz-Creator/blob/master/LICENSE.md)
+[link to CODE_OF_CONDUCT file](https://github.com/brandonbjs/Quiz-Creator/blob/master/CODE_OF_CONDUCT.md)
+
 ## 8. Look and Feel
 	To avoid confusion of new users and further the ease of use we constructed a straight foward applicaiton
 	that will take little to no time to adapt to. All areas requiring user input include instructions of the 
@@ -65,8 +76,18 @@
 
 	Additionally all windows are properly titled so that users will have no trouble navigating the applications multiple 
 	windows. 
-	
+[Start Sreen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/StartScreen.PNG)
+[Maker Screen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MakerScreen.PNG)
+[Taker Screen UI Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/TakerScreen.PNG)	
 	
 ## 9. Lessons learned
-
+	-Move away from saving by text files and towards a database. 
+	-Search for quizes by quiz names rather than text files. 
+	-How to properly manage a group activity using git hub and other collaboration tools
+	-Proper communication on both pushing and pullng as to not overwrite each other projects. 
+	-Have assignement done before last meeting. 
+	-Plan to use more pull requests for future implementations
+	
 ## 10. Demo
+	Please Click "view raw" after clicking the link to view video.
+[Demo Video](https://github.com/brandonbjs/Quiz-Creator/blob/master/QuizCreatorPrototypeDemo.mp4)
