@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# D5 - DESIGN
+# Design
 
-## 1. Description
+## Description
 Quiz Creator is a system that allows users (students and educators), to make, take, save
 (either to their local machine or a database, which will come in a later iteration), and edit
 quizzes for the purpose of studying and refining their knowledge. The user interface is designed
 in such a way that makes it easy to learn and simple to use, without losing any of its
 required functionality. 
-=======
-=======
->>>>>>> 6f55bf47300b7c8e1e978a26a7e53db6f5e9ec3b
-# Design
-
-## Description
 
 ## Architecture
 
@@ -41,9 +33,7 @@ required functionality.
 
 ## Design Patterns
 
-<<<<<<< HEAD
 ## Design Principles
->>>>>>> 6f55bf47300b7c8e1e978a26a7e53db6f5e9ec3b
-=======
+
 ## Design Principles
->>>>>>> 6f55bf47300b7c8e1e978a26a7e53db6f5e9ec3b
+
