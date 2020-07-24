@@ -59,13 +59,13 @@ namespace Quiz_Creator
                 this.Close();
             }
 
-            textboxTitle.Text = currentlyMakingQuiz.Title;
+            textboxTitle.Text = currentlyMakingQuiz.GetTitle();
 
-            for (int i = 0; i < currentlyMakingQuiz.Questions.Count; i++)
+            for (int i = 0; i < currentlyMakingQuiz.GetNumQuestions(); i++)
             {
-                listboxQuestions.Items.Add(currentlyMakingQuiz.Questions[i].Prompt);
+                listboxQuestions.Items.Add(currentlyMakingQuiz.GetQuestion(i).Prompt);
             }
-            if (currentlyMakingQuiz.Questions.Count <= 0)
+            if (currentlyMakingQuiz.GetNumQuestions() <= 0)
             {
                 addBlankQuestion(0);
             }
@@ -77,11 +77,12 @@ namespace Quiz_Creator
 
         private void addBlankQuestion(int index)
         {
-            currentlyMakingQuiz.Questions.Insert(index, new Question(qType.Fill_In, questionSuggest, answerSuggest));
+            currentlyMakingQuiz.InsertQuestion(index, new Question(qType.Fill_In, questionSuggest, answerSuggest));
             listboxQuestions.Items.Insert(index, newQuestionLabel);
 
             currentQuestionIndex = index;
             textboxPromptEdit.Text = questionSuggest;
+            textboxAnswerEdit.Text = answerSuggest;
             listboxQuestions.SelectedIndex = currentQuestionIndex;
         }
 
@@ -92,13 +93,13 @@ namespace Quiz_Creator
             string[] fileLines = System.IO.File.ReadAllLines(filename);
 
             fields = fileLines[0].Split(new string[] { "~>" }, StringSplitOptions.None);
-            openedQuiz.Title = fields[0];
-            openedQuiz.DateModified = DateTime.Parse(fields[1]);
+            openedQuiz.SetTitle(fields[0]);
+            openedQuiz.SetModifiedDate(DateTime.Parse(fields[1]));
 
             for (int i = 2; i < fileLines.Length-2; i++)
             {
                 fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
-                openedQuiz.Questions.Add(new Question(qType.Fill_In, fields[1], fields[2]));
+                openedQuiz.AddQuestion(new Question(qType.Fill_In, fields[1], fields[2]));
             }
             return openedQuiz;
         }
@@ -106,7 +107,7 @@ namespace Quiz_Creator
         private void textboxPromptEdit_TextChanged(object sender, EventArgs e)
         {
             // whenever the text in the text box is changed, save it
-            currentlyMakingQuiz.Questions[currentQuestionIndex].Prompt = textboxPromptEdit.Text;
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question(qType.Fill_In, textboxPromptEdit.Text, textboxAnswerEdit.Text));
 
             if (textboxPromptEdit.Text != questionSuggest)
             {
@@ -117,8 +118,7 @@ namespace Quiz_Creator
         private void textboxAnswerEdit_TextChanged(object sender, EventArgs e)
         {
             // Whenever the answer is changed, save the new answer text
-            currentlyMakingQuiz.Questions[currentQuestionIndex].Answer = textboxAnswerEdit.Text;
-
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question(qType.Fill_In, textboxPromptEdit.Text, textboxAnswerEdit.Text));
         }
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)
@@ -130,13 +130,13 @@ namespace Quiz_Creator
         {
             // Remove a Question
             listboxQuestions.Items.RemoveAt(currentQuestionIndex);
-            currentlyMakingQuiz.Questions.RemoveAt(currentQuestionIndex);
+            currentlyMakingQuiz.RemoveQuestion(currentQuestionIndex);
             if (currentQuestionIndex > 0)
             {
                 currentQuestionIndex--;
                 listboxQuestions.SelectedIndex = currentQuestionIndex;
             }
-            else if (currentlyMakingQuiz.Questions.Count <= 0)
+            else if (currentlyMakingQuiz.GetNumQuestions() <= 0)
             {
                 addBlankQuestion(0);
             }
@@ -149,7 +149,7 @@ namespace Quiz_Creator
         private void textboxTitle_TextChanged(object sender, EventArgs e)
         {
             // Whenever Title is changed, save the new title
-            currentlyMakingQuiz.Title = textboxTitle.Text;
+            currentlyMakingQuiz.SetTitle(textboxTitle.Text);
         }
 
         private void buttonSaveQuiz_Click(object sender, EventArgs e)
@@ -160,18 +160,19 @@ namespace Quiz_Creator
             // In the future, add a blank field checker that checks the title, author, other fields, and questions and answers for blank or default values, 
             // and asks the user if they want to fill them in before saving
 
-            currentlyMakingQuiz.DateModified = DateTime.Now;
+            currentlyMakingQuiz.SetModifiedNow();
 
             const string sPath = "save.txt";
 
             System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
             // Write all fields/metadata to first line
-            SaveFile.WriteLine(currentlyMakingQuiz.Title + "~>" + currentlyMakingQuiz.DateModified + "~>");
+            SaveFile.WriteLine(currentlyMakingQuiz.GetTitle() + "~>" + currentlyMakingQuiz.GetModifiedDate() + "~>");
             SaveFile.WriteLine();
             // Write each question (incl. answer) to it's own line
-            foreach (Question item in currentlyMakingQuiz.Questions)
+            for (int i = 0; i < currentlyMakingQuiz.GetNumQuestions(); i++)
             {
-                SaveFile.WriteLine(item.QuestionType + "~>" + item.Prompt + "~>" + item.Answer + "~>");
+                Question thisQ = currentlyMakingQuiz.GetQuestion(i);
+                SaveFile.WriteLine(thisQ.QuestionType + "~>" + thisQ.Prompt + "~>" + thisQ.Answer + "~>");
             }
             SaveFile.WriteLine();
             SaveFile.WriteLine("~>END~>");
@@ -185,10 +186,11 @@ namespace Quiz_Creator
             if (listboxQuestions.SelectedIndex >= 0)
             {
                 currentQuestionIndex = listboxQuestions.SelectedIndex;
-                textboxPromptEdit.Text = currentlyMakingQuiz.Questions[currentQuestionIndex].Prompt;
-                textboxAnswerEdit.Text = currentlyMakingQuiz.Questions[currentQuestionIndex].Answer;
+                Question thisQ = currentlyMakingQuiz.GetQuestion(currentQuestionIndex);
+                textboxPromptEdit.Text = thisQ.Prompt;
+                textboxAnswerEdit.Text = thisQ.Answer;
             }
-            else if (currentlyMakingQuiz.Questions.Count <= 0)
+            else if (currentlyMakingQuiz.GetNumQuestions() <= 0)
             {
                 addBlankQuestion(0);
             }
