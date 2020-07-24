@@ -36,22 +36,22 @@ required functionality.
 ## Design Principles
 	SOLID Principles
 	-Single responsibility principle
-		-**A class should only have 1 responsibility.**
+		-**A class should only have 1 responsibility**.
 		-Our question class has 1 job: to hold the prompt and response from the user. It is not responsible for grading or displaying the quiz.
 	-Open/Closed principle
-		-**Entities should be open for extension but closed for modification.**
+		-**Entities should be open for extension but closed for modification**.
 		-Our quiz class's fields are all private and can only be accessed via the getter and setter methods. 
 	-Liskov substitution principle
-		-**Objects in a program should be able to be replaced with instances of their subtypes.**
+		-**Objects in a program should be able to be replaced with instances of their subtypes**.
 		 without altering correctness of the program
 		-We intend to implement this in our multiple types of questions: the subtypes of questions should function exactly the same as the base
 		 question class within the quiz program. 
 	-Interface segregation principle
-		-**Many client-specific interfaces are better than one general-purpose interface.**
+		-**Many client-specific interfaces are better than one general-purpose interface**.
 		-This principle should be focused on with student and professor account-specific interfaces: professor interface should have access to 
 		 grading quizzes and adding content to a course; while student interface should view only their own grades and course content and see 
 		 their own practice quizzes.
 	-Dependency inversion principle
-		-**Depend upon abstractions, not concretions.**
+		-**Depend upon abstractions, not concretions**.
 		-Quiz class plans to hold abstract question class, but due to the Liskov substitution principle, will be able to hold any question type.
 		 That way quiz does not depend on any specific type of question to be added.
