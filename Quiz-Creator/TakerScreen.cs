@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace Quiz_Creator
 {
     public partial class TakerScreen : Form
     {
         int currentQuestionIndex;
-
-        int lastQuestionIndex;
 
         Quiz currentlyTakingQuiz;
 
@@ -37,45 +36,49 @@ namespace Quiz_Creator
 
             currentlyTakingQuiz = new Quiz(title);
 
-            currentlyTakingQuiz.DateModified = DateTime.Parse(fields[1]);
+            currentlyTakingQuiz.SetModifiedDate( DateTime.Parse(fields[1]) );
 
             for (int i = 2; i < fileLines.Length - 2; i++)
             {
                 fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
 
-                currentlyTakingQuiz.Questions.Add(new Question(qType.Fill_In, fields[1], fields[2]));
+                currentlyTakingQuiz.AddQuestion(new Question(qType.Fill_In, fields[1], fields[2]));
             }
             currentQuestionIndex = 0;
 
-            lastQuestionIndex = fileLines.Length - 5;
-
-            textboxQuestion.Text = currentlyTakingQuiz.Questions[currentQuestionIndex].Prompt;
+            textboxQuestion.Text = currentlyTakingQuiz.GetQuestion(currentQuestionIndex).Prompt;
 
             buttonBack.Enabled = false;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            // Back Button
-            currentQuestionIndex--;
+            // Next Button
+            if (currentQuestionIndex > 0)
+            {
+                currentQuestionIndex--;
 
-            Manage_Buttons();
+                Manage_Buttons();
 
-            textboxQuestion.Text = currentlyTakingQuiz.Questions[currentQuestionIndex].Prompt;
-
-            textboxAnswer.Text = currentlyTakingQuiz.Questions[currentQuestionIndex].Response;
+                Question thisQ = currentlyTakingQuiz.GetQuestion(currentQuestionIndex);
+                textboxQuestion.Text = thisQ.Prompt;
+                textboxAnswer.Text = thisQ.Response;
+            }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
             // Next Button
-            currentQuestionIndex ++;
+            if (currentQuestionIndex < currentlyTakingQuiz.GetNumQuestions() - 1)
+            {
+                currentQuestionIndex++;
 
-            Manage_Buttons();
+                Manage_Buttons();
 
-            textboxQuestion.Text = currentlyTakingQuiz.Questions[currentQuestionIndex].Prompt;
-
-            textboxAnswer.Text = currentlyTakingQuiz.Questions[currentQuestionIndex].Response;
+                Question thisQ = currentlyTakingQuiz.GetQuestion(currentQuestionIndex);
+                textboxQuestion.Text = thisQ.Prompt;
+                textboxAnswer.Text = thisQ.Response;
+            }
         }
 
         private void textboxAnswer_TextChanged(object sender, EventArgs e)
@@ -93,7 +96,7 @@ namespace Quiz_Creator
             // Submit Quiz (Submits all questions)
 
             // For implementation 1, show results as "you got x/total" in a popup/messagebox
-            int numQuestions = currentlyTakingQuiz.getNumQuestions();
+            int numQuestions = currentlyTakingQuiz.GetNumQuestions();
 
             MessageBox.Show("You got " + Get_Num_Correct() + " out of " + numQuestions + "!");
 
@@ -102,20 +105,20 @@ namespace Quiz_Creator
 
         private void textboxAnswer_Leave(object sender, EventArgs e)
         {
-            currentlyTakingQuiz.Questions[currentQuestionIndex].Response = textboxAnswer.Text;
+            currentlyTakingQuiz.SetResponse(currentQuestionIndex, textboxAnswer.Text);
         }
 
         private int Get_Num_Correct()
         {
             int numCorrect = 0;
 
-            int numQuestions = currentlyTakingQuiz.getNumQuestions();
+            int numQuestions = currentlyTakingQuiz.GetNumQuestions();
 
             int index;
 
             for (index = 0; index < numQuestions; index++)
             {
-                if (currentlyTakingQuiz.Questions[index].Response.ToUpper() == currentlyTakingQuiz.Questions[index].Answer.ToUpper())
+                if (currentlyTakingQuiz.GetResponse(index).ToUpper() == currentlyTakingQuiz.GetQuestion(index).Answer.ToUpper())
                 {
                     numCorrect++;
                 }
@@ -133,7 +136,7 @@ namespace Quiz_Creator
             {
                 buttonBack.Enabled = true;
             }
-            if (currentQuestionIndex == lastQuestionIndex)
+            if (currentQuestionIndex == currentlyTakingQuiz.GetNumQuestions()-1)
             {
                 buttonNext.Enabled = false;
             }
