@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Quiz_Creator
 {
@@ -29,8 +30,12 @@ namespace Quiz_Creator
             // Launch TakerScreen and open quiz
 
             // Read from file address textbox
-
-            var TakerScreen1 = new TakerScreen();
+            if (!File.Exists(textboxLocalQuizFileLocation.Text))
+            {
+                MessageBox.Show("The quiz file \"" + textboxLocalQuizFileLocation.Text + "\" does not exist.");
+                return;
+            }
+            var TakerScreen1 = new TakerScreen(textboxLocalQuizFileLocation.Text);
             TakerScreen1.Show();
         }
 

@@ -41,6 +41,8 @@ namespace Quiz_Creator
         public MakerScreen(string filename)
         {
             // Call this contructor with a filename to open a quiz for editing
+            // Note: the main functionality here should be moved to the Quiz Class for reueseability
+
             InitializeComponent();
 
             titleSuggest = "Untitled Quiz";
@@ -57,7 +59,7 @@ namespace Quiz_Creator
                 this.Close();
             }
 
-            textboxTitle.Text = titleSuggest;
+            textboxTitle.Text = currentlyMakingQuiz.Title;
 
             for (int i = 0; i < currentlyMakingQuiz.Questions.Count; i++)
             {
@@ -66,6 +68,10 @@ namespace Quiz_Creator
             if (currentlyMakingQuiz.Questions.Count <= 0)
             {
                 addBlankQuestion(0);
+            }
+            else
+            {
+                listboxQuestions.SelectedIndex = 0;
             }
         }
 
@@ -134,6 +140,10 @@ namespace Quiz_Creator
             {
                 addBlankQuestion(0);
             }
+            else
+            {
+                listboxQuestions.SelectedIndex = 0;
+            }
         }
 
         private void textboxTitle_TextChanged(object sender, EventArgs e)
@@ -156,12 +166,12 @@ namespace Quiz_Creator
 
             System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
             // Write all fields/metadata to first line
-            SaveFile.WriteLine(currentlyMakingQuiz.Title + "~> " + currentlyMakingQuiz.DateModified + "~>");
+            SaveFile.WriteLine(currentlyMakingQuiz.Title + "~>" + currentlyMakingQuiz.DateModified + "~>");
             SaveFile.WriteLine();
             // Write each question (incl. answer) to it's own line
             foreach (Question item in currentlyMakingQuiz.Questions)
             {
-                SaveFile.WriteLine(item.QuestionType + "~> " + item.Prompt + "~> " + item.Answer + "~>");
+                SaveFile.WriteLine(item.QuestionType + "~>" + item.Prompt + "~>" + item.Answer + "~>");
             }
             SaveFile.WriteLine();
             SaveFile.WriteLine("~>END~>");

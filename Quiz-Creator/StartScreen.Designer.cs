@@ -36,9 +36,10 @@
             // 
             // buttonMakeLocal
             // 
-            this.buttonMakeLocal.Location = new System.Drawing.Point(12, 12);
+            this.buttonMakeLocal.Location = new System.Drawing.Point(18, 18);
+            this.buttonMakeLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMakeLocal.Name = "buttonMakeLocal";
-            this.buttonMakeLocal.Size = new System.Drawing.Size(136, 23);
+            this.buttonMakeLocal.Size = new System.Drawing.Size(204, 35);
             this.buttonMakeLocal.TabIndex = 0;
             this.buttonMakeLocal.Text = "Make New Local Quiz";
             this.buttonMakeLocal.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // buttonTakeLocal
             // 
-            this.buttonTakeLocal.Location = new System.Drawing.Point(12, 378);
+            this.buttonTakeLocal.Location = new System.Drawing.Point(18, 582);
+            this.buttonTakeLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonTakeLocal.Name = "buttonTakeLocal";
-            this.buttonTakeLocal.Size = new System.Drawing.Size(136, 23);
+            this.buttonTakeLocal.Size = new System.Drawing.Size(204, 35);
             this.buttonTakeLocal.TabIndex = 1;
             this.buttonTakeLocal.Text = "Take Local Quiz";
             this.buttonTakeLocal.UseVisualStyleBackColor = true;
@@ -56,17 +58,19 @@
             // 
             // textboxLocalQuizFileLocation
             // 
-            this.textboxLocalQuizFileLocation.Location = new System.Drawing.Point(12, 352);
+            this.textboxLocalQuizFileLocation.Location = new System.Drawing.Point(18, 542);
+            this.textboxLocalQuizFileLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textboxLocalQuizFileLocation.Name = "textboxLocalQuizFileLocation";
-            this.textboxLocalQuizFileLocation.Size = new System.Drawing.Size(775, 20);
+            this.textboxLocalQuizFileLocation.Size = new System.Drawing.Size(1160, 26);
             this.textboxLocalQuizFileLocation.TabIndex = 2;
-            this.textboxLocalQuizFileLocation.Text = "Type the file name of the quiz you want to open";
+            this.textboxLocalQuizFileLocation.Text = "save.txt";
             // 
             // buttonEditLocal
             // 
-            this.buttonEditLocal.Location = new System.Drawing.Point(155, 377);
+            this.buttonEditLocal.Location = new System.Drawing.Point(232, 580);
+            this.buttonEditLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditLocal.Name = "buttonEditLocal";
-            this.buttonEditLocal.Size = new System.Drawing.Size(129, 23);
+            this.buttonEditLocal.Size = new System.Drawing.Size(194, 35);
             this.buttonEditLocal.TabIndex = 3;
             this.buttonEditLocal.Text = "Edit Local Quiz";
             this.buttonEditLocal.UseVisualStyleBackColor = true;
@@ -74,13 +78,14 @@
             // 
             // StartScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 414);
+            this.ClientSize = new System.Drawing.Size(1200, 637);
             this.Controls.Add(this.buttonEditLocal);
             this.Controls.Add(this.textboxLocalQuizFileLocation);
             this.Controls.Add(this.buttonTakeLocal);
             this.Controls.Add(this.buttonMakeLocal);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "StartScreen";
             this.Text = "StartScreen";
             this.ResumeLayout(false);

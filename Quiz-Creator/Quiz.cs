@@ -17,5 +17,10 @@ namespace Quiz_Creator
             DateModified = DateTime.Now;
             Questions = new List<Question>();
         }
+
+        public int getNumQuestions()
+        {
+            return Questions.Count;
+        }
     }
 }
