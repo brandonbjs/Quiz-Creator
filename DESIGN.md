@@ -1,11 +1,11 @@
 # Design
 
 ## Description
-Quiz Creator is a system that allows users (students and educators), to make, take, save
-(either to their local machine or a database, which will come in a later iteration), and edit
-quizzes for the purpose of studying and refining their knowledge. The user interface is designed
-in such a way that makes it easy to learn and simple to use, without losing any of its
-required functionality. 
+Quiz Creator is a system that allows users (students and educators), to make, take, save and edit
+quizzes for the purpose of studying and refining their knowledge. We intend for student made quizzes
+to be created locally, for their own personal enrichment, while instructor made quizzes are saved on a database
+and can be added to their respective course for students to view. The user interface is designed
+in such a way that makes it simple to use, without losing any of its required functionality. 
 
 ## Architecture
 
@@ -32,6 +32,9 @@ required functionality.
 		7. System displays quiz results back to user.
 
 ## Design Patterns
+
+![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
+Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
 
 ## Design Principles
 	SOLID Principles
