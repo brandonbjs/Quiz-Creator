@@ -95,6 +95,33 @@ namespace Quiz_Creator
             return questions.Count;
         }
 
+        /// <summary>
+        /// searchForRelatedQuestion is intended to iterate through our 
+        /// available list of questions and search for a user entered keyword
+        /// in each question prompt.If the keyword is found, the method 
+        /// returns the question index, otherwise it returns -1. This first method
+        /// implementation is only able to find the FIRST question in the list with
+        /// the corresponding keyword.
+        /// </summary>
+        /// <param name="keyword"> string variable that holds the user entered
+        /// keyword we are searching for in our question prompts.</param>
+        /// <returns>An integer variable representing the index of the question
+        /// our keyword was found in. If no such keyword is found in our questions,
+        /// return -1.</returns>
+        public int SearchForRelatedQuestion(string keyword)
+        {
+            int counter = 0;
+            foreach (var q in questions)
+            {
+                if ( q.Prompt.Contains(keyword) )
+                {
+                    return counter;
+                }
+                counter++;
+            }
+            return -1;
+        }
+
         #endregion
 
         #region Responses
