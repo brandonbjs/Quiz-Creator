@@ -33,7 +33,7 @@ required functionality.
 
 ## Design Patterns
 
-![Figure 5.1](Quiz-Creator/Figure5.1.png)
+![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
 Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
 
 ## Design Principles
