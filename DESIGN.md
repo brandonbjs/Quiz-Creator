@@ -34,6 +34,14 @@ required functionality.
 ## Design Patterns
 
 ## Design Principles
-
-## Design Principles
-
+	SOLID Principles
+	-Single responsibility principle
+		-A class should only have 1 responsibility
+	-Open/Closed principle
+		-Entities should be open for extension but closed for modification
+	-Liskov substitution principle
+		-Objects in a program should be able to be replaced with instances of their subtypes without altering correctness of the program
+	-Interface segregation principle
+		-Many client-specific interfaces are better than one general-purpose interface
+	-Dependency inversion principle
+		-Depend upon abstractions, not concretions
