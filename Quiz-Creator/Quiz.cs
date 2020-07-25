@@ -152,6 +152,16 @@ namespace Quiz_Creator
             return protectedQuiz;
         }
 
+        public void SetProtection(bool newProtectedStatus)
+        {
+            protectedQuiz = newProtectedStatus;
+        }
+        public void ChangePassword(string newPassword)
+        {
+            password = newPassword;
+        }
+
+
         public bool SetProtection(bool in_protection, string in_pass)
         {
             // true with new password to add protection, false with old password to remove protection
@@ -179,6 +189,7 @@ namespace Quiz_Creator
             }
             return false;
         }
+
 
         public bool VerifyPassword(string in_pass)
         {

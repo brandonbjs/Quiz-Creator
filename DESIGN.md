@@ -9,7 +9,11 @@ in such a way that makes it simple to use, without losing any of its required fu
 
 ## Architecture
 
+![Figure 2](https://github.com/brandonbjs/Quiz-Creator/blob/master/UMLpackagediagram.png)
+
 ## Class Diagram
+
+![Figure 3](https://github.com/brandonbjs/Quiz-Creator/blob/master/RefinedClassDiagram.png)
 
 ## Sequence Diagram
 
