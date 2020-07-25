@@ -34,17 +34,17 @@ in such a way that makes it simple to use, without losing any of its required fu
 ## Design Patterns
 
 ![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
-
--Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
+Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
 
 ![Figure 5.2](https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignPattern5.2.PNG)
 
--Design Pattern 2: (Behavioral) Iterator Pattern - SearchForRelatedQuestion() method iterates through the quiz class' available
-	list of questions and searches the question prompts to find the first question that contains the user entered keyword. If a related
-	question is found, it returns the question index, otherwise the method returns -1.
-	
-	-Quiz: (https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
-	-Question: (https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+Design Pattern 2: (Behavioral) Iterator Pattern - SearchForRelatedQuestion() method iterates through the quiz class' available
+list of questions and searches the question prompts to find the first question that contains the user entered keyword. If a related
+question is found, it returns the question index, otherwise the method returns -1.
+-[Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
+-[Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+
+
 
 ## Design Principles
 	SOLID Principles
