@@ -41,8 +41,9 @@ Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the Corr
 Design Pattern 2: (Behavioral) Iterator Pattern - SearchForRelatedQuestion() method iterates through the quiz class' available
 list of questions and searches the question prompts to find the first question that contains the user entered keyword. If a related
 question is found, it returns the question index, otherwise the method returns -1.
--[Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
--[Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+
+	[Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
+	[Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
 
 
 
