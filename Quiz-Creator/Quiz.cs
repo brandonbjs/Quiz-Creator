@@ -98,28 +98,33 @@ namespace Quiz_Creator
         /// <summary>
         /// searchForRelatedQuestion is intended to iterate through our 
         /// available list of questions and search for a user entered keyword
-        /// in each question prompt.If the keyword is found, the method 
-        /// returns the question index, otherwise it returns -1. This first method
-        /// implementation is only able to find the FIRST question in the list with
-        /// the corresponding keyword.
+        /// in each question prompt. Storing question indexes as the keyword
+        /// is found.
         /// </summary>
-        /// <param name="keyword"> string variable that holds the user entered
-        /// keyword we are searching for in our question prompts.</param>
-        /// <returns>An integer variable representing the index of the question
-        /// our keyword was found in. If no such keyword is found in our questions,
-        /// return -1.</returns>
-        public int SearchForRelatedQuestion(string keyword)
+        /// <param name="keyword"> 
+        /// string variable that holds the user entered keyword we are searching 
+        /// for in our question prompts.
+        /// </param>
+        /// <returns>
+        /// A list of integers, in which each integer represents the index of
+        /// a question that contained the user entered keyword. Returns null 
+        /// if the keyword is not contained in any of the available question
+        /// prompts.
+        /// </returns>
+        public List<int> SearchForRelatedQuestion(string keyword)
         {
-            int counter = 0;
+            List<int> relatedQuestionsFound = new List<int>();
+            int indexTracker = 0;
             foreach (var q in questions)
             {
                 if ( q.Prompt.Contains(keyword) )
                 {
-                    return counter;
+                    relatedQuestionsFound.Add(indexTracker);
+                    return relatedQuestionsFound;
                 }
-                counter++;
+                indexTracker++;
             }
-            return -1;
+            return null;
         }
 
         #endregion
