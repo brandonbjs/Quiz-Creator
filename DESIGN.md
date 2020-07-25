@@ -17,6 +17,9 @@ in such a way that makes it simple to use, without losing any of its required fu
 
 ## Sequence Diagram
 
+![Figure 4](https://github.com/brandonbjs/Quiz-Creator/blob/master/SequenceDiagram.png)
+
+
 	-User Case: Taking a local quiz
 	Actor: User
 	Description: The user can take a local quiz once it has been created
