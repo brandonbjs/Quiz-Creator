@@ -43,8 +43,13 @@ list of questions and searches the question prompts to find the first question t
 question is found, it returns the question index, otherwise the method returns -1.
 [Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
  / [Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+ 
+![Figure 5.3] (https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignpatternUML(struc).JPG)
+ 
+Design Pattern 3: (Structural) Bridge pattern - Abstract Question class allows modification of parameters for different types of questions.
+Parameters for questions types have not yet been added as formatting and layout of question types is not finalized.
 
-
+[Abstract Question Class] (https://github.com/brandonbjs/Quiz-Creator/blob/abstractquestionclass/Quiz-Creator/Question.cs)
 
 ## Design Principles
 	SOLID Principles
