@@ -49,7 +49,11 @@ question is found, it returns the question index, otherwise the method returns -
 Design Pattern 3: (Structural) Bridge pattern - Abstract Question class allows modification of parameters for different types of questions.
 Parameters for questions types have not yet been added as formatting and layout of question types is not finalized.
 
+<<<<<<< Updated upstream
 [Abstract Question Class] (https://github.com/brandonbjs/Quiz-Creator/blob/abstractquestionclass/Quiz-Creator/Question.cs)
+=======
+[Abstract Question Class](https://github.com/brandonbjs/Quiz-Creator/blob/abstractquestionclass/Quiz-Creator/Question.cs)
+>>>>>>> Stashed changes
 
 ## Design Principles
 	SOLID Principles
