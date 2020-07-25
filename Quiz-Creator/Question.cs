@@ -22,6 +22,11 @@ namespace Quiz_Creator
             Answer = in_answer;
             Response = "";
         }
+
+        public Boolean CorrectResponse()
+        {
+            return Answer == Response;
+        }
     }
 
     public enum qType { Fill_In, Multiple_Choice, Matching, Short_Answer }

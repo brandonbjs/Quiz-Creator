@@ -38,7 +38,8 @@ in such a way that makes it simple to use, without losing any of its required fu
 ## Design Patterns 
 
 ![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
-Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
+
+Design Pattern 1: (Behavioral) Template Method - MatchingQuestion overrides the CorrectResponse() method in the Question class
 
 ![Figure 5.2](https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignPattern5.2.PNG)
 
