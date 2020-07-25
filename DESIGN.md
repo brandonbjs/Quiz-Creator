@@ -49,8 +49,9 @@ Design Pattern 1: (Behavioral) Template Method - MatchingQuestion overrides the 
 ![Figure 5.2](https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignPattern5.2.PNG)
 
 Design Pattern 2: (Behavioral) Iterator Pattern - SearchForRelatedQuestion() method iterates through the quiz class' available
-list of questions and searches the question prompts to find the first question that contains the user entered keyword. If a related
-question is found, it returns the question index, otherwise the method returns -1.
+list of questions and searches the question prompts to find the indexes of all the questions that contain the user entered keyword. 
+If related questions are found, it returns a list of integers containing all the indexes corresponding to the questions containing
+the keyword, otherwise the method returns null.
 [Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
  / [Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
  
