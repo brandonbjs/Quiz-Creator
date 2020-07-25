@@ -41,6 +41,8 @@ in such a way that makes it simple to use, without losing any of its required fu
 ## Design Patterns 
 
 ![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
+[Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+
 
 Design Pattern 1: (Behavioral) Template Method - MatchingQuestion overrides the CorrectResponse() method in the Question class
 
