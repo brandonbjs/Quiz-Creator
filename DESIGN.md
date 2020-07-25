@@ -31,7 +31,7 @@ in such a way that makes it simple to use, without losing any of its required fu
 		6. System compares user responses to answers declared by quiz creator.
 		7. System displays quiz results back to user.
 
-## Design Patterns
+## Design Patterns 
 
 ![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
 Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
@@ -44,7 +44,7 @@ question is found, it returns the question index, otherwise the method returns -
 [Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
  / [Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
  
-![Figure 5.3] (https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignpatternUML(struc).JPG)
+![Figure 5.3] (https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignpatternUML(struc).PNG)
  
 Design Pattern 3: (Structural) Bridge pattern - Abstract Question class allows modification of parameters for different types of questions.
 Parameters for questions types have not yet been added as formatting and layout of question types is not finalized.
