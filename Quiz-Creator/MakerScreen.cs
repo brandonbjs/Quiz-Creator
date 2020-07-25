@@ -77,7 +77,7 @@ namespace Quiz_Creator
 
         private void addBlankQuestion(int index)
         {
-            currentlyMakingQuiz.Questions.Insert(index, new Question(qType.Fill_In, questionSuggest, answerSuggest));
+            currentlyMakingQuiz.Questions.Insert(index, new MCquestion(qType.Fill_In, questionSuggest, answerSuggest));
             listboxQuestions.Items.Insert(index, newQuestionLabel);
 
             currentQuestionIndex = index;
@@ -98,7 +98,7 @@ namespace Quiz_Creator
             for (int i = 2; i < fileLines.Length-2; i++)
             {
                 fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
-                openedQuiz.Questions.Add(new Question(qType.Fill_In, fields[1], fields[2]));
+                openedQuiz.Questions.Add(new MCquestion(qType.Fill_In, fields[1], fields[2]));
             }
             return openedQuiz;
         }

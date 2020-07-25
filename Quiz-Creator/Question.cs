@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quiz_Creator
 {
-    class Question
+    abstract class Question
     {
         public qType QuestionType;
 
@@ -24,5 +24,28 @@ namespace Quiz_Creator
         }
     }
 
+    class MCquestion : Question
+    {
+        public MCquestion(qType in_questionType, string in_prompt, string in_answer) : base(in_questionType, in_prompt, in_answer)
+        {
+
+        }
+    }
+
+    class FITBquestion : Question
+    {
+        public FITBquestion(qType in_questionType, string in_prompt, string in_answer) : base(in_questionType, in_prompt, in_answer)
+        {
+
+        }
+    }
+
+    class Matchquestion : Question
+    {
+        public Matchquestion(qType in_questionType, string in_prompt, string in_answer) : base(in_questionType, in_prompt, in_answer)
+        {
+
+        }
+    }
     public enum qType { Fill_In, Multiple_Choice, Matching, Short_Answer }
 }

@@ -43,7 +43,7 @@ namespace Quiz_Creator
             {
                 fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
 
-                currentlyTakingQuiz.Questions.Add(new Question(qType.Fill_In, fields[1], fields[2]));
+                currentlyTakingQuiz.Questions.Add(new MCquestion(qType.Fill_In, fields[1], fields[2]));
             }
             currentQuestionIndex = 0;
 
