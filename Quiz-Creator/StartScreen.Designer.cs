@@ -211,6 +211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "StartScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Quiz Creator!";
             this.Activated += new System.EventHandler(this.StartScreen_Activated);
             this.Load += new System.EventHandler(this.StartScreen_Load);

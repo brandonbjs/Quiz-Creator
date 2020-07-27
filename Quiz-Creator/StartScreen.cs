@@ -114,6 +114,9 @@ namespace Quiz_Creator
         private void StartScreen_Activated(object sender, EventArgs e)
         {
             LoadLocalQuizzes();
+            buttonEditLocal.Enabled = false;
+            buttonDeleteLocal.Enabled = false;
+            buttonTakeLocal.Enabled = false;
         }
 
         private void buttonDeleteLocal_Click(object sender, EventArgs e)
