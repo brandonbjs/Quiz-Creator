@@ -46,7 +46,7 @@
             // 
             // buttonMakeLocal
             // 
-            this.buttonMakeLocal.Location = new System.Drawing.Point(624, 159);
+            this.buttonMakeLocal.Location = new System.Drawing.Point(624, 189);
             this.buttonMakeLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMakeLocal.Name = "buttonMakeLocal";
             this.buttonMakeLocal.Size = new System.Drawing.Size(204, 35);
@@ -70,7 +70,7 @@
             // buttonEditLocal
             // 
             this.buttonEditLocal.Enabled = false;
-            this.buttonEditLocal.Location = new System.Drawing.Point(624, 204);
+            this.buttonEditLocal.Location = new System.Drawing.Point(624, 234);
             this.buttonEditLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditLocal.Name = "buttonEditLocal";
             this.buttonEditLocal.Size = new System.Drawing.Size(204, 35);
@@ -120,6 +120,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Login / signout";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listViewLocalQuizzes
             // 
@@ -182,7 +183,7 @@
             // buttonDeleteLocal
             // 
             this.buttonDeleteLocal.Enabled = false;
-            this.buttonDeleteLocal.Location = new System.Drawing.Point(624, 249);
+            this.buttonDeleteLocal.Location = new System.Drawing.Point(624, 279);
             this.buttonDeleteLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDeleteLocal.Name = "buttonDeleteLocal";
             this.buttonDeleteLocal.Size = new System.Drawing.Size(204, 35);

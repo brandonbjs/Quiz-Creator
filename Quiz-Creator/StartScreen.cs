@@ -129,5 +129,10 @@ namespace Quiz_Creator
 
             LoadLocalQuizzes();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

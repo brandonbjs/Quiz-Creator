@@ -223,6 +223,13 @@ namespace Quiz_Creator
             radioButton4.Visible = false;
             radioButton5.Visible = false;
 
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
+
+
             if (numChoices > 1)
             {
                 radioButton1.Text = in_question.GetChoice(0);
@@ -246,6 +253,15 @@ namespace Quiz_Creator
                 radioButton5.Text = in_question.GetChoice(4);
                 radioButton5.Visible = true;
             }
+            switch(currentlyTakingQuiz.GetResponse(currentQuestionIndex))
+            {
+                case "1": radioButton1.Checked = true; break;
+                case "2": radioButton2.Checked = true; break;
+                case "3": radioButton3.Checked = true; break;
+                case "4": radioButton4.Checked = true; break;
+                case "5": radioButton5.Checked = true; break;
+            }
+
         }
 
         private void Manage_Buttons()
