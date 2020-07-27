@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Quizzes>
+	<Quiz name="Test Quiz Name 1" date="7/25/2020" id="1">
+		<Question type="FITB">
+			<Prompt>"What?"</Prompt>
+			<Answer>1</Answer>
+		</Question>
+		<Question type="FITB">
+			<Prompt>Where?</Prompt>
+			<Answer>2</Answer>
+		</Question>
+		<Question type="MC">
+			<Prompt>Multiple Choice?</Prompt>
+			<Answer>2</Answer>
+			<Choices>
+				<Choice>Choice 1</Choice>
+				<Choice>Choice-2</Choice>
+				<Choice>choice 3</Choice>
+			</Choices>
+		</Question>
+	</Quiz>
+	<Quiz name="Test Quiz Name 2" date="7/26/2020" id="2">
+		<Question type="FITB">
+			<Prompt>What?</Prompt>
+			<Answer>1</Answer>
+		</Question>
+		<Question type="FITB">
+			<Prompt>Where?</Prompt>
+			<Answer>2</Answer>
+		</Question>
+	</Quiz>
+</Quizzes>
