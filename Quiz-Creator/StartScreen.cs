@@ -121,18 +121,24 @@ namespace Quiz_Creator
 
         private void buttonDeleteLocal_Click(object sender, EventArgs e)
         {
-            XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
+            string selectedQuizDate = GetSelectedQuizDate();
 
-            xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == GetSelectedQuizDate()).Remove();
+            if (MessageBox.Show("Are you sure you want to delete this quiz?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
 
-            xmlDoc.Save("LocalQuizzes.xml");
+                xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == selectedQuizDate).Remove();
 
-            LoadLocalQuizzes();
+                xmlDoc.Save("LocalQuizzes.xml");
+
+                LoadLocalQuizzes();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLoginOrSignout_Click(object sender, EventArgs e)
         {
-
+            LoginScreen loginScreen1 = new LoginScreen();
+            loginScreen1.Show();
         }
     }
 }
