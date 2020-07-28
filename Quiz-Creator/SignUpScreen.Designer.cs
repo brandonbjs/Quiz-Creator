@@ -46,16 +46,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(300, 19);
+            this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 32);
+            this.label1.Size = new System.Drawing.Size(123, 32);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Quiz Creator Signup";
+            this.label1.Text = "Sign Up";
             // 
             // textboxPassword
             // 
             this.textboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxPassword.Location = new System.Drawing.Point(265, 105);
+            this.textboxPassword.Location = new System.Drawing.Point(204, 105);
             this.textboxPassword.Name = "textboxPassword";
             this.textboxPassword.PasswordChar = '*';
             this.textboxPassword.Size = new System.Drawing.Size(356, 32);
@@ -65,7 +65,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(171, 67);
+            this.lblEmail.Location = new System.Drawing.Point(131, 67);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(66, 25);
             this.lblEmail.TabIndex = 7;
@@ -74,7 +74,7 @@
             // textboxEmail
             // 
             this.textboxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxEmail.Location = new System.Drawing.Point(265, 63);
+            this.textboxEmail.Location = new System.Drawing.Point(204, 63);
             this.textboxEmail.Name = "textboxEmail";
             this.textboxEmail.Size = new System.Drawing.Size(356, 32);
             this.textboxEmail.TabIndex = 0;
@@ -83,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(133, 109);
+            this.label2.Location = new System.Drawing.Point(93, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 11;
@@ -93,7 +93,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 151);
+            this.label3.Location = new System.Drawing.Point(20, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(177, 25);
             this.label3.TabIndex = 12;
@@ -103,7 +103,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(166, 237);
+            this.label4.Location = new System.Drawing.Point(126, 237);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 25);
             this.label4.TabIndex = 13;
@@ -117,7 +117,7 @@
             this.comboBoxType.Items.AddRange(new object[] {
             "student",
             "teacher"});
-            this.comboBoxType.Location = new System.Drawing.Point(265, 233);
+            this.comboBoxType.Location = new System.Drawing.Point(204, 233);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(356, 34);
             this.comboBoxType.TabIndex = 5;
@@ -125,7 +125,7 @@
             // textboxConfirm
             // 
             this.textboxConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxConfirm.Location = new System.Drawing.Point(265, 147);
+            this.textboxConfirm.Location = new System.Drawing.Point(204, 147);
             this.textboxConfirm.Name = "textboxConfirm";
             this.textboxConfirm.PasswordChar = '*';
             this.textboxConfirm.Size = new System.Drawing.Size(356, 32);
@@ -139,7 +139,7 @@
             this.comboBoxOrg.FormattingEnabled = true;
             this.comboBoxOrg.Items.AddRange(new object[] {
             "Northern Arizona University"});
-            this.comboBoxOrg.Location = new System.Drawing.Point(265, 189);
+            this.comboBoxOrg.Location = new System.Drawing.Point(204, 189);
             this.comboBoxOrg.Name = "comboBoxOrg";
             this.comboBoxOrg.Size = new System.Drawing.Size(356, 34);
             this.comboBoxOrg.TabIndex = 4;
@@ -148,7 +148,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(108, 193);
+            this.label5.Location = new System.Drawing.Point(68, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 25);
             this.label5.TabIndex = 17;
@@ -157,7 +157,7 @@
             // buttonSignUp
             // 
             this.buttonSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignUp.Location = new System.Drawing.Point(334, 288);
+            this.buttonSignUp.Location = new System.Drawing.Point(197, 286);
             this.buttonSignUp.Name = "buttonSignUp";
             this.buttonSignUp.Size = new System.Drawing.Size(196, 48);
             this.buttonSignUp.TabIndex = 6;
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 380);
+            this.ClientSize = new System.Drawing.Size(591, 357);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxOrg);
