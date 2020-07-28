@@ -130,9 +130,10 @@ namespace Quiz_Creator
             LoadLocalQuizzes();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLoginOrSignout_Click(object sender, EventArgs e)
         {
-
+            LoginScreen loginScreen1 = new LoginScreen();
+            loginScreen1.Show();
         }
     }
 }
