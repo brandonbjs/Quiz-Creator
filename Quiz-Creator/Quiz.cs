@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Quiz_Creator
 {
@@ -13,7 +14,7 @@ namespace Quiz_Creator
 
         private string title;
         private string author;
-        private DateTime dateModified;
+        private string dateModified;
         private bool protectedQuiz;
         private string password;
 
@@ -27,7 +28,7 @@ namespace Quiz_Creator
         {
             title = "Untitled Quiz";
             author = "No Author";
-            dateModified = DateTime.Now;
+            dateModified = DateTime.Now.ToString();
             protectedQuiz = false;
             password = "";
             questions = new List<Question>();
@@ -35,7 +36,7 @@ namespace Quiz_Creator
 
         public Quiz(string in_title) {
             title = in_title;
-            dateModified = DateTime.Now;
+            dateModified = DateTime.Now.ToString();
             questions = new List<Question>();
             protectedQuiz = false;
             password = "";
@@ -81,15 +82,6 @@ namespace Quiz_Creator
             questions.RemoveAt(index);
         }
 
-        public qType GetQuestionType(int index)
-        {
-            if(index < questions.Count)
-            {
-                return questions[index].QuestionType;
-            }
-            return qType.Fill_In;
-        }
-
         public int GetNumQuestions()
         {
             return questions.Count;
@@ -117,7 +109,7 @@ namespace Quiz_Creator
             int indexTracker = 0;
             foreach (var q in questions)
             {
-                if ( q.Prompt.Contains(keyword) )
+                if ( q.GetPrompt().Contains(keyword) )
                 {
                     relatedQuestionsFound.Add(indexTracker);
                     return relatedQuestionsFound;
@@ -135,7 +127,7 @@ namespace Quiz_Creator
         {
             if (index < questions.Count)
             {
-                return questions[index].Response;
+                return questions[index].GetResponse();
             }
             return null;
         }
@@ -144,7 +136,7 @@ namespace Quiz_Creator
         {
             if (index < questions.Count)
             {
-                questions[index].Response = in_response;
+                questions[index].SetResponse(in_response);
             }
         }
 
@@ -229,21 +221,72 @@ namespace Quiz_Creator
 
         #region Date
 
-        public DateTime GetModifiedDate()
+        public string GetModifiedDate()
         {
             return dateModified;
         }
 
         public void SetModifiedDate(DateTime in_date)
         {
-            dateModified = in_date;
+            dateModified = in_date.ToString();
         }
 
         public void SetModifiedNow()
         {
-            dateModified = DateTime.Now;
+            dateModified = DateTime.Now.ToString();
         }
 
         #endregion
+        public void AddDataFromFile(string filename, string quizDate)
+        {
+            XmlDocument localDoc = new XmlDocument();
+
+            localDoc.Load(filename);
+
+            XmlNodeList quizNodes = localDoc.GetElementsByTagName("Quiz");
+
+            XmlNode selectedQuizNode = null;
+
+            foreach (XmlNode node in quizNodes)
+            {
+                if (node.Attributes[1].InnerText == quizDate)
+                {
+                    selectedQuizNode = node;
+                }
+            }
+            title = selectedQuizNode.Attributes[0].InnerText;
+
+            dateModified = selectedQuizNode.Attributes[1].InnerText;
+
+            XmlNodeList questionNodes = selectedQuizNode.ChildNodes;
+
+            foreach (XmlNode questionNode in questionNodes)
+            {
+                string newQuestionType = questionNode.Attributes[0].InnerText;
+
+                string newQuestionPrompt = questionNode.ChildNodes[0].InnerText;
+
+                string newQuestionAnswer = questionNode.ChildNodes[1].InnerText;
+
+                if (newQuestionType == "MC")
+                {
+                    XmlNodeList choicesNode = questionNode.ChildNodes[2].ChildNodes;
+
+                    string[] questionChoices = new string[choicesNode.Count];
+
+                    int numChoices = choicesNode.Count;
+
+                    for (int index = 0; index < numChoices; index++)
+                    {
+                        questionChoices[index] = choicesNode[index].InnerText;
+                    }
+                    AddQuestion(new MCQuestion(questionChoices, newQuestionType, newQuestionPrompt, newQuestionAnswer));
+                }
+                else
+                {
+                    AddQuestion(new Question(newQuestionType, newQuestionPrompt, newQuestionAnswer));
+                }
+            }
+        }
     }
 }

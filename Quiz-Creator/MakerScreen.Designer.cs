@@ -44,43 +44,49 @@
             // listboxQuestions
             // 
             this.listboxQuestions.FormattingEnabled = true;
-            this.listboxQuestions.Location = new System.Drawing.Point(12, 84);
+            this.listboxQuestions.ItemHeight = 20;
+            this.listboxQuestions.Location = new System.Drawing.Point(18, 129);
+            this.listboxQuestions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listboxQuestions.Name = "listboxQuestions";
-            this.listboxQuestions.Size = new System.Drawing.Size(242, 316);
+            this.listboxQuestions.Size = new System.Drawing.Size(361, 484);
             this.listboxQuestions.TabIndex = 0;
             this.listboxQuestions.SelectedIndexChanged += new System.EventHandler(this.listboxQuestions_SelectedIndexChanged);
             // 
             // textboxTitle
             // 
-            this.textboxTitle.Location = new System.Drawing.Point(12, 25);
+            this.textboxTitle.Location = new System.Drawing.Point(18, 38);
+            this.textboxTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textboxTitle.Name = "textboxTitle";
-            this.textboxTitle.Size = new System.Drawing.Size(700, 20);
+            this.textboxTitle.Size = new System.Drawing.Size(1048, 26);
             this.textboxTitle.TabIndex = 1;
             this.textboxTitle.TextChanged += new System.EventHandler(this.textboxTitle_TextChanged);
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(12, 9);
+            this.labelTitle.Location = new System.Drawing.Point(18, 14);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(27, 13);
+            this.labelTitle.Size = new System.Drawing.Size(38, 20);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Title";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 68);
+            this.label1.Location = new System.Drawing.Point(18, 105);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Questions";
             // 
             // buttonAddQuestion
             // 
-            this.buttonAddQuestion.Location = new System.Drawing.Point(12, 415);
+            this.buttonAddQuestion.Location = new System.Drawing.Point(18, 638);
+            this.buttonAddQuestion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAddQuestion.Name = "buttonAddQuestion";
-            this.buttonAddQuestion.Size = new System.Drawing.Size(116, 23);
+            this.buttonAddQuestion.Size = new System.Drawing.Size(174, 35);
             this.buttonAddQuestion.TabIndex = 4;
             this.buttonAddQuestion.Text = "Add Question";
             this.buttonAddQuestion.UseVisualStyleBackColor = true;
@@ -88,9 +94,10 @@
             // 
             // buttonRemoveQuestion
             // 
-            this.buttonRemoveQuestion.Location = new System.Drawing.Point(134, 415);
+            this.buttonRemoveQuestion.Location = new System.Drawing.Point(201, 638);
+            this.buttonRemoveQuestion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRemoveQuestion.Name = "buttonRemoveQuestion";
-            this.buttonRemoveQuestion.Size = new System.Drawing.Size(120, 23);
+            this.buttonRemoveQuestion.Size = new System.Drawing.Size(180, 35);
             this.buttonRemoveQuestion.TabIndex = 5;
             this.buttonRemoveQuestion.Text = "Remove Question";
             this.buttonRemoveQuestion.UseVisualStyleBackColor = true;
@@ -98,9 +105,10 @@
             // 
             // buttonSaveQuiz
             // 
-            this.buttonSaveQuiz.Location = new System.Drawing.Point(718, 22);
+            this.buttonSaveQuiz.Location = new System.Drawing.Point(1077, 34);
+            this.buttonSaveQuiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSaveQuiz.Name = "buttonSaveQuiz";
-            this.buttonSaveQuiz.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveQuiz.Size = new System.Drawing.Size(112, 35);
             this.buttonSaveQuiz.TabIndex = 6;
             this.buttonSaveQuiz.Text = "Save Quiz";
             this.buttonSaveQuiz.UseVisualStyleBackColor = true;
@@ -108,10 +116,11 @@
             // 
             // textboxPromptEdit
             // 
-            this.textboxPromptEdit.Location = new System.Drawing.Point(294, 130);
+            this.textboxPromptEdit.Location = new System.Drawing.Point(441, 200);
+            this.textboxPromptEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textboxPromptEdit.Multiline = true;
             this.textboxPromptEdit.Name = "textboxPromptEdit";
-            this.textboxPromptEdit.Size = new System.Drawing.Size(499, 135);
+            this.textboxPromptEdit.Size = new System.Drawing.Size(746, 206);
             this.textboxPromptEdit.TabIndex = 7;
             this.textboxPromptEdit.Click += new System.EventHandler(this.textboxPromptEdit_Click);
             this.textboxPromptEdit.TextChanged += new System.EventHandler(this.textboxPromptEdit_TextChanged);
@@ -119,17 +128,19 @@
             // labelPromptEdit
             // 
             this.labelPromptEdit.AutoSize = true;
-            this.labelPromptEdit.Location = new System.Drawing.Point(291, 114);
+            this.labelPromptEdit.Location = new System.Drawing.Point(436, 175);
+            this.labelPromptEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPromptEdit.Name = "labelPromptEdit";
-            this.labelPromptEdit.Size = new System.Drawing.Size(378, 13);
+            this.labelPromptEdit.Size = new System.Drawing.Size(562, 20);
             this.labelPromptEdit.TabIndex = 8;
             this.labelPromptEdit.Text = "Type your Prompt Here.  Don\'t forget to use underscores to indictate the blank.";
             // 
             // textboxAnswerEdit
             // 
-            this.textboxAnswerEdit.Location = new System.Drawing.Point(294, 314);
+            this.textboxAnswerEdit.Location = new System.Drawing.Point(441, 483);
+            this.textboxAnswerEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textboxAnswerEdit.Name = "textboxAnswerEdit";
-            this.textboxAnswerEdit.Size = new System.Drawing.Size(116, 20);
+            this.textboxAnswerEdit.Size = new System.Drawing.Size(172, 26);
             this.textboxAnswerEdit.TabIndex = 9;
             this.textboxAnswerEdit.TextChanged += new System.EventHandler(this.textboxAnswerEdit_TextChanged);
             this.textboxAnswerEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxAnswerEdit_KeyPress);
@@ -137,17 +148,18 @@
             // labelAnswerEdit
             // 
             this.labelAnswerEdit.AutoSize = true;
-            this.labelAnswerEdit.Location = new System.Drawing.Point(291, 298);
+            this.labelAnswerEdit.Location = new System.Drawing.Point(436, 458);
+            this.labelAnswerEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAnswerEdit.Name = "labelAnswerEdit";
-            this.labelAnswerEdit.Size = new System.Drawing.Size(116, 13);
+            this.labelAnswerEdit.Size = new System.Drawing.Size(170, 20);
             this.labelAnswerEdit.TabIndex = 10;
             this.labelAnswerEdit.Text = "Type the Answer Here:";
             // 
             // MakerScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 450);
+            this.ClientSize = new System.Drawing.Size(1222, 692);
             this.Controls.Add(this.labelAnswerEdit);
             this.Controls.Add(this.textboxAnswerEdit);
             this.Controls.Add(this.labelPromptEdit);
@@ -159,8 +171,11 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.textboxTitle);
             this.Controls.Add(this.listboxQuestions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MakerScreen";
-            this.Text = "MakerScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Make a Quiz";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Xml;
 
 namespace Quiz_Creator
 {
@@ -44,7 +45,7 @@ namespace Quiz_Creator
                 }
                 else
                 {
-                    MessageBox.Show("Account found!");
+                    MessageBox.Show("");
                 }
 
                 conn.Close();
