@@ -84,15 +84,16 @@ namespace Quiz_Creator
 
         private void addBlankQuestion(int index)
         {
+            currentQuestionIndex = index;
+            
             currentlyMakingQuiz.InsertQuestion(index, new Question("FITB", questionSuggest, answerSuggest));
-            tabControlQuestionType.SelectedIndex = 0;
 
             listboxQuestions.Items.Insert(index, newQuestionLabel);
+            listboxQuestions.SelectedIndex = currentQuestionIndex;
+            tabControlQuestionType.SelectedIndex = 0;
 
-            currentQuestionIndex = index;
             textboxPromptEdit.Text = questionSuggest;
             textboxAnswerEdit.Text = answerSuggest;
-            listboxQuestions.SelectedIndex = currentQuestionIndex;
         }
 
         private void setFITBData()
@@ -233,10 +234,7 @@ namespace Quiz_Creator
 
             #endregion
 
-            if(choices.Count > 1)
-            {
-                currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new MCQuestion(choicesArr, "MC", textboxPromptEdit.Text, correctAns));
-            }
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new MCQuestion(choicesArr, "MC", textboxPromptEdit.Text, correctAns));
         }
 
         #endregion
@@ -291,15 +289,15 @@ namespace Quiz_Creator
                     xmlDocument.Element("Quizzes").Elements("Quiz")
                     .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Add
                     (
-                        new XElement("Question", new XAttribute("type", currentlyMakingQuiz.GetQuestion(index).GetQuestionType()),
-                            new XElement("Prompt", currentlyMakingQuiz.GetQuestion(index).GetPrompt()),
-                            new XElement("Answer", currentlyMakingQuiz.GetQuestion(index).GetAnswer()),
-                            new XElement("Choices")
+                        new XElement("Question", new XAttribute( "type", currentlyMakingQuiz.GetQuestion(index).GetQuestionType() ),
+                            new XElement( "Prompt", currentlyMakingQuiz.GetQuestion(index).GetPrompt() ),
+                            new XElement( "Answer", currentlyMakingQuiz.GetQuestion(index).GetAnswer() ),
+                            new XElement( "Choices" )
                     ));
                     for (int j = 0; j < ((MCQuestion)currentlyMakingQuiz.GetQuestion(index)).GetNumChoices(); j++)
                     {
                         xmlDocument.Element("Quizzes").Elements("Quiz")
-                        .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Elements("Choices").First().Add
+                        .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Elements("Question").ElementAt(index).Elements("Choices").FirstOrDefault().Add
                         (
                             new XElement("Choice", ( (MCQuestion) currentlyMakingQuiz.GetQuestion(index) ).GetChoice(j))
                         );
@@ -327,7 +325,8 @@ namespace Quiz_Creator
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)
         {
-            addBlankQuestion(currentQuestionIndex + 1);
+            currentQuestionIndex++;
+            addBlankQuestion(currentQuestionIndex);
         }
 
         private void buttonRemoveQuestion_Click(object sender, EventArgs e)
@@ -361,8 +360,80 @@ namespace Quiz_Creator
             {
                 currentQuestionIndex = listboxQuestions.SelectedIndex;
                 Question thisQ = currentlyMakingQuiz.GetQuestion(currentQuestionIndex);
+
                 textboxPromptEdit.Text = thisQ.GetPrompt();
-                textboxAnswerEdit.Text = thisQ.GetAnswer();
+
+                if (thisQ.GetQuestionType() == "FITB")
+                {
+                    tabControlQuestionType.SelectedIndex = 0;
+                    textboxAnswerEdit.Text = thisQ.GetAnswer();
+                }
+                else if (thisQ.GetQuestionType() == "MC")
+                {
+                    tabControlQuestionType.SelectedIndex = 1;
+
+                    textBoxMC1.Text = thisQ.GetNumChoices() > 0 ? thisQ.GetChoice(0) : "";
+                    textBoxMC2.Text = thisQ.GetNumChoices() > 1 ? thisQ.GetChoice(1) : "";
+                    textBoxMC3.Text = thisQ.GetNumChoices() > 2 ? thisQ.GetChoice(2) : "";
+                    textBoxMC4.Text = thisQ.GetNumChoices() > 3 ? thisQ.GetChoice(3) : "";
+                    textBoxMC5.Text = thisQ.GetNumChoices() > 4 ? thisQ.GetChoice(4) : "";
+
+                    #region Fill as many textboxes as there are choices
+                    /*
+                    if (thisQ.GetNumChoices() > 0)
+                    {
+                        textBoxMC1.Text = thisQ.GetChoice(0);
+                    }
+
+                    if (thisQ.GetNumChoices() > 1)
+                    {
+                        textBoxMC2.Text = thisQ.GetChoice(1);
+                    }
+
+                    if (thisQ.GetNumChoices() > 2)
+                    {
+                        textBoxMC3.Text = thisQ.GetChoice(2);
+                    }
+                    if (thisQ.GetNumChoices() > 3)
+                    {
+                        textBoxMC4.Text = thisQ.GetChoice(3);
+                    }
+                    if (thisQ.GetNumChoices() > 4)
+                    {
+                        textBoxMC5.Text = thisQ.GetChoice(4);
+                    }
+                    */
+                    #endregion
+
+                    #region Check the correct radio button for the answer
+
+                    if (thisQ.GetAnswer() == "1")
+                    {
+                        radioButtonMC1.Checked = true;
+                    }
+                    if (thisQ.GetAnswer() == "2")
+                    {
+                        radioButtonMC2.Checked = true;
+                    }
+                    if (thisQ.GetAnswer() == "3")
+                    {
+                        radioButtonMC3.Checked = true;
+                    }
+                    if (thisQ.GetAnswer() == "4")
+                    {
+                        radioButtonMC4.Checked = true;
+                    }
+                    if (thisQ.GetAnswer() == "5")
+                    {
+                        radioButtonMC5.Checked = true;
+                    }
+
+                    #endregion
+
+
+                }
+
+
             }
             else if (currentlyMakingQuiz.GetNumQuestions() <= 0)
             {
@@ -377,7 +448,15 @@ namespace Quiz_Creator
         private void textboxPromptEdit_TextChanged(object sender, EventArgs e)
         {
             // whenever the text in the text box is changed, save it
-            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
+
+            if (currentlyMakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+            {
+                setFITBData();
+            }
+            else if (currentlyMakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "MC")
+            {
+                setMultipleChoiceData();
+            }
 
             if (textboxPromptEdit.Text != questionSuggest)
             {
@@ -394,13 +473,20 @@ namespace Quiz_Creator
         {
             if (tabControlQuestionType.SelectedIndex == 0)
             {
-                // TODO: Set FITB fields to correct values when tab switched to
-                setFITBData(); //Maybe not this
+                setFITBData();
             }
             if (tabControlQuestionType.SelectedIndex == 1)
             {
-                // TODO: Set MC fields to correct values when tab switched to
-                setMultipleChoiceData(); // Maybe not this
+                if (currentlyMakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+                {
+                    textBoxMC5.Text = "";
+                    textBoxMC4.Text = "";
+                    textBoxMC3.Text = "";
+                    textBoxMC2.Text = "False";
+                    textBoxMC1.Text = "True";
+                    radioButtonMC1.Checked = true;
+                }
+                setMultipleChoiceData();
             }
         }
 
