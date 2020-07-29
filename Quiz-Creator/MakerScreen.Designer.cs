@@ -43,18 +43,18 @@
             this.tabPageFITB = new System.Windows.Forms.TabPage();
             this.labelFITB = new System.Windows.Forms.Label();
             this.tabPageMultipleChoice = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonMC2 = new System.Windows.Forms.RadioButton();
-            this.radioButtonMC1 = new System.Windows.Forms.RadioButton();
-            this.radioButtonMC3 = new System.Windows.Forms.RadioButton();
-            this.radioButtonMC4 = new System.Windows.Forms.RadioButton();
-            this.radioButtonMC5 = new System.Windows.Forms.RadioButton();
-            this.textBoxMC1 = new System.Windows.Forms.TextBox();
-            this.textBoxMC2 = new System.Windows.Forms.TextBox();
-            this.textBoxMC3 = new System.Windows.Forms.TextBox();
-            this.textBoxMC4 = new System.Windows.Forms.TextBox();
-            this.textBoxMC5 = new System.Windows.Forms.TextBox();
             this.labelMCInstruct = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxMC5 = new System.Windows.Forms.TextBox();
+            this.textBoxMC4 = new System.Windows.Forms.TextBox();
+            this.textBoxMC3 = new System.Windows.Forms.TextBox();
+            this.textBoxMC2 = new System.Windows.Forms.TextBox();
+            this.textBoxMC1 = new System.Windows.Forms.TextBox();
+            this.radioButtonMC5 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMC4 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMC3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMC1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMC2 = new System.Windows.Forms.RadioButton();
             this.tabControlQuestionType.SuspendLayout();
             this.tabPageFITB.SuspendLayout();
             this.tabPageMultipleChoice.SuspendLayout();
@@ -74,9 +74,10 @@
             // 
             // textboxTitle
             // 
+            this.textboxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxTitle.Location = new System.Drawing.Point(12, 32);
             this.textboxTitle.Name = "textboxTitle";
-            this.textboxTitle.Size = new System.Drawing.Size(700, 20);
+            this.textboxTitle.Size = new System.Drawing.Size(700, 22);
             this.textboxTitle.TabIndex = 1;
             this.textboxTitle.TextChanged += new System.EventHandler(this.textboxTitle_TextChanged);
             // 
@@ -126,9 +127,10 @@
             // 
             // buttonSaveQuiz
             // 
-            this.buttonSaveQuiz.Location = new System.Drawing.Point(718, 29);
+            this.buttonSaveQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveQuiz.Location = new System.Drawing.Point(718, 27);
             this.buttonSaveQuiz.Name = "buttonSaveQuiz";
-            this.buttonSaveQuiz.Size = new System.Drawing.Size(97, 23);
+            this.buttonSaveQuiz.Size = new System.Drawing.Size(97, 30);
             this.buttonSaveQuiz.TabIndex = 6;
             this.buttonSaveQuiz.Text = "Save Quiz";
             this.buttonSaveQuiz.UseVisualStyleBackColor = true;
@@ -136,6 +138,7 @@
             // 
             // textboxPromptEdit
             // 
+            this.textboxPromptEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxPromptEdit.Location = new System.Drawing.Point(301, 93);
             this.textboxPromptEdit.Multiline = true;
             this.textboxPromptEdit.Name = "textboxPromptEdit";
@@ -182,6 +185,7 @@
             this.tabControlQuestionType.SelectedIndex = 0;
             this.tabControlQuestionType.Size = new System.Drawing.Size(518, 279);
             this.tabControlQuestionType.TabIndex = 11;
+            this.tabControlQuestionType.SelectedIndexChanged += new System.EventHandler(this.tabControlQuestionType_SelectedIndexChanged);
             // 
             // tabPageFITB
             // 
@@ -218,6 +222,17 @@
             this.tabPageMultipleChoice.Text = "Multiple Choice";
             this.tabPageMultipleChoice.UseVisualStyleBackColor = true;
             // 
+            // labelMCInstruct
+            // 
+            this.labelMCInstruct.AutoSize = true;
+            this.labelMCInstruct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMCInstruct.Location = new System.Drawing.Point(18, 210);
+            this.labelMCInstruct.Name = "labelMCInstruct";
+            this.labelMCInstruct.Size = new System.Drawing.Size(471, 13);
+            this.labelMCInstruct.TabIndex = 3;
+            this.labelMCInstruct.Text = "Enter 2 to 5 choices, and bubble in the correct choice on the left.  Blank choice" +
+    "s will be discarded.";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxMC5);
@@ -237,41 +252,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choices";
             // 
-            // radioButtonMC2
+            // textBoxMC5
             // 
-            this.radioButtonMC2.AutoSize = true;
-            this.radioButtonMC2.Location = new System.Drawing.Point(6, 62);
-            this.radioButtonMC2.Name = "radioButtonMC2";
-            this.radioButtonMC2.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMC2.TabIndex = 1;
-            this.radioButtonMC2.UseVisualStyleBackColor = true;
+            this.textBoxMC5.Location = new System.Drawing.Point(26, 151);
+            this.textBoxMC5.Name = "textBoxMC5";
+            this.textBoxMC5.Size = new System.Drawing.Size(466, 26);
+            this.textBoxMC5.TabIndex = 9;
+            this.textBoxMC5.TextChanged += new System.EventHandler(this.textBoxMC5_TextChanged);
             // 
-            // radioButtonMC1
+            // textBoxMC4
             // 
-            this.radioButtonMC1.AutoSize = true;
-            this.radioButtonMC1.Location = new System.Drawing.Point(6, 30);
-            this.radioButtonMC1.Name = "radioButtonMC1";
-            this.radioButtonMC1.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMC1.TabIndex = 0;
-            this.radioButtonMC1.UseVisualStyleBackColor = true;
+            this.textBoxMC4.Location = new System.Drawing.Point(26, 119);
+            this.textBoxMC4.Name = "textBoxMC4";
+            this.textBoxMC4.Size = new System.Drawing.Size(466, 26);
+            this.textBoxMC4.TabIndex = 8;
+            this.textBoxMC4.TextChanged += new System.EventHandler(this.textBoxMC4_TextChanged);
             // 
-            // radioButtonMC3
+            // textBoxMC3
             // 
-            this.radioButtonMC3.AutoSize = true;
-            this.radioButtonMC3.Location = new System.Drawing.Point(6, 94);
-            this.radioButtonMC3.Name = "radioButtonMC3";
-            this.radioButtonMC3.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMC3.TabIndex = 2;
-            this.radioButtonMC3.UseVisualStyleBackColor = true;
+            this.textBoxMC3.Location = new System.Drawing.Point(26, 87);
+            this.textBoxMC3.Name = "textBoxMC3";
+            this.textBoxMC3.Size = new System.Drawing.Size(466, 26);
+            this.textBoxMC3.TabIndex = 7;
+            this.textBoxMC3.TextChanged += new System.EventHandler(this.textBoxMC3_TextChanged);
             // 
-            // radioButtonMC4
+            // textBoxMC2
             // 
-            this.radioButtonMC4.AutoSize = true;
-            this.radioButtonMC4.Location = new System.Drawing.Point(6, 126);
-            this.radioButtonMC4.Name = "radioButtonMC4";
-            this.radioButtonMC4.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMC4.TabIndex = 3;
-            this.radioButtonMC4.UseVisualStyleBackColor = true;
+            this.textBoxMC2.Location = new System.Drawing.Point(26, 55);
+            this.textBoxMC2.Name = "textBoxMC2";
+            this.textBoxMC2.Size = new System.Drawing.Size(466, 26);
+            this.textBoxMC2.TabIndex = 6;
+            this.textBoxMC2.TextChanged += new System.EventHandler(this.textBoxMC2_TextChanged);
+            // 
+            // textBoxMC1
+            // 
+            this.textBoxMC1.Location = new System.Drawing.Point(26, 23);
+            this.textBoxMC1.Name = "textBoxMC1";
+            this.textBoxMC1.Size = new System.Drawing.Size(466, 26);
+            this.textBoxMC1.TabIndex = 5;
+            this.textBoxMC1.TextChanged += new System.EventHandler(this.textBoxMC1_TextChanged);
             // 
             // radioButtonMC5
             // 
@@ -281,52 +300,47 @@
             this.radioButtonMC5.Size = new System.Drawing.Size(14, 13);
             this.radioButtonMC5.TabIndex = 4;
             this.radioButtonMC5.UseVisualStyleBackColor = true;
+            this.radioButtonMC5.CheckedChanged += new System.EventHandler(this.radioButtonMC5_CheckedChanged);
             // 
-            // textBoxMC1
+            // radioButtonMC4
             // 
-            this.textBoxMC1.Location = new System.Drawing.Point(26, 23);
-            this.textBoxMC1.Name = "textBoxMC1";
-            this.textBoxMC1.Size = new System.Drawing.Size(466, 26);
-            this.textBoxMC1.TabIndex = 5;
+            this.radioButtonMC4.AutoSize = true;
+            this.radioButtonMC4.Location = new System.Drawing.Point(6, 126);
+            this.radioButtonMC4.Name = "radioButtonMC4";
+            this.radioButtonMC4.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMC4.TabIndex = 3;
+            this.radioButtonMC4.UseVisualStyleBackColor = true;
+            this.radioButtonMC4.CheckedChanged += new System.EventHandler(this.radioButtonMC4_CheckedChanged);
             // 
-            // textBoxMC2
+            // radioButtonMC3
             // 
-            this.textBoxMC2.Location = new System.Drawing.Point(26, 55);
-            this.textBoxMC2.Name = "textBoxMC2";
-            this.textBoxMC2.Size = new System.Drawing.Size(466, 26);
-            this.textBoxMC2.TabIndex = 6;
+            this.radioButtonMC3.AutoSize = true;
+            this.radioButtonMC3.Location = new System.Drawing.Point(6, 94);
+            this.radioButtonMC3.Name = "radioButtonMC3";
+            this.radioButtonMC3.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMC3.TabIndex = 2;
+            this.radioButtonMC3.UseVisualStyleBackColor = true;
+            this.radioButtonMC3.CheckedChanged += new System.EventHandler(this.radioButtonMC3_CheckedChanged);
             // 
-            // textBoxMC3
+            // radioButtonMC1
             // 
-            this.textBoxMC3.Location = new System.Drawing.Point(26, 87);
-            this.textBoxMC3.Name = "textBoxMC3";
-            this.textBoxMC3.Size = new System.Drawing.Size(466, 26);
-            this.textBoxMC3.TabIndex = 7;
+            this.radioButtonMC1.AutoSize = true;
+            this.radioButtonMC1.Location = new System.Drawing.Point(6, 30);
+            this.radioButtonMC1.Name = "radioButtonMC1";
+            this.radioButtonMC1.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMC1.TabIndex = 0;
+            this.radioButtonMC1.UseVisualStyleBackColor = true;
+            this.radioButtonMC1.CheckedChanged += new System.EventHandler(this.radioButtonMC1_CheckedChanged);
             // 
-            // textBoxMC4
+            // radioButtonMC2
             // 
-            this.textBoxMC4.Location = new System.Drawing.Point(26, 119);
-            this.textBoxMC4.Name = "textBoxMC4";
-            this.textBoxMC4.Size = new System.Drawing.Size(466, 26);
-            this.textBoxMC4.TabIndex = 8;
-            // 
-            // textBoxMC5
-            // 
-            this.textBoxMC5.Location = new System.Drawing.Point(26, 151);
-            this.textBoxMC5.Name = "textBoxMC5";
-            this.textBoxMC5.Size = new System.Drawing.Size(466, 26);
-            this.textBoxMC5.TabIndex = 9;
-            // 
-            // labelMCInstruct
-            // 
-            this.labelMCInstruct.AutoSize = true;
-            this.labelMCInstruct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMCInstruct.Location = new System.Drawing.Point(18, 210);
-            this.labelMCInstruct.Name = "labelMCInstruct";
-            this.labelMCInstruct.Size = new System.Drawing.Size(471, 13);
-            this.labelMCInstruct.TabIndex = 3;
-            this.labelMCInstruct.Text = "Enter 2 to 5 choices, and bubble in the correct choice on the left.  Blank choice" +
-    "s will be discarded.";
+            this.radioButtonMC2.AutoSize = true;
+            this.radioButtonMC2.Location = new System.Drawing.Point(6, 62);
+            this.radioButtonMC2.Name = "radioButtonMC2";
+            this.radioButtonMC2.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMC2.TabIndex = 1;
+            this.radioButtonMC2.UseVisualStyleBackColor = true;
+            this.radioButtonMC2.CheckedChanged += new System.EventHandler(this.radioButtonMC2_CheckedChanged);
             // 
             // MakerScreen
             // 

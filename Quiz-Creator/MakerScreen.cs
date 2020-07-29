@@ -18,6 +18,8 @@ namespace Quiz_Creator
 {
     public partial class MakerScreen : Form
     {
+        #region Fields
+
         private Boolean isEdit = false;
 
         string titleSuggest = "Untitled Quiz";
@@ -28,6 +30,10 @@ namespace Quiz_Creator
         int currentQuestionIndex;
 
         Quiz currentlyMakingQuiz;
+
+        #endregion
+
+        #region Constructors
 
         public MakerScreen()
         {
@@ -68,6 +74,10 @@ namespace Quiz_Creator
             }
         }
 
+        #endregion
+
+        #region Functional Methods
+
         private void addBlankQuestion(int index)
         {
             currentlyMakingQuiz.InsertQuestion(index, new Question("FITB", questionSuggest, answerSuggest));
@@ -77,55 +87,13 @@ namespace Quiz_Creator
             textboxPromptEdit.Text = questionSuggest;
             textboxAnswerEdit.Text = answerSuggest;
             listboxQuestions.SelectedIndex = currentQuestionIndex;
-        }  
-
-        private void textboxPromptEdit_TextChanged(object sender, EventArgs e)
-        {
-            // whenever the text in the text box is changed, save it
-            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
-
-            if (textboxPromptEdit.Text != questionSuggest)
-            {
-                listboxQuestions.Items[currentQuestionIndex] = textboxPromptEdit.Text;
-            }
         }
 
-        private void textboxAnswerEdit_TextChanged(object sender, EventArgs e)
-        {
-            // Whenever the answer is changed, save the new answer text
-            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
-        }
+        #endregion
 
-        private void buttonAddQuestion_Click(object sender, EventArgs e)
-        {
-            addBlankQuestion(currentQuestionIndex + 1);
-        }
+        #region Windows Forum Event Methods
 
-        private void buttonRemoveQuestion_Click(object sender, EventArgs e)
-        {
-            // Remove a Question
-            listboxQuestions.Items.RemoveAt(currentQuestionIndex);
-            currentlyMakingQuiz.RemoveQuestion(currentQuestionIndex);
-            if (currentQuestionIndex > 0)
-            {
-                currentQuestionIndex--;
-                listboxQuestions.SelectedIndex = currentQuestionIndex;
-            }
-            else if (currentlyMakingQuiz.GetNumQuestions() <= 0)
-            {
-                addBlankQuestion(0);
-            }
-            else
-            {
-                listboxQuestions.SelectedIndex = 0;
-            }
-        }
-
-        private void textboxTitle_TextChanged(object sender, EventArgs e)
-        {
-            // Whenever Title is changed, save the new title
-            currentlyMakingQuiz.SetTitle(textboxTitle.Text);
-        }
+        #region Title and Saving
 
         private void buttonSaveQuiz_Click(object sender, EventArgs e)
         {
@@ -134,7 +102,7 @@ namespace Quiz_Creator
 
             // In the future, add a blank field checker that checks the title, author, other fields, and questions and answers for blank or default values, 
             // and asks the user if they want to fill them in before saving
-            if(isEdit)
+            if (isEdit)
             {
                 XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
 
@@ -170,6 +138,45 @@ namespace Quiz_Creator
             Close();
         }
 
+        private void textboxTitle_TextChanged(object sender, EventArgs e)
+        {
+            // Whenever Title is changed, save the new title
+            currentlyMakingQuiz.SetTitle(textboxTitle.Text);
+        }
+
+        #endregion
+
+        #region Question Management
+
+        #region Add and Remove Questions
+
+        private void buttonAddQuestion_Click(object sender, EventArgs e)
+        {
+            addBlankQuestion(currentQuestionIndex + 1);
+        }
+
+        private void buttonRemoveQuestion_Click(object sender, EventArgs e)
+        {
+            // Remove a Question
+            listboxQuestions.Items.RemoveAt(currentQuestionIndex);
+            currentlyMakingQuiz.RemoveQuestion(currentQuestionIndex);
+            if (currentQuestionIndex > 0)
+            {
+                currentQuestionIndex--;
+                listboxQuestions.SelectedIndex = currentQuestionIndex;
+            }
+            else if (currentlyMakingQuiz.GetNumQuestions() <= 0)
+            {
+                addBlankQuestion(0);
+            }
+            else
+            {
+                listboxQuestions.SelectedIndex = 0;
+            }
+        }
+
+        #endregion
+
         private void listboxQuestions_SelectedIndexChanged(object sender, EventArgs e)
         {
             // A different list item has been selected
@@ -186,14 +193,39 @@ namespace Quiz_Creator
             }
         }
 
-        private void textboxPromptEdit_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Prompt
+
+        private void textboxPromptEdit_TextChanged(object sender, EventArgs e)
         {
-            // When the Question textbox is in focus, clear any suggestion text
-            if (textboxPromptEdit.Text == questionSuggest)
+            // whenever the text in the text box is changed, save it
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
+
+            if (textboxPromptEdit.Text != questionSuggest)
             {
-                textboxPromptEdit.SelectAll();
-                textboxPromptEdit.Focus();
+                listboxQuestions.Items[currentQuestionIndex] = textboxPromptEdit.Text;
             }
+        }
+
+        #endregion
+
+        #region Answers
+
+        #region Question Types and Tabs
+        private void tabControlQuestionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Fill in the Blank
+
+        private void textboxAnswerEdit_TextChanged(object sender, EventArgs e)
+        {
+            // Whenever the answer is changed, save the new answer text
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
         }
 
         private void textboxAnswerEdit_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,9 +238,72 @@ namespace Quiz_Creator
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        #endregion
+
+        #region Multiple Choice
+
+        #region Multiple Choice Radio Buttons
+
+        private void radioButtonMC1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void radioButtonMC2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonMC3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonMC4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonMC5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Multiple Choice TextBoxes
+
+        private void textBoxMC1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMC2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMC3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMC4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMC5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #endregion
     }
 }
