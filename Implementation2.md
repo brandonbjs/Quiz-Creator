@@ -26,3 +26,8 @@
 	allignment of nesting code is three spaces from bracket character number.
 
 ## 5. Lessons Learned
+	In retrospective, we would have liked to practice pair programming in the future as we have a lot to learn from each other and
+	can possibly surpass barriers if pair programming was performed. Some changes we would make in the future is refactoring the code
+	for saving a quiz to a local machine and saving a course quiz to our database. As it stands, we are saving local quizzes as XML on our
+	local machine while course quizzes created by instructors are intended to be saved to a database by a means other than XML which will 
+	lead to significantly more code writing. 
