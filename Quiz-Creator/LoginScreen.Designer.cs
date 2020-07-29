@@ -47,7 +47,7 @@
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // txtEmail
             // 
@@ -56,7 +56,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(313, 32);
             this.txtEmail.TabIndex = 0;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtEmail.Text = "bjs492@nau.edu";
             // 
             // lblUsername
             // 
@@ -86,6 +86,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(313, 32);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "quizcreator";
             // 
             // label1
             // 
@@ -135,7 +136,6 @@
             this.Name = "LoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,7 +19,14 @@ namespace Quiz_Creator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUpScreen signUpScreen1 = new SignUpScreen();
+
+            signUpScreen1.Show();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -33,18 +40,21 @@ namespace Quiz_Creator
 
                 conn.Open();
 
-                string sql = "SELECT account_id FROM acc_info WHERE acc_email= '" + txtEmail.Text + "' AND acc_password='" + txtPassword.Text + "';";
+                string sql = "SELECT * FROM accounts WHERE acc_email= '" + txtEmail.Text + "' AND acc_password='" + txtPassword.Text + "';";
 
                 var cmd = new MySqlCommand(sql, conn);
+
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 if (!rdr.Read())
                 {
                     MessageBox.Show("Account not found.");
+
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Account found! Your ID is: " + rdr.GetValue(0).ToString());
+                    Hide();
                 }
 
                 conn.Close();
@@ -53,22 +63,6 @@ namespace Quiz_Creator
             {
                 MessageBox.Show("Error connecting to database");
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SignUpScreen signUpScreen1 = new SignUpScreen();
-            signUpScreen1.Show();
         }
     }
 }

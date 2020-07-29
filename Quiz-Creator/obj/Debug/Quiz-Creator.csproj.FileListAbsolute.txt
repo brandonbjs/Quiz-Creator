@@ -173,3 +173,5 @@ C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-C
 C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CopyComplete
 C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.exe
 C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.pdb
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseSelectScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCourseScreen.resources
