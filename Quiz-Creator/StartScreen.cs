@@ -140,5 +140,13 @@ namespace Quiz_Creator
             LoginScreen loginScreen1 = new LoginScreen();
             loginScreen1.Show();
         }
+
+        private void CourseSelectButton_Click(object sender, EventArgs e)
+        {
+            // Launch MakerScreen to make local
+            var CourseSelectScreen1 = new CourseSelectScreen();
+
+            CourseSelectScreen1.Show();
+        }
     }
 }

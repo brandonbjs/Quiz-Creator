@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Course.cs" />
+    <Compile Include="CourseSelectScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseSelectScreen.Designer.cs">
+      <DependentUpon>CourseSelectScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +97,9 @@
       <DependentUpon>TakerScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="CourseSelectScreen.resx">
+      <DependentUpon>CourseSelectScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

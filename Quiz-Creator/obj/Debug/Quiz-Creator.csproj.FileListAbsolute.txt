@@ -142,3 +142,34 @@ C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\bin\Debug\MySql.Data.
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CopyComplete
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\bin\Debug\LocalQuizzes.xml
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.SignUpScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\LocalQuizzes.xml
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Quiz-Creator.exe.config
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Quiz-Creator.exe
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Quiz-Creator.pdb
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Google.Protobuf.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Zstandard.Net.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\Renci.SshNet.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\System.Buffers.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\System.Memory.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\MySql.Data.xml
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csprojAssemblyReference.cache
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.exe.config
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseSelectScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.LoginScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.MakerScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.Properties.Resources.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.SignUpScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.StartScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.TakerScreen.resources
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.GenerateResource.cache
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CoreCompileInputs.cache
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.csproj.CopyComplete
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.exe
+C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.pdb
