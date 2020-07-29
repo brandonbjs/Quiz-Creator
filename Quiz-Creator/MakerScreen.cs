@@ -84,8 +84,9 @@ namespace Quiz_Creator
 
         private void addBlankQuestion(int index)
         {
-            // TODO: Switch to default question type of fill in the blank, or just go with last question type?
             currentlyMakingQuiz.InsertQuestion(index, new Question("FITB", questionSuggest, answerSuggest));
+            tabControlQuestionType.SelectedIndex = 0;
+
             listboxQuestions.Items.Insert(index, newQuestionLabel);
 
             currentQuestionIndex = index;
@@ -157,7 +158,7 @@ namespace Quiz_Creator
 
             if (correctAnsIndex > -1)
             {
-                correctAns = choices[correctAnsIndex];
+                correctAns = (correctAnsIndex + 1).ToString();
             }
 
             string[] choicesArr = new string[choices.Count];
@@ -170,8 +171,6 @@ namespace Quiz_Creator
             }
 
             #endregion
-
-
 
             #region Error Prevention - Make sure at least two options are filled and a filled option is marked as correct
 
@@ -248,8 +247,10 @@ namespace Quiz_Creator
 
         private void buttonSaveQuiz_Click(object sender, EventArgs e)
         {
+            // TODO: test saving for multiple choice questions
+
             // Save the quiz.  To an xml file
-            //add a file location for it to save to for now
+            // add a file location for it to save to for now
 
             // In the future, add a blank field checker that checks the title, author, other fields, and questions and answers for blank or default values, 
             // and asks the user if they want to fill them in before saving
@@ -274,13 +275,36 @@ namespace Quiz_Creator
 
             for (int index = 0; index < currentlyMakingQuiz.GetNumQuestions(); index++)
             {
-                xmlDocument.Element("Quizzes").Elements("Quiz")
+                if (currentlyMakingQuiz.GetQuestion(index).GetQuestionType() == "FITB")
+                {
+                    xmlDocument.Element("Quizzes").Elements("Quiz")
                     .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Add
                     (
                         new XElement("Question", new XAttribute("type", currentlyMakingQuiz.GetQuestion(index).GetQuestionType()),
                             new XElement("Prompt", currentlyMakingQuiz.GetQuestion(index).GetPrompt()),
                             new XElement("Answer", currentlyMakingQuiz.GetQuestion(index).GetAnswer())
                     ));
+                }
+
+                else if (currentlyMakingQuiz.GetQuestion(index).GetQuestionType() == "MC")
+                {
+                    xmlDocument.Element("Quizzes").Elements("Quiz")
+                    .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Add
+                    (
+                        new XElement("Question", new XAttribute("type", currentlyMakingQuiz.GetQuestion(index).GetQuestionType()),
+                            new XElement("Prompt", currentlyMakingQuiz.GetQuestion(index).GetPrompt()),
+                            new XElement("Answer", currentlyMakingQuiz.GetQuestion(index).GetAnswer()),
+                            new XElement("Choices")
+                    ));
+                    for (int j = 0; j < ((MCQuestion)currentlyMakingQuiz.GetQuestion(index)).GetNumChoices(); j++)
+                    {
+                        xmlDocument.Element("Quizzes").Elements("Quiz")
+                        .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Elements("Choices").First().Add
+                        (
+                            new XElement("Choice", ( (MCQuestion) currentlyMakingQuiz.GetQuestion(index) ).GetChoice(j))
+                        );
+                    }
+                }
             }
             xmlDocument.Save("LocalQuizzes.xml");
 
