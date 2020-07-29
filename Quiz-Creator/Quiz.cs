@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Quiz_Creator
 {
@@ -13,7 +14,7 @@ namespace Quiz_Creator
 
         private string title;
         private string author;
-        private DateTime dateModified;
+        private string dateModified;
         private bool protectedQuiz;
         private string password;
 
@@ -27,7 +28,7 @@ namespace Quiz_Creator
         {
             title = "Untitled Quiz";
             author = "No Author";
-            dateModified = DateTime.Now;
+            dateModified = DateTime.Now.ToString();
             protectedQuiz = false;
             password = "";
             questions = new List<Question>();
@@ -35,7 +36,7 @@ namespace Quiz_Creator
 
         public Quiz(string in_title) {
             title = in_title;
-            dateModified = DateTime.Now;
+            dateModified = DateTime.Now.ToString();
             questions = new List<Question>();
             protectedQuiz = false;
             password = "";
@@ -81,18 +82,41 @@ namespace Quiz_Creator
             questions.RemoveAt(index);
         }
 
-        public qType GetQuestionType(int index)
-        {
-            if(index < questions.Count)
-            {
-                return questions[index].QuestionType;
-            }
-            return qType.Fill_In;
-        }
-
         public int GetNumQuestions()
         {
             return questions.Count;
+        }
+
+        /// <summary>
+        /// searchForRelatedQuestion is intended to iterate through our 
+        /// available list of questions and search for a user entered keyword
+        /// in each question prompt. Storing question indexes as the keyword
+        /// is found.
+        /// </summary>
+        /// <param name="keyword"> 
+        /// string variable that holds the user entered keyword we are searching 
+        /// for in our question prompts.
+        /// </param>
+        /// <returns>
+        /// A list of integers, in which each integer represents the index of
+        /// a question that contained the user entered keyword. Returns null 
+        /// if the keyword is not contained in any of the available question
+        /// prompts.
+        /// </returns>
+        public List<int> SearchForRelatedQuestion(string keyword)
+        {
+            List<int> relatedQuestionsFound = new List<int>();
+            int indexTracker = 0;
+            foreach (var q in questions)
+            {
+                if ( q.GetPrompt().Contains(keyword) )
+                {
+                    relatedQuestionsFound.Add(indexTracker);
+                    return relatedQuestionsFound;
+                }
+                indexTracker++;
+            }
+            return null;
         }
 
         #endregion
@@ -103,7 +127,7 @@ namespace Quiz_Creator
         {
             if (index < questions.Count)
             {
-                return questions[index].Response;
+                return questions[index].GetResponse();
             }
             return null;
         }
@@ -112,7 +136,7 @@ namespace Quiz_Creator
         {
             if (index < questions.Count)
             {
-                questions[index].Response = in_response;
+                questions[index].SetResponse(in_response);
             }
         }
 
@@ -124,6 +148,16 @@ namespace Quiz_Creator
         {
             return protectedQuiz;
         }
+
+        public void SetProtection(bool newProtectedStatus)
+        {
+            protectedQuiz = newProtectedStatus;
+        }
+        public void ChangePassword(string newPassword)
+        {
+            password = newPassword;
+        }
+
 
         public bool SetProtection(bool in_protection, string in_pass)
         {
@@ -152,6 +186,7 @@ namespace Quiz_Creator
             }
             return false;
         }
+
 
         public bool VerifyPassword(string in_pass)
         {
@@ -186,21 +221,72 @@ namespace Quiz_Creator
 
         #region Date
 
-        public DateTime GetModifiedDate()
+        public string GetModifiedDate()
         {
             return dateModified;
         }
 
         public void SetModifiedDate(DateTime in_date)
         {
-            dateModified = in_date;
+            dateModified = in_date.ToString();
         }
 
         public void SetModifiedNow()
         {
-            dateModified = DateTime.Now;
+            dateModified = DateTime.Now.ToString();
         }
 
         #endregion
+        public void AddDataFromFile(string filename, string quizDate)
+        {
+            XmlDocument localDoc = new XmlDocument();
+
+            localDoc.Load(filename);
+
+            XmlNodeList quizNodes = localDoc.GetElementsByTagName("Quiz");
+
+            XmlNode selectedQuizNode = null;
+
+            foreach (XmlNode node in quizNodes)
+            {
+                if (node.Attributes[1].InnerText == quizDate)
+                {
+                    selectedQuizNode = node;
+                }
+            }
+            title = selectedQuizNode.Attributes[0].InnerText;
+
+            dateModified = selectedQuizNode.Attributes[1].InnerText;
+
+            XmlNodeList questionNodes = selectedQuizNode.ChildNodes;
+
+            foreach (XmlNode questionNode in questionNodes)
+            {
+                string newQuestionType = questionNode.Attributes[0].InnerText;
+
+                string newQuestionPrompt = questionNode.ChildNodes[0].InnerText;
+
+                string newQuestionAnswer = questionNode.ChildNodes[1].InnerText;
+
+                if (newQuestionType == "MC")
+                {
+                    XmlNodeList choicesNode = questionNode.ChildNodes[2].ChildNodes;
+
+                    string[] questionChoices = new string[choicesNode.Count];
+
+                    int numChoices = choicesNode.Count;
+
+                    for (int index = 0; index < numChoices; index++)
+                    {
+                        questionChoices[index] = choicesNode[index].InnerText;
+                    }
+                    AddQuestion(new MCQuestion(questionChoices, newQuestionType, newQuestionPrompt, newQuestionAnswer));
+                }
+                else
+                {
+                    AddQuestion(new Question(newQuestionType, newQuestionPrompt, newQuestionAnswer));
+                }
+            }
+        }
     }
 }

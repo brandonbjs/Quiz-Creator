@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Quizzes>
+  <Quiz name="Test Quiz Has Multiple choice" date="7/27/2020 1:04:00 AM">
+    <Question type="FITB">
+      <Prompt>What is 2 + 2?</Prompt>
+      <Answer>4</Answer>
+    </Question>
+    <Question type="MC">
+      <Prompt>Multiple Choice?</Prompt>
+      <Answer>4</Answer>
+      <Choices>
+        <Choice>Choice 1</Choice>
+        <Choice>Choice 2</Choice>
+        <Choice>choice 3</Choice>
+        <Choice>pick me!</Choice>
+        <Choice>choice 5</Choice>
+      </Choices>
+    </Question>
+    <Question type="MC">
+      <Prompt>Multiple Choice!?</Prompt>
+      <Answer>1</Answer>
+      <Choices>
+        <Choice>( ͡° ͜ʖ ͡°)</Choice>
+        <Choice>Choice2</Choice>
+        <Choice>choice3</Choice>
+      </Choices>
+    </Question>
+  </Quiz>
+  <Quiz name="Untitled Quiz" date="7/27/2020 2:25:58 PM">
+    <Question type="FITB">
+      <Prompt>Enter the quesition here</Prompt>
+      <Answer></Answer>
+    </Question>
+  </Quiz>
+</Quizzes>

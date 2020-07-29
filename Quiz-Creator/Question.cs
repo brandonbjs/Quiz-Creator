@@ -8,21 +8,78 @@ namespace Quiz_Creator
 {
     class Question
     {
-        public qType QuestionType;
+        private string questionType;
 
-        public string Prompt;
-        public string Answer;
-        public string Response;
+        private string prompt;
 
+        private string answer;
 
-        public Question(qType in_questionType, string in_prompt, string in_answer)
+        private string response;
+
+        public Question(string in_questionType, string in_prompt, string in_answer)
         {
-            QuestionType = in_questionType;
-            Prompt = in_prompt;
-            Answer = in_answer;
-            Response = "";
+            questionType = in_questionType;
+
+            prompt = in_prompt;
+
+            answer = in_answer;
+
+            response = "";
+        }
+
+        public string GetQuestionType()
+        {
+            return questionType;
+        }
+
+        public void SetQuestionType(string in_questionType)
+        {
+            questionType = in_questionType;
+        }
+
+        public string GetPrompt()
+        {
+            return prompt;
+        }
+
+        public void SetPrompt(string in_prompt)
+        {
+            prompt = in_prompt;
+        }
+
+        public string GetAnswer()
+        {
+            return answer;
+        }
+
+        public void SetAnswer(string in_answer)
+        {
+            answer = in_answer;
+        }
+
+        public string GetResponse()
+        {
+            return response;
+        }
+
+        public void SetResponse(string in_response)
+        {
+            response = in_response;
+        }
+
+        public Boolean CorrectResponse()
+        {
+            return answer == response;
+        }
+
+        public virtual int GetNumChoices()
+        {
+            return 0;
+        }
+
+        public virtual string GetChoice(int choiceIndex)
+        {
+            return "";
         }
     }
-
-    public enum qType { Fill_In, Multiple_Choice, Matching, Short_Answer }
 }

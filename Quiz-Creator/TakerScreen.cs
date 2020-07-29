@@ -9,141 +9,268 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Xml;
 
 namespace Quiz_Creator
 {
     public partial class TakerScreen : Form
     {
-        int currentQuestionIndex;
+        private int currentQuestionIndex = 0;
 
-        Quiz currentlyTakingQuiz;
+        private Quiz currentlyTakingQuiz;
 
-        public TakerScreen()
+        public TakerScreen(string quizDate, Boolean isLocal)
         {
             InitializeComponent();
-        }
 
-        public TakerScreen(string filename)
-        {
-            // Call this contructor with a filename to open a quiz for taking
-            InitializeComponent();
-
-            string[] fileLines = File.ReadAllLines(filename);
-
-            string[] fields = fileLines[0].Split(new string[] { "~>" }, StringSplitOptions.None);
-
-            string title = fields[0];
-
-            currentlyTakingQuiz = new Quiz(title);
-
-            currentlyTakingQuiz.SetModifiedDate( DateTime.Parse(fields[1]) );
-
-            for (int i = 2; i < fileLines.Length - 2; i++)
+            //load the selected quiz into the object
+            if(isLocal)
             {
-                fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
+                currentlyTakingQuiz = new Quiz();
 
-                currentlyTakingQuiz.AddQuestion(new Question(qType.Fill_In, fields[1], fields[2]));
+                currentlyTakingQuiz.AddDataFromFile("LocalQuizzes.xml", quizDate);
             }
-            currentQuestionIndex = 0;
+            else
+            {
+                //not yet implemented
+            }
+            comboBoxQuestionSelect.SelectedIndex = 0;
 
-            textboxQuestion.Text = currentlyTakingQuiz.GetQuestion(currentQuestionIndex).Prompt;
+            labelQuizTitle.Text = currentlyTakingQuiz.GetTitle();
 
-            buttonBack.Enabled = false;
+            groupBoxQuestion.Text = "Question " + (currentQuestionIndex+1).ToString();
+
+            labelPrompt.Text = currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetPrompt();
+
+            if(currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+            {
+                DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+            }
+            else
+            {
+                DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            // Next Button
-            if (currentQuestionIndex > 0)
+            // Back Button
+            SaveResponse();
+
+            currentQuestionIndex--;
+
+            if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
             {
-                currentQuestionIndex--;
-
-                Manage_Buttons();
-
-                Question thisQ = currentlyTakingQuiz.GetQuestion(currentQuestionIndex);
-                textboxQuestion.Text = thisQ.Prompt;
-                textboxAnswer.Text = thisQ.Response;
+                DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
             }
+            else
+            {
+                DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+            }
+            Manage_Buttons();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
             // Next Button
-            if (currentQuestionIndex < currentlyTakingQuiz.GetNumQuestions() - 1)
+            SaveResponse();
+
+            currentQuestionIndex++;
+
+            if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
             {
-                currentQuestionIndex++;
-
-                Manage_Buttons();
-
-                Question thisQ = currentlyTakingQuiz.GetQuestion(currentQuestionIndex);
-                textboxQuestion.Text = thisQ.Prompt;
-                textboxAnswer.Text = thisQ.Response;
+                DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
             }
-        }
-
-        private void textboxAnswer_TextChanged(object sender, EventArgs e)
-        {
-            // Answer Text changed
-        }
-
-        private void buttonSubmitQuestion_Click(object sender, EventArgs e)
-        {
-            // Submit Question (Same as Next, unless we are on the last question and/or all questions are filled out)
+            else
+            {
+                DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+            }
+            Manage_Buttons();
         }
 
         private void buttonSubmitQuiz_Click(object sender, EventArgs e)
         {
-            // Submit Quiz (Submits all questions)
-
             // For implementation 1, show results as "you got x/total" in a popup/messagebox
+            SaveResponse();
+
             int numQuestions = currentlyTakingQuiz.GetNumQuestions();
 
-            MessageBox.Show("You got " + Get_Num_Correct() + " out of " + numQuestions + "!");
+            string summaryString = "";
+
+            for(int index = 0; index < numQuestions; index++)
+            {
+                summaryString += "\nQuestion #" + (index + 1) + ": ";
+                if(currentlyTakingQuiz.GetQuestion(index).CorrectResponse())
+                {
+                    summaryString += "Correct";
+                }
+                else
+                {
+                    summaryString += "Incorrect";
+                }
+            }
+            MessageBox.Show(summaryString);
 
             // For future implementations, save quiz here
         }
 
-        private void textboxAnswer_Leave(object sender, EventArgs e)
+        private void AddFromLocal(string quizDate)
         {
-            currentlyTakingQuiz.SetResponse(currentQuestionIndex, textboxAnswer.Text);
-        }
+            XmlDocument localDoc = new XmlDocument();
 
-        private int Get_Num_Correct()
-        {
-            int numCorrect = 0;
+            localDoc.Load("LocalQuizzes.xml");
 
-            int numQuestions = currentlyTakingQuiz.GetNumQuestions();
+            XmlNodeList quizNodes = localDoc.GetElementsByTagName("Quiz");
 
-            int index;
+            XmlNode selectedQuizNode = null;
 
-            for (index = 0; index < numQuestions; index++)
+            foreach (XmlNode node in quizNodes)
             {
-                if (currentlyTakingQuiz.GetResponse(index).ToUpper() == currentlyTakingQuiz.GetQuestion(index).Answer.ToUpper())
+                if (node.Attributes[1].InnerText == quizDate)
                 {
-                    numCorrect++;
+                    selectedQuizNode = node;
                 }
             }
-            return numCorrect;
+            string quizTitle = selectedQuizNode.Attributes[0].InnerText;
+
+            currentlyTakingQuiz = new Quiz(quizTitle);
+
+            XmlNodeList questionNodes = selectedQuizNode.ChildNodes;
+
+            foreach (XmlNode questionNode in questionNodes)
+            {
+                string newQuestionType = questionNode.Attributes[0].InnerText;
+
+                string newQuestionPrompt = questionNode.ChildNodes[0].InnerText;
+
+                string newQuestionAnswer = questionNode.ChildNodes[1].InnerText;
+
+                if (newQuestionType == "MC")
+                {
+                    XmlNodeList choicesNode = questionNode.ChildNodes[2].ChildNodes;
+
+                    string[] questionChoices = new string[choicesNode.Count];
+
+                    int numChoices = choicesNode.Count;
+
+                    for(int index = 0; index < numChoices; index++)
+                    {
+                        questionChoices[index] = choicesNode[index].InnerText;
+                    }
+                    currentlyTakingQuiz.AddQuestion(new MCQuestion(questionChoices, newQuestionType, newQuestionPrompt, newQuestionAnswer));
+                }
+                else
+                {
+                    currentlyTakingQuiz.AddQuestion(new Question(newQuestionType, newQuestionPrompt, newQuestionAnswer));
+                }
+            }
+        }
+
+        private void SaveResponse()
+        {
+            if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+            {
+                currentlyTakingQuiz.GetQuestion(currentQuestionIndex).SetResponse(textBoxResponse.Text);
+            }
+            else
+            {
+                string userResponse = "";
+
+                if(radioButton1.Checked) { userResponse = "1"; }
+                if(radioButton2.Checked) { userResponse = "2"; }
+                if(radioButton3.Checked) { userResponse = "3"; }
+                if(radioButton4.Checked) { userResponse = "4"; }
+                if(radioButton5.Checked) { userResponse = "5"; }
+
+                currentlyTakingQuiz.GetQuestion(currentQuestionIndex).SetResponse(userResponse);
+            }
+        }
+
+        private void DisplayFITB(Question in_question)
+        {
+            groupBoxQuestion.Text = "Question " + (currentQuestionIndex + 1).ToString();
+
+            //Show FITB response
+            labelResponse.Visible = true;
+            textBoxResponse.Visible = true;
+            textBoxResponse.Text = in_question.GetResponse();
+            labelPrompt.Text = in_question.GetPrompt();
+
+            //Hide MC buttons
+            radioButton1.Visible = false;
+            radioButton2.Visible = false;
+            radioButton3.Visible = false;
+            radioButton4.Visible = false;
+            radioButton5.Visible = false;
+        }
+
+        private void DisplayMC(MCQuestion in_question)
+        {
+            groupBoxQuestion.Text = "Question " + (currentQuestionIndex + 1).ToString();
+
+            //Hide FITB response
+            labelResponse.Visible = false;
+            textBoxResponse.Visible = false;
+
+            //Show MC
+            labelPrompt.Text = in_question.GetPrompt();
+
+            int numChoices = in_question.GetNumChoices();
+
+            radioButton1.Visible = false;
+            radioButton2.Visible = false;
+            radioButton3.Visible = false;
+            radioButton4.Visible = false;
+            radioButton5.Visible = false;
+
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
+
+
+            if (numChoices > 1)
+            {
+                radioButton1.Text = in_question.GetChoice(0);
+                radioButton2.Text = in_question.GetChoice(1);
+                radioButton1.Visible = true;
+                radioButton2.Visible = true;
+            }
+            if(numChoices > 2)
+            {
+                radioButton3.Text = in_question.GetChoice(2);
+                radioButton3.Visible = true;
+            }
+            if(numChoices > 3)
+            {
+                radioButton4.Text = in_question.GetChoice(3);
+                radioButton4.Visible = true;
+
+            }
+            if(numChoices > 4)
+            {
+                radioButton5.Text = in_question.GetChoice(4);
+                radioButton5.Visible = true;
+            }
+            switch(currentlyTakingQuiz.GetResponse(currentQuestionIndex))
+            {
+                case "1": radioButton1.Checked = true; break;
+                case "2": radioButton2.Checked = true; break;
+                case "3": radioButton3.Checked = true; break;
+                case "4": radioButton4.Checked = true; break;
+                case "5": radioButton5.Checked = true; break;
+            }
+
         }
 
         private void Manage_Buttons()
         {
-            if (currentQuestionIndex == 0)
-            {
-                buttonBack.Enabled = false;
-            }
-            else
-            {
-                buttonBack.Enabled = true;
-            }
-            if (currentQuestionIndex == currentlyTakingQuiz.GetNumQuestions()-1)
-            {
-                buttonNext.Enabled = false;
-            }
-            else
-            {
-                buttonNext.Enabled = true;
-            }
+            if (currentQuestionIndex == 0) { buttonBack.Enabled = false; }
+            else { buttonBack.Enabled = true; }
+
+            if (currentQuestionIndex == currentlyTakingQuiz.GetNumQuestions()-1) { buttonNext.Enabled = false; }
+            else{ buttonNext.Enabled = true; }
         }
     }
 }

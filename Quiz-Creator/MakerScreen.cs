@@ -6,18 +6,25 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
+
 
 namespace Quiz_Creator
 {
     public partial class MakerScreen : Form
     {
-        string titleSuggest;
-        string questionSuggest;
-        string answerSuggest;
-        string newQuestionLabel;
+        private Boolean isEdit = false;
+
+        string titleSuggest = "Untitled Quiz";
+        string questionSuggest = "Enter the quesition here";
+        string answerSuggest = "";
+        string newQuestionLabel = "New Question";
+
         int currentQuestionIndex;
 
         Quiz currentlyMakingQuiz;
@@ -26,44 +33,30 @@ namespace Quiz_Creator
         {
             InitializeComponent();
 
-
-            titleSuggest = "Untitled Quiz";
-            questionSuggest = "Enter the quesition here";
-            newQuestionLabel = "New Question";
-            answerSuggest = "";
-
             currentlyMakingQuiz = new Quiz(titleSuggest);
+
             textboxTitle.Text = titleSuggest;
 
             addBlankQuestion(0);
         }
 
-        public MakerScreen(string filename)
+        public MakerScreen(string quizDate)
         {
             // Call this contructor with a filename to open a quiz for editing
             // Note: the main functionality here should be moved to the Quiz Class for reueseability
-
             InitializeComponent();
 
-            titleSuggest = "Untitled Quiz";
-            questionSuggest = "Enter the quesition here";
-            newQuestionLabel = "New Question";
-            answerSuggest = "";
-            if (File.Exists(filename))
-            {
-                currentlyMakingQuiz = readQuizFile(filename);
-            }
-            else
-            {
-                MessageBox.Show("The quiz file \"" + filename + "\" does not exist.");
-                this.Close();
-            }
+            isEdit = true;
+
+            currentlyMakingQuiz = new Quiz();
+
+            currentlyMakingQuiz.AddDataFromFile("LocalQuizzes.xml", quizDate);
 
             textboxTitle.Text = currentlyMakingQuiz.GetTitle();
 
             for (int i = 0; i < currentlyMakingQuiz.GetNumQuestions(); i++)
             {
-                listboxQuestions.Items.Add(currentlyMakingQuiz.GetQuestion(i).Prompt);
+                listboxQuestions.Items.Add(currentlyMakingQuiz.GetQuestion(i).GetPrompt());
             }
             if (currentlyMakingQuiz.GetNumQuestions() <= 0)
             {
@@ -77,37 +70,19 @@ namespace Quiz_Creator
 
         private void addBlankQuestion(int index)
         {
-            currentlyMakingQuiz.InsertQuestion(index, new Question(qType.Fill_In, questionSuggest, answerSuggest));
+            currentlyMakingQuiz.InsertQuestion(index, new Question("FITB", questionSuggest, answerSuggest));
             listboxQuestions.Items.Insert(index, newQuestionLabel);
 
             currentQuestionIndex = index;
             textboxPromptEdit.Text = questionSuggest;
             textboxAnswerEdit.Text = answerSuggest;
             listboxQuestions.SelectedIndex = currentQuestionIndex;
-        }
-
-        private Quiz readQuizFile(string filename)
-        {
-            Quiz openedQuiz = new Quiz("Unopened Quiz");
-            string[] fields;
-            string[] fileLines = System.IO.File.ReadAllLines(filename);
-
-            fields = fileLines[0].Split(new string[] { "~>" }, StringSplitOptions.None);
-            openedQuiz.SetTitle(fields[0]);
-            openedQuiz.SetModifiedDate(DateTime.Parse(fields[1]));
-
-            for (int i = 2; i < fileLines.Length-2; i++)
-            {
-                fields = fileLines[i].Split(new string[] { "~>" }, StringSplitOptions.None);
-                openedQuiz.AddQuestion(new Question(qType.Fill_In, fields[1], fields[2]));
-            }
-            return openedQuiz;
-        }
+        }  
 
         private void textboxPromptEdit_TextChanged(object sender, EventArgs e)
         {
             // whenever the text in the text box is changed, save it
-            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question(qType.Fill_In, textboxPromptEdit.Text, textboxAnswerEdit.Text));
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
 
             if (textboxPromptEdit.Text != questionSuggest)
             {
@@ -118,7 +93,7 @@ namespace Quiz_Creator
         private void textboxAnswerEdit_TextChanged(object sender, EventArgs e)
         {
             // Whenever the answer is changed, save the new answer text
-            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question(qType.Fill_In, textboxPromptEdit.Text, textboxAnswerEdit.Text));
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
         }
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)
@@ -154,30 +129,45 @@ namespace Quiz_Creator
 
         private void buttonSaveQuiz_Click(object sender, EventArgs e)
         {
-            // Save the quiz.  To a text file for now.
+            // Save the quiz.  To an xml file
             //add a file location for it to save to for now
 
             // In the future, add a blank field checker that checks the title, author, other fields, and questions and answers for blank or default values, 
             // and asks the user if they want to fill them in before saving
-
-            currentlyMakingQuiz.SetModifiedNow();
-
-            const string sPath = "save.txt";
-
-            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
-            // Write all fields/metadata to first line
-            SaveFile.WriteLine(currentlyMakingQuiz.GetTitle() + "~>" + currentlyMakingQuiz.GetModifiedDate() + "~>");
-            SaveFile.WriteLine();
-            // Write each question (incl. answer) to it's own line
-            for (int i = 0; i < currentlyMakingQuiz.GetNumQuestions(); i++)
+            if(isEdit)
             {
-                Question thisQ = currentlyMakingQuiz.GetQuestion(i);
-                SaveFile.WriteLine(thisQ.QuestionType + "~>" + thisQ.Prompt + "~>" + thisQ.Answer + "~>");
+                XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
+
+                xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == currentlyMakingQuiz.GetModifiedDate()).Remove();
+
+                currentlyMakingQuiz.SetModifiedNow();
+
+                xmlDoc.Save("LocalQuizzes.xml");
             }
-            SaveFile.WriteLine();
-            SaveFile.WriteLine("~>END~>");
-            SaveFile.Close();
-            MessageBox.Show("Quiz saved!");
+
+            XDocument xmlDocument = XDocument.Load("LocalQuizzes.xml");
+
+            xmlDocument.Element("Quizzes").Add(
+                new XElement("Quiz",
+                new XAttribute("name", currentlyMakingQuiz.GetTitle()),
+                new XAttribute("date", currentlyMakingQuiz.GetModifiedDate())
+                ));
+
+            for (int index = 0; index < currentlyMakingQuiz.GetNumQuestions(); index++)
+            {
+                xmlDocument.Element("Quizzes").Elements("Quiz")
+                    .First(c => (string)c.Attribute("date") == currentlyMakingQuiz.GetModifiedDate()).Add
+                    (
+                        new XElement("Question", new XAttribute("type", currentlyMakingQuiz.GetQuestion(index).GetQuestionType()),
+                            new XElement("Prompt", currentlyMakingQuiz.GetQuestion(index).GetPrompt()),
+                            new XElement("Answer", currentlyMakingQuiz.GetQuestion(index).GetAnswer())
+                    ));
+            }
+            xmlDocument.Save("LocalQuizzes.xml");
+
+            MessageBox.Show("Quiz saved successfully!");
+
+            Close();
         }
 
         private void listboxQuestions_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,8 +177,8 @@ namespace Quiz_Creator
             {
                 currentQuestionIndex = listboxQuestions.SelectedIndex;
                 Question thisQ = currentlyMakingQuiz.GetQuestion(currentQuestionIndex);
-                textboxPromptEdit.Text = thisQ.Prompt;
-                textboxAnswerEdit.Text = thisQ.Answer;
+                textboxPromptEdit.Text = thisQ.GetPrompt();
+                textboxAnswerEdit.Text = thisQ.GetAnswer();
             }
             else if (currentlyMakingQuiz.GetNumQuestions() <= 0)
             {

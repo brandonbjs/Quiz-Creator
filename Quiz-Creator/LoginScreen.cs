@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Xml;
 
 namespace Quiz_Creator
 {
@@ -23,7 +24,7 @@ namespace Quiz_Creator
             try
             {
                 string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-                string database = "login_info";
+                string database = "QC_database";
                 string uid = "admin";
                 string password = "quizcreator";
                 string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
@@ -32,10 +33,9 @@ namespace Quiz_Creator
 
                 conn.Open();
 
-                string sql = "SELECT * FROM `login_info` WHERE username= '" + txtUsername.Text + "' AND password='" + txtPassword.Text + "';";
+                string sql = "SELECT account_id FROM acc_info WHERE acc_email= '" + txtEmail.Text + "' AND acc_password='" + txtPassword.Text + "';";
 
                 var cmd = new MySqlCommand(sql, conn);
-
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 if (!rdr.Read())
@@ -44,7 +44,7 @@ namespace Quiz_Creator
                 }
                 else
                 {
-                    MessageBox.Show("Account found!");
+                    MessageBox.Show("Account found! Your ID is: " + rdr.GetValue(0).ToString());
                 }
 
                 conn.Close();
@@ -63,6 +63,12 @@ namespace Quiz_Creator
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUpScreen signUpScreen1 = new SignUpScreen();
+            signUpScreen1.Show();
         }
     }
 }

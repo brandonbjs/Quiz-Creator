@@ -9,9 +9,16 @@ in such a way that makes it simple to use, without losing any of its required fu
 
 ## Architecture
 
+![Figure 2](https://github.com/brandonbjs/Quiz-Creator/blob/master/UMLpackagediagram.png)
+
 ## Class Diagram
 
+![Figure 3](https://github.com/brandonbjs/Quiz-Creator/blob/master/RefinedClassDiagram.png)
+
 ## Sequence Diagram
+
+![Figure 4](https://github.com/brandonbjs/Quiz-Creator/blob/master/SequenceDiagram.png)
+
 
 	-User Case: Taking a local quiz
 	Actor: User
@@ -31,10 +38,30 @@ in such a way that makes it simple to use, without losing any of its required fu
 		6. System compares user responses to answers declared by quiz creator.
 		7. System displays quiz results back to user.
 
-## Design Patterns
+## Design Patterns 
 
 ![Figure 5.1](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.1.png)
-Design Pattern 1: (Behavioral) Template Method - FITBQuestion overrides the CorrectResponse() method in the Question class
+[Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+
+
+Design Pattern 1: (Behavioral) Template Method - MatchingQuestion overrides the CorrectResponse() method in the Question class
+
+![Figure 5.2](https://github.com/brandonbjs/Quiz-Creator/blob/master/DesignPattern5.2.PNG)
+
+Design Pattern 2: (Behavioral) Iterator Pattern - SearchForRelatedQuestion() method iterates through the quiz class' available
+list of questions and searches the question prompts to find the indexes of all the questions that contain the user entered keyword. 
+If related questions are found, it returns a list of integers containing all the indexes corresponding to the questions containing
+the keyword, otherwise the method returns null.
+[Quiz Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs)
+ / [Question Class Link](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Question.cs)
+ 
+![Figure 5.3](https://github.com/brandonbjs/Quiz-Creator/blob/master/Figure5.3.png)
+ 
+Design Pattern 3: (Structural) Bridge pattern - Abstract Question class allows modification of parameters for different types of questions.
+Parameters for questions types have not yet been added as formatting and layout of question types is not finalized.
+
+
+[Abstract Question Class](https://github.com/brandonbjs/Quiz-Creator/blob/abstractquestionclass/Quiz-Creator/Question.cs)
 
 ## Design Principles
 	SOLID Principles
