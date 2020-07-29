@@ -19,12 +19,19 @@ namespace Quiz_Creator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUpScreen signUpScreen1 = new SignUpScreen();
+
+            signUpScreen1.Show();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-                string database = "login_info";
+                string database = "QC_database";
                 string uid = "admin";
                 string password = "quizcreator";
                 string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
@@ -33,7 +40,7 @@ namespace Quiz_Creator
 
                 conn.Open();
 
-                string sql = "SELECT * FROM `login_info` WHERE username= '" + txtUsername.Text + "' AND password='" + txtPassword.Text + "';";
+                string sql = "SELECT * FROM accounts WHERE acc_email= '" + txtEmail.Text + "' AND acc_password='" + txtPassword.Text + "';";
 
                 var cmd = new MySqlCommand(sql, conn);
 
@@ -42,10 +49,12 @@ namespace Quiz_Creator
                 if (!rdr.Read())
                 {
                     MessageBox.Show("Account not found.");
+
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("");
+                    Hide();
                 }
 
                 conn.Close();
@@ -54,16 +63,6 @@ namespace Quiz_Creator
             {
                 MessageBox.Show("Error connecting to database");
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -31,17 +31,21 @@
             this.buttonMakeLocal = new System.Windows.Forms.Button();
             this.buttonTakeLocal = new System.Windows.Forms.Button();
             this.buttonEditLocal = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLoginOrSignout = new System.Windows.Forms.Button();
             this.listViewLocalQuizzes = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonEditRemote = new System.Windows.Forms.Button();
-            this.buttonTakeRemote = new System.Windows.Forms.Button();
             this.buttonMakeRemote = new System.Windows.Forms.Button();
             this.buttonDeleteLocal = new System.Windows.Forms.Button();
+            this.CourseSelectButton = new System.Windows.Forms.Button();
+            this.buttonJoinCourse = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listViewCourses = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // buttonMakeLocal
@@ -79,18 +83,6 @@
             this.buttonEditLocal.UseVisualStyleBackColor = true;
             this.buttonEditLocal.Click += new System.EventHandler(this.buttonEditLocal_Click);
             // 
-            // listBox2
-            // 
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 25;
-            this.listBox2.Items.AddRange(new object[] {
-            "Only available when signed in..."});
-            this.listBox2.Location = new System.Drawing.Point(12, 410);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(605, 304);
-            this.listBox2.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -105,22 +97,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 378);
+            this.label2.Location = new System.Drawing.Point(12, 377);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 29);
+            this.label2.Size = new System.Drawing.Size(140, 29);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Organization Quizzes";
+            this.label2.Text = "My Courses";
             // 
-            // button1
+            // buttonLoginOrSignout
             // 
-            this.button1.Location = new System.Drawing.Point(676, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 35);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Login / signout";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLoginOrSignout.Location = new System.Drawing.Point(676, 6);
+            this.buttonLoginOrSignout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLoginOrSignout.Name = "buttonLoginOrSignout";
+            this.buttonLoginOrSignout.Size = new System.Drawing.Size(160, 35);
+            this.buttonLoginOrSignout.TabIndex = 8;
+            this.buttonLoginOrSignout.Text = "Login / signout";
+            this.buttonLoginOrSignout.UseVisualStyleBackColor = true;
+            this.buttonLoginOrSignout.Click += new System.EventHandler(this.buttonLoginOrSignout_Click);
             // 
             // listViewLocalQuizzes
             // 
@@ -131,6 +123,7 @@
             this.listViewLocalQuizzes.HideSelection = false;
             this.listViewLocalQuizzes.LabelWrap = false;
             this.listViewLocalQuizzes.Location = new System.Drawing.Point(17, 44);
+            this.listViewLocalQuizzes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewLocalQuizzes.MultiSelect = false;
             this.listViewLocalQuizzes.Name = "listViewLocalQuizzes";
             this.listViewLocalQuizzes.ShowGroups = false;
@@ -152,32 +145,24 @@
             // 
             // buttonEditRemote
             // 
-            this.buttonEditRemote.Location = new System.Drawing.Point(628, 679);
+            this.buttonEditRemote.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditRemote.Location = new System.Drawing.Point(624, 635);
             this.buttonEditRemote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditRemote.Name = "buttonEditRemote";
             this.buttonEditRemote.Size = new System.Drawing.Size(204, 35);
             this.buttonEditRemote.TabIndex = 12;
-            this.buttonEditRemote.Text = "Edit Course Quiz";
+            this.buttonEditRemote.Text = "Edit Course Quiz (instructor)";
             this.buttonEditRemote.UseVisualStyleBackColor = true;
-            // 
-            // buttonTakeRemote
-            // 
-            this.buttonTakeRemote.Location = new System.Drawing.Point(628, 634);
-            this.buttonTakeRemote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonTakeRemote.Name = "buttonTakeRemote";
-            this.buttonTakeRemote.Size = new System.Drawing.Size(204, 35);
-            this.buttonTakeRemote.TabIndex = 11;
-            this.buttonTakeRemote.Text = "Take Course Quiz";
-            this.buttonTakeRemote.UseVisualStyleBackColor = true;
             // 
             // buttonMakeRemote
             // 
-            this.buttonMakeRemote.Location = new System.Drawing.Point(628, 589);
+            this.buttonMakeRemote.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMakeRemote.Location = new System.Drawing.Point(623, 677);
             this.buttonMakeRemote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMakeRemote.Name = "buttonMakeRemote";
             this.buttonMakeRemote.Size = new System.Drawing.Size(204, 35);
             this.buttonMakeRemote.TabIndex = 10;
-            this.buttonMakeRemote.Text = "Make New Course Quiz";
+            this.buttonMakeRemote.Text = "Make New Course Quiz (instr)";
             this.buttonMakeRemote.UseVisualStyleBackColor = true;
             // 
             // buttonDeleteLocal
@@ -192,20 +177,84 @@
             this.buttonDeleteLocal.UseVisualStyleBackColor = true;
             this.buttonDeleteLocal.Click += new System.EventHandler(this.buttonDeleteLocal_Click);
             // 
+            // CourseSelectButton
+            // 
+            this.CourseSelectButton.Location = new System.Drawing.Point(624, 453);
+            this.CourseSelectButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CourseSelectButton.Name = "CourseSelectButton";
+            this.CourseSelectButton.Size = new System.Drawing.Size(204, 35);
+            this.CourseSelectButton.TabIndex = 14;
+            this.CourseSelectButton.Text = "Select Course (student)";
+            this.CourseSelectButton.UseVisualStyleBackColor = true;
+            this.CourseSelectButton.Click += new System.EventHandler(this.CourseSelectButton_Click);
+            // 
+            // buttonJoinCourse
+            // 
+            this.buttonJoinCourse.Location = new System.Drawing.Point(623, 410);
+            this.buttonJoinCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonJoinCourse.Name = "buttonJoinCourse";
+            this.buttonJoinCourse.Size = new System.Drawing.Size(204, 35);
+            this.buttonJoinCourse.TabIndex = 15;
+            this.buttonJoinCourse.Text = "Join a Course (student)";
+            this.buttonJoinCourse.UseVisualStyleBackColor = true;
+            this.buttonJoinCourse.Click += new System.EventHandler(this.buttonJoinCourse_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(623, 590);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 35);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Create Course (instructor)";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // listViewCourses
+            // 
+            this.listViewCourses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewCourses.FullRowSelect = true;
+            this.listViewCourses.GridLines = true;
+            this.listViewCourses.HideSelection = false;
+            this.listViewCourses.LabelWrap = false;
+            this.listViewCourses.Location = new System.Drawing.Point(12, 410);
+            this.listViewCourses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listViewCourses.MultiSelect = false;
+            this.listViewCourses.Name = "listViewCourses";
+            this.listViewCourses.ShowGroups = false;
+            this.listViewCourses.Size = new System.Drawing.Size(602, 315);
+            this.listViewCourses.TabIndex = 17;
+            this.listViewCourses.UseCompatibleStateImageBehavior = false;
+            this.listViewCourses.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Course Name";
+            this.columnHeader3.Width = 210;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Instructor";
+            this.columnHeader4.Width = 187;
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 730);
+            this.ClientSize = new System.Drawing.Size(845, 753);
+            this.Controls.Add(this.listViewCourses);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonJoinCourse);
+            this.Controls.Add(this.CourseSelectButton);
             this.Controls.Add(this.buttonDeleteLocal);
             this.Controls.Add(this.buttonEditRemote);
-            this.Controls.Add(this.buttonTakeRemote);
             this.Controls.Add(this.buttonMakeRemote);
             this.Controls.Add(this.listViewLocalQuizzes);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonLoginOrSignout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.buttonEditLocal);
             this.Controls.Add(this.buttonTakeLocal);
             this.Controls.Add(this.buttonMakeLocal);
@@ -226,16 +275,20 @@
         private System.Windows.Forms.Button buttonMakeLocal;
         private System.Windows.Forms.Button buttonTakeLocal;
         private System.Windows.Forms.Button buttonEditLocal;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLoginOrSignout;
         private System.Windows.Forms.ListView listViewLocalQuizzes;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button buttonEditRemote;
-        private System.Windows.Forms.Button buttonTakeRemote;
         private System.Windows.Forms.Button buttonMakeRemote;
         private System.Windows.Forms.Button buttonDeleteLocal;
+        private System.Windows.Forms.Button CourseSelectButton;
+        private System.Windows.Forms.Button buttonJoinCourse;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListView listViewCourses;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

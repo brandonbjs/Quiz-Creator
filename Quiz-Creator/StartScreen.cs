@@ -10,14 +10,22 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
+using MySql.Data.MySqlClient;
+
 
 namespace Quiz_Creator
 {
     public partial class StartScreen : Form
     {
+        public User currentUser;
+
         public StartScreen()
         {
             InitializeComponent();
+        }
+
+        public StartScreen(User in_User)
+        {
         }
 
         private void buttonMakeLocal_Click(object sender, EventArgs e)
@@ -59,6 +67,8 @@ namespace Quiz_Creator
         private void StartScreen_Load(object sender, EventArgs e)
         {
             LoadLocalQuizzes();
+
+            DisplayCourses();
         }
 
         private void LoadLocalQuizzes()
@@ -114,25 +124,80 @@ namespace Quiz_Creator
         private void StartScreen_Activated(object sender, EventArgs e)
         {
             LoadLocalQuizzes();
+
             buttonEditLocal.Enabled = false;
+
             buttonDeleteLocal.Enabled = false;
+
             buttonTakeLocal.Enabled = false;
         }
 
         private void buttonDeleteLocal_Click(object sender, EventArgs e)
         {
-            XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
+            string selectedQuizDate = GetSelectedQuizDate();
 
-            xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == GetSelectedQuizDate()).Remove();
+            if (MessageBox.Show("Are you sure you want to delete this quiz?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
 
-            xmlDoc.Save("LocalQuizzes.xml");
+                xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == selectedQuizDate).Remove();
 
-            LoadLocalQuizzes();
+                xmlDoc.Save("LocalQuizzes.xml");
+
+                LoadLocalQuizzes();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLoginOrSignout_Click(object sender, EventArgs e)
         {
+            LoginScreen loginScreen1 = new LoginScreen();
 
+            loginScreen1.Show();
+        }
+
+        private void CourseSelectButton_Click(object sender, EventArgs e)
+        {
+            // Launch MakerScreen to make local
+            var CourseSelectScreen1 = new CourseSelectScreen();
+
+            CourseSelectScreen1.Show();
+        }
+
+        private void buttonJoinCourse_Click(object sender, EventArgs e)
+        {
+            JoinCourseScreen joinCourseScreen = new JoinCourseScreen();
+
+            joinCourseScreen.Show();
+        }
+
+        private void DisplayCourses()
+        {
+            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
+            string database = "QC_database";
+            string uid = "admin";
+            string password = "quizcreator";
+            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
+
+            MySqlConnection conn = new MySqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM QC_database.courses;";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                string[] row = { rdr.GetString("course_name"), rdr.GetString("instructor_name")};
+
+                var listViewItem = new ListViewItem(row);
+
+                listViewCourses.Items.Add(listViewItem);
+            }
+
+            conn.Close();
         }
     }
 }

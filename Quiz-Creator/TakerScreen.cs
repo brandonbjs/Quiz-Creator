@@ -50,6 +50,7 @@ namespace Quiz_Creator
             {
                 DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
             }
+            Manage_Buttons();
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
