@@ -38,7 +38,7 @@ namespace Quiz_Creator
                     conn.Open();
 
                     //build sql command
-                    string sql = "INSERT INTO acc_info (acc_email, acc_password, acc_org, acc_role) ";
+                    string sql = "INSERT INTO accounts (acc_email, acc_password, acc_org, acc_role) ";
                     sql += "VALUES ('" + textboxEmail.Text + "', ";
                     sql += "'" + textboxPassword.Text + "', ";
                     sql += "'" + comboBoxOrg.Text + "', ";
