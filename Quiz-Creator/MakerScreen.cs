@@ -205,5 +205,10 @@ namespace Quiz_Creator
                 textboxPromptEdit.Focus();
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
