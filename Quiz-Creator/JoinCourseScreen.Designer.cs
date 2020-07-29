@@ -77,6 +77,7 @@
             this.buttonJoinCourse.TabIndex = 11;
             this.buttonJoinCourse.Text = "Join Course";
             this.buttonJoinCourse.UseVisualStyleBackColor = true;
+            this.buttonJoinCourse.Click += new System.EventHandler(this.buttonJoinCourse_Click);
             // 
             // columnHeader3
             // 
