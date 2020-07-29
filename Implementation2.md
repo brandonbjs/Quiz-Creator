@@ -18,5 +18,11 @@
 ## 3. Demo
 
 ## 4. Code Quality
+	Coders have been adopting the use of regions for housing related code within classes. Coders have practiced adequate naming 
+	conventions when writing methods and classes, as well as commenting more difficult lines of code for readability and maintainability.
+	Followed DRY principle, with minimal duplications implemented where possible. Functions and classes are small and focus on 
+	one task. Coders refactored constantly, with pull requests being requested after every stage. Coding conventions have been uniform;
+	brackets are not on the same line as code and have no spaces before them (i.e. same character as the method/class line above). Vertical 
+	allignment of nesting code is three spaces from bracket character number.
 
 ## 5. Lessons Learned
