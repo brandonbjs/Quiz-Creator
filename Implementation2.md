@@ -18,16 +18,17 @@
 ## 3. Demo
 
 ## 4. Code Quality
-	Coders have been adopting the use of regions for housing related code within classes. Coders have practiced adequate naming 
-	conventions when writing methods and classes, as well as commenting more difficult lines of code for readability and maintainability.
-	Followed DRY principle, with minimal duplications implemented where possible. Functions and classes are small and focus on 
-	one task. Coders refactored constantly, with pull requests being requested after every stage. Coding conventions have been uniform;
-	brackets are not on the same line as code and have no spaces before them (i.e. same character as the method/class line above). Vertical 
-	allignment of nesting code is three spaces from bracket character number.
+	Coders have been adopting the use of regions for housing related code within classes. Coders have practiced adequate 
+	naming conventions when writing methods and classes, as well as commenting more difficult lines of code for 
+	readability and maintainability. Followed DRY principle, with minimal duplications implemented where possible. 
+	Functions and classes are small and focus on one task. Coders refactored constantly, with pull requests being requested 
+	after every stage. Coding conventions have been uniform; brackets are not on the same line as code and have no spaces 
+	before them (i.e. same character as the method/class line above). Vertical allignment of nesting code is three spaces 
+	from bracket character number.
 
 ## 5. Lessons Learned
-	In retrospective, we would have liked to practice pair programming in the future as we have a lot to learn from each other and
-	can possibly surpass barriers if pair programming was performed. Some changes we would make in the future is refactoring the code
-	for saving a quiz to a local machine and saving a course quiz to our database. As it stands, we are saving local quizzes as XML on our
-	local machine while course quizzes created by instructors are intended to be saved to a database by a means other than XML which will 
-	lead to significantly more code writing. 
+	In retrospective, we would have liked to practice pair programming in the future as we have a lot to learn from 
+	each other and can possibly surpass barriers if pair programming was performed. Some changes we would make in the future 
+	is refactoring the code for saving a quiz to a local machine and saving a course quiz to our database. As it stands, 
+	we are saving local quizzes as XML on our local machine while course quizzes created by instructors are intended to be 
+	saved to a database by a means other than XML which will lead to significantly more code writing. 
