@@ -24,8 +24,12 @@ namespace Quiz_Creator
 
         string titleSuggest = "Untitled Quiz";
         string questionSuggest = "Enter the quesition here";
-        string answerSuggest = "";
         string newQuestionLabel = "New Question";
+
+        string answerSuggest = "";
+        string MCopt1Suggest = "True";
+        string MCopt2Suggest = "False";
+        string MCopt5Suggest = "N/A";
 
         int currentQuestionIndex;
 
@@ -80,6 +84,7 @@ namespace Quiz_Creator
 
         private void addBlankQuestion(int index)
         {
+            // TODO: Switch to default question type of fill in the blank, or just go with last question type?
             currentlyMakingQuiz.InsertQuestion(index, new Question("FITB", questionSuggest, answerSuggest));
             listboxQuestions.Items.Insert(index, newQuestionLabel);
 
@@ -87,6 +92,152 @@ namespace Quiz_Creator
             textboxPromptEdit.Text = questionSuggest;
             textboxAnswerEdit.Text = answerSuggest;
             listboxQuestions.SelectedIndex = currentQuestionIndex;
+        }
+
+        private void setFITBData()
+        {
+            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
+        }
+
+        private void setMultipleChoiceData()
+        {
+            int correctAnsIndex = -1;
+            List<string> choices = new List<string>();
+
+            #region Add a choice to the list from each non empty choice textbox
+
+            if (textBoxMC1.Text != "")
+            {
+                choices.Add(textBoxMC1.Text);
+                if (radioButtonMC1.Checked)
+                {
+                    correctAnsIndex = choices.Count - 1;
+                }
+            }
+
+            if (textBoxMC2.Text != "")
+            {
+                choices.Add(textBoxMC2.Text);
+                if (radioButtonMC2.Checked)
+                {
+                    correctAnsIndex = choices.Count - 1;
+                }
+            }
+
+            if (textBoxMC3.Text != "")
+            {
+                choices.Add(textBoxMC3.Text);
+                if (radioButtonMC3.Checked)
+                {
+                    correctAnsIndex = choices.Count - 1;
+                }
+            }
+
+            if (textBoxMC4.Text != "")
+            {
+                choices.Add(textBoxMC4.Text);
+                if (radioButtonMC4.Checked)
+                {
+                    correctAnsIndex = choices.Count - 1;
+                }
+            }
+
+            if (textBoxMC5.Text != "")
+            {
+                choices.Add(textBoxMC5.Text);
+                if (radioButtonMC5.Checked)
+                {
+                    correctAnsIndex = choices.Count - 1;
+                }
+            }
+
+            #endregion
+
+            string correctAns = "";
+
+            if (correctAnsIndex > -1)
+            {
+                correctAns = choices[correctAnsIndex];
+            }
+
+            string[] choicesArr = new string[choices.Count];
+
+            #region Put the choices in a fixed length array
+
+            for (int j = 0; j < choices.Count; j++)
+            {
+                choicesArr[j] = choices[j];
+            }
+
+            #endregion
+
+
+
+            #region Error Prevention - Make sure at least two options are filled and a filled option is marked as correct
+
+            if (choices.Count < 1)
+            {
+                textBoxMC1.Text = MCopt1Suggest;
+                textBoxMC2.Text = MCopt2Suggest;
+                radioButtonMC1.Checked = true;
+            }
+
+            else if (choices.Count < 2 && textBoxMC5.Text == "")
+            {
+                textBoxMC5.Text = MCopt5Suggest;
+                if (correctAnsIndex == -1)
+                {
+                    radioButtonMC5.Checked = true;
+                }
+                else
+                {
+                    setMultipleChoiceData();
+                }
+            }
+
+            else if (choices.Count < 2 && textBoxMC1.Text == "")
+            {
+                textBoxMC1.Text = MCopt1Suggest;
+                if (correctAnsIndex == -1)
+                {
+                    radioButtonMC1.Checked = true;
+                }
+                else
+                {
+                    setMultipleChoiceData();
+                }
+            }
+
+            if (correctAnsIndex == -1)
+            {
+                if (textBoxMC1.Text != "")
+                {
+                    radioButtonMC1.Checked = true;
+                }
+                else if (textBoxMC5.Text != "")
+                {
+                    radioButtonMC5.Checked = true;
+                }
+                else if (textBoxMC2.Text != "")
+                {
+                    radioButtonMC2.Checked = true;
+                }
+                else if (textBoxMC3.Text != "")
+                {
+                    radioButtonMC3.Checked = true;
+                }
+                else if (textBoxMC4.Text != "")
+                {
+                    radioButtonMC4.Checked = true;
+                }
+            }
+
+            #endregion
+
+            if(choices.Count > 1)
+            {
+                currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new MCQuestion(choicesArr, "MC", textboxPromptEdit.Text, correctAns));
+            }
         }
 
         #endregion
@@ -179,6 +330,8 @@ namespace Quiz_Creator
 
         private void listboxQuestions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // TODO: switch to appropriate tab for question selected
+
             // A different list item has been selected
             if (listboxQuestions.SelectedIndex >= 0)
             {
@@ -215,7 +368,16 @@ namespace Quiz_Creator
         #region Question Types and Tabs
         private void tabControlQuestionType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (tabControlQuestionType.SelectedIndex == 0)
+            {
+                // TODO: Set FITB fields to correct values when tab switched to
+                setFITBData(); //Maybe not this
+            }
+            if (tabControlQuestionType.SelectedIndex == 1)
+            {
+                // TODO: Set MC fields to correct values when tab switched to
+                setMultipleChoiceData(); // Maybe not this
+            }
         }
 
         #endregion
@@ -225,7 +387,7 @@ namespace Quiz_Creator
         private void textboxAnswerEdit_TextChanged(object sender, EventArgs e)
         {
             // Whenever the answer is changed, save the new answer text
-            currentlyMakingQuiz.SetQuestion(currentQuestionIndex, new Question("FITB", textboxPromptEdit.Text, textboxAnswerEdit.Text));
+            setFITBData();
         }
 
         private void textboxAnswerEdit_KeyPress(object sender, KeyPressEventArgs e)
@@ -246,27 +408,27 @@ namespace Quiz_Creator
 
         private void radioButtonMC1_CheckedChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void radioButtonMC2_CheckedChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void radioButtonMC3_CheckedChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void radioButtonMC4_CheckedChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void radioButtonMC5_CheckedChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         #endregion
@@ -275,27 +437,27 @@ namespace Quiz_Creator
 
         private void textBoxMC1_TextChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void textBoxMC2_TextChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void textBoxMC3_TextChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void textBoxMC4_TextChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         private void textBoxMC5_TextChanged(object sender, EventArgs e)
         {
-
+            setMultipleChoiceData();
         }
 
         #endregion

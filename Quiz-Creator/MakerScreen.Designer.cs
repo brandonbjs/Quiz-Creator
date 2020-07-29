@@ -282,6 +282,7 @@
             this.textBoxMC2.Name = "textBoxMC2";
             this.textBoxMC2.Size = new System.Drawing.Size(466, 26);
             this.textBoxMC2.TabIndex = 6;
+            this.textBoxMC2.Text = "False";
             this.textBoxMC2.TextChanged += new System.EventHandler(this.textBoxMC2_TextChanged);
             // 
             // textBoxMC1
@@ -290,6 +291,7 @@
             this.textBoxMC1.Name = "textBoxMC1";
             this.textBoxMC1.Size = new System.Drawing.Size(466, 26);
             this.textBoxMC1.TabIndex = 5;
+            this.textBoxMC1.Text = "True";
             this.textBoxMC1.TextChanged += new System.EventHandler(this.textBoxMC1_TextChanged);
             // 
             // radioButtonMC5
@@ -325,10 +327,12 @@
             // radioButtonMC1
             // 
             this.radioButtonMC1.AutoSize = true;
+            this.radioButtonMC1.Checked = true;
             this.radioButtonMC1.Location = new System.Drawing.Point(6, 30);
             this.radioButtonMC1.Name = "radioButtonMC1";
             this.radioButtonMC1.Size = new System.Drawing.Size(14, 13);
             this.radioButtonMC1.TabIndex = 0;
+            this.radioButtonMC1.TabStop = true;
             this.radioButtonMC1.UseVisualStyleBackColor = true;
             this.radioButtonMC1.CheckedChanged += new System.EventHandler(this.radioButtonMC1_CheckedChanged);
             // 
