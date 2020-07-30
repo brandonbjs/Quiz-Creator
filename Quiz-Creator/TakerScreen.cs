@@ -34,7 +34,6 @@ namespace Quiz_Creator
             {
                 //not yet implemented
             }
-            comboBoxQuestionSelect.SelectedIndex = 0;
 
             labelQuizTitle.Text = currentlyTakingQuiz.GetTitle();
 
@@ -271,6 +270,60 @@ namespace Quiz_Creator
 
             if (currentQuestionIndex == currentlyTakingQuiz.GetNumQuestions()-1) { buttonNext.Enabled = false; }
             else{ buttonNext.Enabled = true; }
+        }
+
+        private void comboBoxQuestionSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SaveResponse();
+            if ( comboBoxQuestionSelect.SelectedItem.ToString() == "Question # 1" )
+            {
+                currentQuestionIndex = 0;
+                if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+                {
+                    DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                }
+                else
+                {
+                    DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                }
+                Manage_Buttons();
+            }
+            else if ( comboBoxQuestionSelect.SelectedItem.ToString() == "Question # 2" )
+            {
+                currentQuestionIndex = 1;
+                if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+                {
+                    DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                }
+                else
+                {
+                    DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                }
+                Manage_Buttons();
+            }
+            else if ( comboBoxQuestionSelect.SelectedItem.ToString() == "Question # 3")
+            {
+                currentQuestionIndex = 2;
+                if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
+                {
+                    DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                }
+                else
+                {
+                    DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                }
+                Manage_Buttons();
+            }
+        }
+
+        private void TakerScreen_Load(object sender, EventArgs e)
+        {
+            comboBoxQuestionSelect.Items.Insert(0, "Jump to Question");
+            comboBoxQuestionSelect.SelectedIndex = 0;
+            for ( int iter = 1; iter < currentlyTakingQuiz.GetNumQuestions() + 1; iter++ )
+            {
+                comboBoxQuestionSelect.Items.Add("Question # " + iter);
+            }
         }
     }
 }
