@@ -175,3 +175,7 @@ C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-C
 C:\Users\Linkdaddy T\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz-Creator.pdb
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseSelectScreen.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCourseScreen.resources
+C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\bin\Debug\LocalQuizzes.xml
+C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseSelectScreen.resources
+C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCourseScreen.resources
+C:\Users\Steve\Documents\GitHub\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.SignUpScreen.resources
