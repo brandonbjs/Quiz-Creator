@@ -262,7 +262,6 @@ namespace Quiz_Creator
                 case "4": radioButton4.Checked = true; break;
                 case "5": radioButton5.Checked = true; break;
             }
-
         }
 
         private void Manage_Buttons()
