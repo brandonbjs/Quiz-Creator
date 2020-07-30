@@ -67,6 +67,10 @@ namespace Quiz_Creator
         {
             return hasPassword;
         }
+        public List<Quiz> GetQuizzes()
+        {
+            return quizList;
+        }
 
         public Boolean AddStudent(int in_userID)
         {

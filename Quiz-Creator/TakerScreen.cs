@@ -29,6 +29,9 @@ namespace Quiz_Creator
                 currentlyTakingQuiz = new Quiz();
 
                 currentlyTakingQuiz.AddDataFromFile("LocalQuizzes.xml", quizDate);
+
+                currentlyTakingQuiz.SerializeQuiz();
+                MessageBox.Show("worked");
             }
             else
             {
@@ -165,6 +168,7 @@ namespace Quiz_Creator
                     currentlyTakingQuiz.AddQuestion(new Question(newQuestionType, newQuestionPrompt, newQuestionAnswer));
                 }
             }
+            currentlyTakingQuiz.SerializeQuiz();
         }
 
         private void SaveResponse()

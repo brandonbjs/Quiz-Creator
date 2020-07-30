@@ -54,6 +54,12 @@
     <Compile Include="CourseQuizzesList.Designer.cs">
       <DependentUpon>CourseQuizzesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseScreen.Designer.cs">
+      <DependentUpon>CourseScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseSelectScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="CourseQuizzesList.resx">
       <DependentUpon>CourseQuizzesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseScreen.resx">
+      <DependentUpon>CourseScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelectScreen.resx">
       <DependentUpon>CourseSelectScreen.cs</DependentUpon>
