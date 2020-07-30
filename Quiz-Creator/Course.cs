@@ -6,26 +6,38 @@ using System.Threading.Tasks;
 
 namespace Quiz_Creator
 {
-    class Course
+    public class Course
     {
-        private string coursename;
+        private string courseName;
 
+        private string instructorName;
 
-        public Course(string in_name)
+        List<Quiz> quizList;
+
+        public Course()
         {
-            coursename = in_name;
+            courseName = "";
+            instructorName = "";
+        }
+        public Course(string in_name, string in_instructor)
+        {
+            courseName = in_name;
+            instructorName = in_instructor;
         }
 
         public string GetName()
         {
-            return coursename;
+            return courseName;
         }
 
         public void setName(string in_name)
         {
-            coursename = in_name;
+            courseName = in_name;
         }
 
-
+        public string GetInstructorName()
+        {
+            return instructorName;
+        }
     }
 }
