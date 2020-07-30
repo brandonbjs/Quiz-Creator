@@ -207,5 +207,19 @@ namespace Quiz_Creator
         {
 
         }
+
+        private void listViewCourses_Click(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < listViewCourses.Items.Count; i++)
+            {
+                var rectangle = listViewCourses.GetItemRect(i);
+                if (rectangle.Contains(e.Location))
+                {
+                    var CourseQuizzesListScreen1 = new CourseQuizzesList();
+                    CourseQuizzesListScreen1.Show();
+                }
+            }
+        }
+
     }
 }
