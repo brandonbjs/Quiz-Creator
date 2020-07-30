@@ -12,7 +12,7 @@
 ## 2. Implemented requirements
 ### Course Selection / Course List
 (Steven, Tyler..work was done together on one computer)  
-[Trello Link](https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection) / [Screenshot]().  
+[Trello Link](https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection) / [Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/CourseSelect.PNG).  
 Steven approved the [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/22).
 
 ### Get immediate results.
