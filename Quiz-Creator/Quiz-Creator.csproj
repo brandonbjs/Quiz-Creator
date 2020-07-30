@@ -66,6 +66,12 @@
     <Compile Include="CreateScreen.Designer.cs">
       <DependentUpon>CreateScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="JoinCoursePasswordScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JoinCoursePasswordScreen.Designer.cs">
+      <DependentUpon>JoinCoursePasswordScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="JoinCourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelectScreen.resx">
       <DependentUpon>CourseSelectScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JoinCoursePasswordScreen.resx">
+      <DependentUpon>JoinCoursePasswordScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JoinCourseScreen.resx">
       <DependentUpon>JoinCourseScreen.cs</DependentUpon>

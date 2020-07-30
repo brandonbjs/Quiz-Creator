@@ -13,6 +13,9 @@
 	-Course Selection / Course List (Steven, Tyler..work was done together on one computer)
 	https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection
 	Steven approved the pull request
+	-Get immediate results: Bryan implemented the ability to get immediate results from taking a quiz. Brandon reviewed
+	 and approved the pull request. [Pull Request](https://github.com/brandonbjs/Quiz-Creator/pull/11/files) 
+	 [screenshot](https://trello-attachments.s3.amazonaws.com/5f20c3de6fda1481479ad6e8/841x778/ee99230c96d54ed9128f244ad5c8b1e7/Screenshot_of_requirement.png)
 	
 
 ## 3. Demo
