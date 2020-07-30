@@ -73,7 +73,7 @@ namespace Quiz_Creator
 
                     MySqlDataReader rdrGetCourses = cmdGetCourses.ExecuteReader();
 
-                    List<string> extractedCourses = new List<string>();
+                    List<string> extractedCourses = new List<string>(0);
 
                     while (rdrGetCourses.Read())
                     {
@@ -95,18 +95,19 @@ namespace Quiz_Creator
                             sqlInstructorSelect += extractedCourses[index] + "', '";
                         }
                     }
-
-                    var cmdGetInstructors = new MySqlCommand(sqlInstructorSelect, conn);
-
-                    MySqlDataReader rdrGetInstructors = cmdGetInstructors.ExecuteReader();
-
-                    for(int i = 0; rdrGetInstructors.Read(); i++)
+                    if(extractedCourses.Count > 0)
                     {
-                        Course newCourse = new Course(extractedCourses[i], rdrGetInstructors.GetString("instructor_name"));
+                        var cmdGetInstructors = new MySqlCommand(sqlInstructorSelect, conn);
 
-                        currentUser.AddToCourseList(newCourse);
+                        MySqlDataReader rdrGetInstructors = cmdGetInstructors.ExecuteReader();
+
+                        for (int i = 0; rdrGetInstructors.Read(); i++)
+                        {
+                            Course newCourse = new Course(extractedCourses[i], rdrGetInstructors.GetString("instructor_name"));
+
+                            currentUser.AddToCourseList(newCourse);
+                        }
                     }
-
                     MessageBox.Show("Welcome, " + currentUser.GetEmail() + "!");
                 }
                 conn.Close();

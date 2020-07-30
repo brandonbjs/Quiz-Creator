@@ -56,7 +56,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(313, 32);
             this.txtEmail.TabIndex = 0;
-            this.txtEmail.Text = "bjs492@nau.edu";
+            this.txtEmail.Text = "dummy@dummy.com";
             // 
             // lblUsername
             // 
@@ -87,7 +87,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(313, 32);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "quizcreator";
+            this.txtPassword.Text = "123";
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label1

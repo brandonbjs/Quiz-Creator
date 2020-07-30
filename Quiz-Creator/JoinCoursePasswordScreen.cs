@@ -14,6 +14,7 @@ namespace Quiz_Creator
     public partial class JoinCoursePasswordScreen : Form
     {
         private string courseName;
+        private string courseInstructor;
 
         private string coursePassword;
 
@@ -24,11 +25,13 @@ namespace Quiz_Creator
 
         private User currentUser;
 
-        public JoinCoursePasswordScreen(string in_courseName, string in_pass, ref User in_User)
+        public JoinCoursePasswordScreen(string in_courseName, string in_courseInstructor, string in_pass, ref User in_User)
         {
             InitializeComponent();
 
             courseName = in_courseName;
+
+            courseInstructor = in_courseInstructor;
 
             coursePassword = in_pass;
 
@@ -55,10 +58,20 @@ namespace Quiz_Creator
                 insertSql += "'" + courseName + "');";
 
                 var insertCmd = new MySqlCommand(insertSql, conn);
+                try
+                {
+                    insertCmd.ExecuteNonQuery();
 
-                insertCmd.ExecuteNonQuery();
+                    Course newCourse = new Course(courseName, courseInstructor);
 
-                MessageBox.Show("Welcome to " + courseName + "!");
+                    currentUser.AddToCourseList(newCourse);
+
+                    MessageBox.Show("Welcome to " + courseName + "!");
+                }
+                catch
+                {
+                    MessageBox.Show("You are already a member of this course!");
+                }
 
                 conn.Close();
 

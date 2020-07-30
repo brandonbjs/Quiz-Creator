@@ -14,6 +14,11 @@ namespace Quiz_Creator
 
         List<Quiz> quizList;
 
+        public Course()
+        {
+            courseName = "";
+            instructorName = "";
+        }
         public Course(string in_name, string in_instructor)
         {
             courseName = in_name;
