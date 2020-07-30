@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -8,6 +10,7 @@ using System.Xml;
 
 namespace Quiz_Creator
 {
+    [Serializable]
     class Quiz
     {
         #region Fields
@@ -41,6 +44,16 @@ namespace Quiz_Creator
             protectedQuiz = false;
             password = "";
             questions = new List<Question>();
+        }
+
+        public Quiz(string in_title, string in_author, string in_dateModified, bool in_protectedQuiz, string in_password, List<Question> in_questions)
+        {
+            title = in_title;
+            author = in_author;
+            dateModified = in_dateModified;
+            protectedQuiz = in_protectedQuiz;
+            password = in_password;
+            questions = in_questions;
         }
 
         #endregion 
@@ -237,6 +250,41 @@ namespace Quiz_Creator
         }
 
         #endregion
+
+        #region Saving
+
+        public void SerializeQuiz()
+        {
+            Stream stream = File.Open("dbquiz.qz", FileMode.Create);
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            formatter.Serialize(stream, this);
+            stream.Close();
+        }
+
+        public void DeserializeQuiz()
+        {
+            if (File.Exists("dbquiz.qz"))
+            {
+                Stream stream = File.Open("dbquiz.qz", FileMode.Open);
+                BinaryFormatter formatter = new BinaryFormatter();
+
+                Quiz deserializedData = (Quiz)formatter.Deserialize(stream);
+                stream.Close();
+
+                title = deserializedData.title;
+                author = deserializedData.author;
+                dateModified = deserializedData.dateModified;
+                protectedQuiz = deserializedData.protectedQuiz;
+                password = deserializedData.password;
+                questions = deserializedData.questions;
+            }
+            else
+            {
+                // Can't open the file if it doesn't exist
+            }
+        }
+
         public void AddDataFromFile(string filename, string quizDate)
         {
             XmlDocument localDoc = new XmlDocument();
@@ -288,5 +336,7 @@ namespace Quiz_Creator
                 }
             }
         }
+
+        #endregion
     }
 }
