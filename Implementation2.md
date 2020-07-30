@@ -10,9 +10,15 @@
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
-	-Course Selection / Course List (Steven, Tyler..work was done together on one computer)
-	https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection
-	Steven approved the pull request
+Course Selection / Course List (Steven, Tyler..work was done together on one computer) [trello link](https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection). Steven approved the pull request
+
+Requirement: Get immediate results. Bryan implemented the ability to get immediate results from taking a quiz. Brandon reviewed and approved the pull request. [Pull Request](https://github.com/brandonbjs/Quiz-Creator/pull/11/files) [screenshot](https://trello-attachments.s3.amazonaws.com/5f20c3de6fda1481479ad6e8/841x778/ee99230c96d54ed9128f244ad5c8b1e7/Screenshot_of_requirement.png)
+	
+	-Creating multiple choice questions & multiple question types in making a quiz
+	https://trello.com/c/IdcjooVt/54-baileys-story-1-create-quizzes-to-test-my-knowledge
+	Implemented by Jacob
+	https://github.com/brandonbjs/Quiz-Creator/pull/16
+	Approved by Brandon
 	
 
 ## 3. Demo

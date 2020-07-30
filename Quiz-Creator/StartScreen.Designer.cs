@@ -40,7 +40,7 @@
             this.buttonEditRemote = new System.Windows.Forms.Button();
             this.buttonMakeRemote = new System.Windows.Forms.Button();
             this.buttonDeleteLocal = new System.Windows.Forms.Button();
-            this.CourseSelectButton = new System.Windows.Forms.Button();
+            this.buttonCourseSelect = new System.Windows.Forms.Button();
             this.buttonJoinCourse = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.listViewCourses = new System.Windows.Forms.ListView();
@@ -110,7 +110,7 @@
             this.buttonLoginOrSignout.Name = "buttonLoginOrSignout";
             this.buttonLoginOrSignout.Size = new System.Drawing.Size(160, 35);
             this.buttonLoginOrSignout.TabIndex = 8;
-            this.buttonLoginOrSignout.Text = "Login / signout";
+            this.buttonLoginOrSignout.Text = "Login";
             this.buttonLoginOrSignout.UseVisualStyleBackColor = true;
             this.buttonLoginOrSignout.Click += new System.EventHandler(this.buttonLoginOrSignout_Click);
             // 
@@ -146,24 +146,26 @@
             // buttonEditRemote
             // 
             this.buttonEditRemote.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditRemote.Location = new System.Drawing.Point(624, 635);
+            this.buttonEditRemote.Location = new System.Drawing.Point(622, 542);
             this.buttonEditRemote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditRemote.Name = "buttonEditRemote";
             this.buttonEditRemote.Size = new System.Drawing.Size(204, 35);
             this.buttonEditRemote.TabIndex = 12;
             this.buttonEditRemote.Text = "Edit Course Quiz (instructor)";
             this.buttonEditRemote.UseVisualStyleBackColor = true;
+            this.buttonEditRemote.Visible = false;
             // 
             // buttonMakeRemote
             // 
             this.buttonMakeRemote.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMakeRemote.Location = new System.Drawing.Point(623, 677);
+            this.buttonMakeRemote.Location = new System.Drawing.Point(621, 584);
             this.buttonMakeRemote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMakeRemote.Name = "buttonMakeRemote";
             this.buttonMakeRemote.Size = new System.Drawing.Size(204, 35);
             this.buttonMakeRemote.TabIndex = 10;
             this.buttonMakeRemote.Text = "Make New Course Quiz (instr)";
             this.buttonMakeRemote.UseVisualStyleBackColor = true;
+            this.buttonMakeRemote.Visible = false;
             // 
             // buttonDeleteLocal
             // 
@@ -177,38 +179,39 @@
             this.buttonDeleteLocal.UseVisualStyleBackColor = true;
             this.buttonDeleteLocal.Click += new System.EventHandler(this.buttonDeleteLocal_Click);
             // 
-            // CourseSelectButton
+            // buttonCourseSelect
             // 
-            this.CourseSelectButton.Location = new System.Drawing.Point(624, 453);
-            this.CourseSelectButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CourseSelectButton.Name = "CourseSelectButton";
-            this.CourseSelectButton.Size = new System.Drawing.Size(204, 35);
-            this.CourseSelectButton.TabIndex = 14;
-            this.CourseSelectButton.Text = "Select Course (student)";
-            this.CourseSelectButton.UseVisualStyleBackColor = true;
-            this.CourseSelectButton.Click += new System.EventHandler(this.CourseSelectButton_Click);
+            this.buttonCourseSelect.Location = new System.Drawing.Point(628, 690);
+            this.buttonCourseSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonCourseSelect.Name = "buttonCourseSelect";
+            this.buttonCourseSelect.Size = new System.Drawing.Size(204, 35);
+            this.buttonCourseSelect.TabIndex = 14;
+            this.buttonCourseSelect.Text = "View Course";
+            this.buttonCourseSelect.UseVisualStyleBackColor = true;
+            this.buttonCourseSelect.Click += new System.EventHandler(this.buttonCourseSelect_Click);
             // 
             // buttonJoinCourse
             // 
-            this.buttonJoinCourse.Location = new System.Drawing.Point(623, 410);
+            this.buttonJoinCourse.Location = new System.Drawing.Point(628, 647);
             this.buttonJoinCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonJoinCourse.Name = "buttonJoinCourse";
             this.buttonJoinCourse.Size = new System.Drawing.Size(204, 35);
             this.buttonJoinCourse.TabIndex = 15;
-            this.buttonJoinCourse.Text = "Join a Course (student)";
+            this.buttonJoinCourse.Text = "Join a Course";
             this.buttonJoinCourse.UseVisualStyleBackColor = true;
             this.buttonJoinCourse.Click += new System.EventHandler(this.buttonJoinCourse_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(623, 590);
+            this.button2.Location = new System.Drawing.Point(621, 497);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(204, 35);
             this.button2.TabIndex = 16;
             this.button2.Text = "Create Course (instructor)";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // listViewCourses
             // 
@@ -247,7 +250,7 @@
             this.Controls.Add(this.listViewCourses);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonJoinCourse);
-            this.Controls.Add(this.CourseSelectButton);
+            this.Controls.Add(this.buttonCourseSelect);
             this.Controls.Add(this.buttonDeleteLocal);
             this.Controls.Add(this.buttonEditRemote);
             this.Controls.Add(this.buttonMakeRemote);
@@ -284,7 +287,7 @@
         private System.Windows.Forms.Button buttonEditRemote;
         private System.Windows.Forms.Button buttonMakeRemote;
         private System.Windows.Forms.Button buttonDeleteLocal;
-        private System.Windows.Forms.Button CourseSelectButton;
+        private System.Windows.Forms.Button buttonCourseSelect;
         private System.Windows.Forms.Button buttonJoinCourse;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListView listViewCourses;
