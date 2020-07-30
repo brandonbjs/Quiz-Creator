@@ -18,9 +18,14 @@ namespace Quiz_Creator
         string database = "QC_database";
         string uid = "admin";
         string password = "quizcreator";
-        public JoinCourseScreen()
+
+        private User currentUser;
+
+        public JoinCourseScreen(ref User in_User)
         {
             InitializeComponent();
+
+            currentUser = in_User;
         }
 
         private void JoinCourseScreen_Load(object sender, EventArgs e)
@@ -69,7 +74,9 @@ namespace Quiz_Creator
 
                 conn.Open();
 
-                string sql = "SELECT * FROM courses WHERE course_name= '" + listViewCourses.SelectedItems[0].Text + "';";
+                string courseName = listViewCourses.SelectedItems[0].Text;
+
+                string sql = "SELECT * FROM courses WHERE course_name= '" + courseName + "';";
 
                 var cmd = new MySqlCommand(sql, conn);
 
@@ -79,9 +86,34 @@ namespace Quiz_Creator
 
                 if (!Convert.IsDBNull(rdr["password"]))
                 {
-                    MessageBox.Show("user would enter password here");
+                    JoinCoursePasswordScreen joinCoursePasswordScreen1 = new JoinCoursePasswordScreen(courseName, rdr.GetString("password"), ref currentUser);
+
+                    joinCoursePasswordScreen1.Show();
                 }
-                MessageBox.Show("user joins the course");
+                else
+                {
+                    try
+                    {
+                        //build sql command
+                        string insertSql = "INSERT INTO course_account (account_id, course_name) ";
+                        insertSql += "VALUES ('" + currentUser.getID() + "', ";
+                        insertSql += "'" + courseName + "');";
+
+                        var insertCmd = new MySqlCommand(insertSql, conn);
+
+                        insertCmd.ExecuteNonQuery();
+
+                        conn.Close();
+
+                        MessageBox.Show("Welcome to " + courseName + "!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error adding course");
+                    }
+
+                }
+
                 conn.Close();
             }
             else

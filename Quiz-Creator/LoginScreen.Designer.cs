@@ -77,6 +77,7 @@
             this.lblPassword.Size = new System.Drawing.Size(89, 22);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
+            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // txtPassword
             // 
@@ -87,6 +88,7 @@
             this.txtPassword.Size = new System.Drawing.Size(313, 32);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "quizcreator";
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label1
             // 
