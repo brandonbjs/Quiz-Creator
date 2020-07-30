@@ -205,7 +205,9 @@ namespace Quiz_Creator
 
         private void buttonCourseSelect_Click(object sender, EventArgs e)
         {
+            CourseScreen courseScreen = new CourseScreen(ref currentUser, listViewCourses.SelectedItems[0].Text);
 
+            courseScreen.Show();
         }
 
         private void listViewCourses_Click(object sender, MouseEventArgs e)
