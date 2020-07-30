@@ -34,7 +34,7 @@ Implemented by Brandon.
 Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/16)
 
 ## 3. Demo
-
+[Demo Video](https://github.com/brandonbjs/Quiz-Creator/blob/master/Welcome%20to%20Quiz%20Creator!%202020-07-29%2023-49-22.mp4)
 ## 4. Code Quality
 	Coders have been adopting the use of regions for housing related code within classes. Coders have practiced adequate 
 	naming conventions when writing methods and classes, as well as commenting more difficult lines of code for 
