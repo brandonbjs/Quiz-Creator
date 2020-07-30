@@ -20,8 +20,6 @@ Get immediate results. Bryan implemented the ability to get immediate results fr
 [screenshot](https://trello-attachments.s3.amazonaws.com/5f20c3de6fda1481479ad6e8/841x778/ee99230c96d54ed9128f244ad5c8b1e7/Screenshot_of_requirement.png).
 Brandon reviewed and approved the [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/11/files).
 	
-<<<<<<< HEAD
-	
 Creating multiple choice questions & multiple question types in making a quiz. Implemented by Jacob. 
 [Trello link](https://trello.com/c/IdcjooVt/54-baileys-story-1-create-quizzes-to-test-my-knowledge) / 
 [Screenshot]().
@@ -31,7 +29,6 @@ Question Selection Drop Down Box. Implemented by Brandon.
 [Trello link](https://trello.com/c/8pkcT76S/56-d6-dropdown-question-fix) / 
 [Screenshot]().
 Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/16)
-=======
 
 ## 3. Demo
 
