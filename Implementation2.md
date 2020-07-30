@@ -1,4 +1,4 @@
-# Implementation 1
+# Implementation 2
 
 ## 1. Introduction
 	Quiz Creator is a desktop application that allows students and educators to effortlessly create,
@@ -21,7 +21,7 @@ Bryan implemented the ability to get immediate results from taking a quiz.
 [screenshot](https://trello-attachments.s3.amazonaws.com/5f20c3de6fda1481479ad6e8/841x778/ee99230c96d54ed9128f244ad5c8b1e7/Screenshot_of_requirement.png).  
 Brandon reviewed and approved the [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/11/files).
 	
-### Creating multiple choice questions & multiple question types in making a quiz.
+### Creating multiple choice questions & multiple question types on the Maker Screen
 Implemented by Jacob.  
 [Trello link](https://trello.com/c/IdcjooVt/54-baileys-story-1-create-quizzes-to-test-my-knowledge) / 
 [Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MCQuestionPic.PNG).  
@@ -42,7 +42,7 @@ Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-
 	Functions and classes are small and focus on one task. Coders refactored constantly, with pull requests being requested 
 	after every stage. Coding conventions have been uniform; brackets are not on the same line as code and have no spaces 
 	before them (i.e. same character as the method/class line above). Vertical allignment of nesting code is three spaces 
-	from bracket character number.
+	from bracket character number.  Code folding is used in some of the longer classes, like MakerScreen, for organization.
 
 ## 5. Lessons Learned
 	In retrospective, we would have liked to practice pair programming in the future as we have a lot to learn from 
