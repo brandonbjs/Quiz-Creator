@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +20,8 @@ namespace Quiz_Creator
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //list of course names
+            listBox1.Items.Add("CS 386");
+            listBox1.Items.Add("CS 480");
         }
     }
 }

@@ -11,7 +11,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using MySql.Data.MySqlClient;
-
+using System.Runtime.CompilerServices;
 
 namespace Quiz_Creator
 {
@@ -22,6 +22,8 @@ namespace Quiz_Creator
         public StartScreen()
         {
             InitializeComponent();
+
+            currentUser = new User();
         }
 
         public StartScreen(User in_User)
@@ -68,7 +70,8 @@ namespace Quiz_Creator
         {
             LoadLocalQuizzes();
 
-            DisplayCourses();
+            buttonJoinCourse.Enabled = false;
+            buttonCourseSelect.Enabled = false;
         }
 
         private void LoadLocalQuizzes()
@@ -130,6 +133,15 @@ namespace Quiz_Creator
             buttonDeleteLocal.Enabled = false;
 
             buttonTakeLocal.Enabled = false;
+
+            if(currentUser.getLoginStatus())
+            {
+                DisplayCourses();
+
+                buttonJoinCourse.Enabled = true;
+
+                buttonCourseSelect.Enabled = true;
+            }
         }
 
         private void buttonDeleteLocal_Click(object sender, EventArgs e)
@@ -150,9 +162,16 @@ namespace Quiz_Creator
 
         private void buttonLoginOrSignout_Click(object sender, EventArgs e)
         {
-            LoginScreen loginScreen1 = new LoginScreen();
+            if(currentUser.getLoginStatus())
+            {
+                MessageBox.Show("You are already logged in!");
 
-            loginScreen1.Show();
+                return;
+            }
+
+            LoginScreen loginScreen1 = new LoginScreen(ref currentUser);
+
+            loginScreen1.Show(this);
         }
 
         private void CourseSelectButton_Click(object sender, EventArgs e)
@@ -165,39 +184,42 @@ namespace Quiz_Creator
 
         private void buttonJoinCourse_Click(object sender, EventArgs e)
         {
-            JoinCourseScreen joinCourseScreen = new JoinCourseScreen();
+            JoinCourseScreen joinCourseScreen = new JoinCourseScreen(ref currentUser);
 
             joinCourseScreen.Show();
         }
 
         private void DisplayCourses()
         {
-            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-            string database = "QC_database";
-            string uid = "admin";
-            string password = "quizcreator";
-            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
+            listViewCourses.Items.Clear();
 
-            MySqlConnection conn = new MySqlConnection(connectionString);
+            List<Course> courseList = currentUser.GetCourseList();
 
-            conn.Open();
-
-            string sql = "SELECT * FROM QC_database.courses;";
-
-            var cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach(Course course in courseList)
             {
-                string[] row = { rdr.GetString("course_name"), rdr.GetString("instructor_name")};
-
-                var listViewItem = new ListViewItem(row);
-
+                string[] row = { course.GetName(), course.GetInstructorName() };
+                ListViewItem listViewItem = new ListViewItem(row);
                 listViewCourses.Items.Add(listViewItem);
             }
-
-            conn.Close();
         }
+
+        private void buttonCourseSelect_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewCourses_Click(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < listViewCourses.Items.Count; i++)
+            {
+                var rectangle = listViewCourses.GetItemRect(i);
+                if (rectangle.Contains(e.Location))
+                {
+                    var CourseQuizzesListScreen1 = new CourseQuizzesList();
+                    CourseQuizzesListScreen1.Show();
+                }
+            }
+        }
+
     }
 }

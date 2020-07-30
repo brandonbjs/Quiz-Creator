@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Microsoft.VisualBasic;
 
 namespace Quiz_Creator
 {
@@ -18,9 +17,14 @@ namespace Quiz_Creator
         string database = "QC_database";
         string uid = "admin";
         string password = "quizcreator";
-        public JoinCourseScreen()
+
+        private User currentUser;
+
+        public JoinCourseScreen(ref User in_User)
         {
             InitializeComponent();
+
+            currentUser = in_User;
         }
 
         private void JoinCourseScreen_Load(object sender, EventArgs e)
@@ -61,28 +65,31 @@ namespace Quiz_Creator
 
         private void buttonJoinCourse_Click(object sender, EventArgs e)
         {
-            if(listViewCourses.SelectedItems.Count != 0)
+            if(listViewCourses.SelectedItems.Count != 0 )
             {
-                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
+                string courseName = listViewCourses.SelectedItems[0].Text;
 
-                MySqlConnection conn = new MySqlConnection(connectionString);
+                Course selectedCourse = new Course(courseName);
 
-                conn.Open();
-
-                string sql = "SELECT * FROM courses WHERE course_name= '" + listViewCourses.SelectedItems[0].Text + "';";
-
-                var cmd = new MySqlCommand(sql, conn);
-
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                rdr.Read();
-
-                if (!Convert.IsDBNull(rdr["password"]))
+                if (selectedCourse.IsProtected())
                 {
-                    MessageBox.Show("user would enter password here");
+                    JoinCoursePasswordScreen joinCoursePasswordScreen1 = new JoinCoursePasswordScreen(ref selectedCourse, ref currentUser, courseName);
+                    joinCoursePasswordScreen1.Show();
                 }
-                MessageBox.Show("user joins the course");
-                conn.Close();
+                else
+                {
+                    if (selectedCourse.AddStudent(currentUser.getID()))
+                    {
+                        currentUser.AddToCourseList(selectedCourse);
+
+                        MessageBox.Show("Welcome to " + courseName + "!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You are already part of this course!");
+                    }
+                }
+
             }
             else
             {

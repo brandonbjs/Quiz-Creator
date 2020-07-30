@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quiz_Creator
 {
+    [Serializable]
     class Question
     {
         private string questionType;
