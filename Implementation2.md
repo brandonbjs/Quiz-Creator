@@ -22,12 +22,12 @@ Brandon reviewed and approved the [pull request](https://github.com/brandonbjs/Q
 	
 Creating multiple choice questions & multiple question types in making a quiz. Implemented by Jacob. 
 [Trello link](https://trello.com/c/IdcjooVt/54-baileys-story-1-create-quizzes-to-test-my-knowledge) / 
-[Screenshot]().
+[Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MCQuestionPic.PNG).
 Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/16)
 
 Question Selection Drop Down Box. Implemented by Brandon.
 [Trello link](https://trello.com/c/8pkcT76S/56-d6-dropdown-question-fix) / 
-[Screenshot]().
+[Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/QuestionSelection.PNG).
 Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/16)
 
 ## 3. Demo
