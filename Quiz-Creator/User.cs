@@ -54,6 +54,18 @@ namespace Quiz_Creator
             return courseList;
         }
 
+        public Course GetCourseByName(string in_name)
+        {
+            foreach(Course course in courseList)
+            {
+                if(course.GetName() == in_name)
+                {
+                    return course;
+                }
+            }
+            return null;
+        }
+
         public string GetEmail()
         {
             return email;

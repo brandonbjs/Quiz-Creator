@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Microsoft.VisualBasic;
 
 namespace Quiz_Creator
 {
@@ -18,9 +17,6 @@ namespace Quiz_Creator
         string database = "QC_database";
         string uid = "admin";
         string password = "quizcreator";
-
-        private string courseName;
-        private string courseInstructor;
 
         private User currentUser;
 
@@ -71,68 +67,29 @@ namespace Quiz_Creator
         {
             if(listViewCourses.SelectedItems.Count != 0 )
             {
-                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
-
-                MySqlConnection conn = new MySqlConnection(connectionString);
-
-                conn.Open();
-
                 string courseName = listViewCourses.SelectedItems[0].Text;
-                string courseInstructor = listViewCourses.Columns[1].Text;
 
-                string sql = "SELECT * FROM courses WHERE course_name= '" + courseName + "';";
+                Course selectedCourse = new Course(courseName);
 
-                var cmd = new MySqlCommand(sql, conn);
-
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                rdr.Read();
-                if (!Convert.IsDBNull(rdr["password"]))
+                if (selectedCourse.IsProtected())
                 {
-                    JoinCoursePasswordScreen joinCoursePasswordScreen1 = new JoinCoursePasswordScreen(courseName, courseInstructor, rdr.GetString("password"), ref currentUser);
-
+                    JoinCoursePasswordScreen joinCoursePasswordScreen1 = new JoinCoursePasswordScreen(ref selectedCourse, ref currentUser, courseName);
                     joinCoursePasswordScreen1.Show();
                 }
                 else
                 {
-                    try
+                    if (selectedCourse.AddStudent(currentUser.getID()))
                     {
-                        conn.Close();
-                        conn.Open();
-
-                        //build sql command
-                        string insertSql = "INSERT INTO course_account (account_id, course_name) ";
-                        insertSql += "VALUES (" + currentUser.getID() + ", ";
-                        insertSql += "'" + courseName + "');";
-
-                        try
-                        {
-                            var insertCmd = new MySqlCommand(insertSql, conn);
-
-                            insertCmd.ExecuteNonQuery();
-
-                        }
-                        catch(MySqlException ex)
-                        {
-                            MessageBox.Show("You are already a member of this course!");
-                            return;
-                        }
-                        conn.Close();
-
-                        Course newCourse = new Course(courseName, courseInstructor);
-
-                        currentUser.AddToCourseList(newCourse);
+                        currentUser.AddToCourseList(selectedCourse);
 
                         MessageBox.Show("Welcome to " + courseName + "!");
                     }
-                    catch
+                    else
                     {
-                        MessageBox.Show("Error adding course");
+                        MessageBox.Show("You are already part of this course!");
                     }
-
                 }
 
-                conn.Close();
             }
             else
             {

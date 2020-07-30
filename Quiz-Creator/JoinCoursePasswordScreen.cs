@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,67 +15,39 @@ namespace Quiz_Creator
     public partial class JoinCoursePasswordScreen : Form
     {
         private string courseName;
-        private string courseInstructor;
-
-        private string coursePassword;
-
-        string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-        string database = "QC_database";
-        string uid = "admin";
-        string password = "quizcreator";
-
         private User currentUser;
+        private Course selectedCourse;
 
-        public JoinCoursePasswordScreen(string in_courseName, string in_courseInstructor, string in_pass, ref User in_User)
+        public JoinCoursePasswordScreen(ref Course in_Course, ref User in_User, string in_courseName)
         {
             InitializeComponent();
 
-            courseName = in_courseName;
-
-            courseInstructor = in_courseInstructor;
-
-            coursePassword = in_pass;
+            selectedCourse = in_Course;
 
             currentUser = in_User;
+
+            courseName = in_courseName;
         }
 
         private void JoinCoursePasswordScreen_Load(object sender, EventArgs e)
         {
-            lblCourseName.Text = courseName;
+            lblCourseName.Text = selectedCourse.GetName();
         }
 
         private void btnJoinCourse_Click(object sender, EventArgs e)
         {
-            if(txtPassword.Text == coursePassword)
+            if(txtPassword.Text == selectedCourse.GetPassword())
             {
-                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
-
-                MySqlConnection conn = new MySqlConnection(connectionString);
-
-                conn.Open();
-
-                string insertSql = "INSERT INTO course_account (account_id, course_name) ";
-                insertSql += "VALUES ('" + currentUser.getID() + "', ";
-                insertSql += "'" + courseName + "');";
-
-                var insertCmd = new MySqlCommand(insertSql, conn);
-                try
+                if (selectedCourse.AddStudent(currentUser.getID()))
                 {
-                    insertCmd.ExecuteNonQuery();
-
-                    Course newCourse = new Course(courseName, courseInstructor);
-
-                    currentUser.AddToCourseList(newCourse);
+                    currentUser.AddToCourseList(selectedCourse);
 
                     MessageBox.Show("Welcome to " + courseName + "!");
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("You are already a member of this course!");
+                    MessageBox.Show("You are already part of this course!");
                 }
-
-                conn.Close();
-
                 Close();
             }
             else
