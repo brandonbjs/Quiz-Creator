@@ -10,24 +10,27 @@
 	GitHub: https://github.com/brandonbjs/Quiz-Creator
 
 ## 2. Implemented requirements
-Course Selection / Course List (Steven, Tyler..work was done together on one computer) 
-[Trello Link](https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection) / 
-[Screenshot](). 
+### Course Selection / Course List
+(Steven, Tyler..work was done together on one computer)  
+[Trello Link](https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection) / [Screenshot]().  
 Steven approved the [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/22).
 
-Get immediate results. Bryan implemented the ability to get immediate results from taking a quiz. 
+### Get immediate results.
+Bryan implemented the ability to get immediate results from taking a quiz.  
 [Trello Link](https://trello.com/c/FASJ0gYe/41-d6-requirement-get-results) / 
-[screenshot](https://trello-attachments.s3.amazonaws.com/5f20c3de6fda1481479ad6e8/841x778/ee99230c96d54ed9128f244ad5c8b1e7/Screenshot_of_requirement.png).
+[screenshot](https://trello-attachments.s3.amazonaws.com/5f20c3de6fda1481479ad6e8/841x778/ee99230c96d54ed9128f244ad5c8b1e7/Screenshot_of_requirement.png).  
 Brandon reviewed and approved the [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/11/files).
 	
-Creating multiple choice questions & multiple question types in making a quiz. Implemented by Jacob. 
+### Creating multiple choice questions & multiple question types in making a quiz.
+Implemented by Jacob.  
 [Trello link](https://trello.com/c/IdcjooVt/54-baileys-story-1-create-quizzes-to-test-my-knowledge) / 
-[Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MCQuestionPic.PNG).
+[Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/MCQuestionPic.PNG).  
 Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/16)
 
-Question Selection Drop Down Box. Implemented by Brandon.
+### Question Selection Drop Down Box.
+Implemented by Brandon.  
 [Trello link](https://trello.com/c/8pkcT76S/56-d6-dropdown-question-fix) / 
-[Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/QuestionSelection.PNG).
+[Screenshot](https://github.com/brandonbjs/Quiz-Creator/blob/master/QuestionSelection.PNG).  
 Brandon reviewed and approved [pull request](https://github.com/brandonbjs/Quiz-Creator/pull/16)
 
 ## 3. Demo
