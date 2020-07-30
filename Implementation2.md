@@ -14,6 +14,12 @@
 	https://trello.com/c/L6LNzhlp/43-d6-requirement-course-selection
 	Steven approved the pull request
 	
+	-Creating multiple choice questions & multiple question types in making a quiz
+	https://trello.com/c/IdcjooVt/54-baileys-story-1-create-quizzes-to-test-my-knowledge
+	Implemented by Jacob
+	https://github.com/brandonbjs/Quiz-Creator/pull/16
+	Approved by Brandon
+	
 
 ## 3. Demo
 
