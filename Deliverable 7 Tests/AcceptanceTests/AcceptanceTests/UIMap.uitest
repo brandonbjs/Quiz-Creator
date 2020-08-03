@@ -1,0 +1,2114 @@
+<?xml version="1.0"?>
+<UITest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Id="bb97a0cb-a3b5-4d31-a8e4-31718f51cc57" AssemblyVersion="16.0.29514.35" Version="1.0" xmlns="http://schemas.microsoft.com/VisualStudio/TeamTest/UITest/2010">
+  <Configuration>
+    <Group Name="IE">
+      <Setting Name="Version" Value="9.11.18362.0" WarningLevel="1" />
+      <Setting Name="InformationBar" WarningLevel="1" />
+      <Setting Name="AutoCompletePassword" WarningLevel="1" />
+      <Setting Name="AutoCompleteForm" WarningLevel="1" />
+      <Setting Name="DefaultBrowser" Value="IEXPLORE.EXE" WarningLevel="1" />
+      <Setting Name="PopupBlocker" Value="yes" WarningLevel="1" />
+      <Setting Name="TabbedBrowsing" WarningLevel="2" />
+      <Setting Name="InternetZoneSecurity" Value="66816" WarningLevel="2" />
+      <Setting Name="IntranetZoneSecurity" Value="69632" WarningLevel="2" />
+      <Setting Name="TrustedZoneSecurity" Value="70912" WarningLevel="2" />
+      <Setting Name="RestrictedZoneSecurity" Value="73728" WarningLevel="2" />
+      <Setting Name="PhishingFilter" WarningLevel="1" />
+      <Setting Name="EnhancedSecurityConfiguration" WarningLevel="1" />
+    </Group>
+    <Group Name="OS">
+      <Setting Name="Name" Value="Microsoft Windows 10 Home" WarningLevel="2" />
+      <Setting Name="Version" Value="Microsoft Windows NT 10.0.18363.0" WarningLevel="2" />
+      <Setting Name="IsUserAdmin" Value="False" WarningLevel="2" />
+      <Setting Name="Is64BitOperatingSystem" Value="True" WarningLevel="2" />
+      <Setting Name="IsTerminalServerSession" Value="False" WarningLevel="2" />
+      <Setting Name="OSLanguage" Value="1033" WarningLevel="1" />
+      <Setting Name="UserLocale" Value="1033" WarningLevel="1" />
+      <Setting Name="DragFullWindows" Value="True" WarningLevel="2" />
+      <Setting Name="ScreenResolutionWidth" Value="1920" WarningLevel="2" />
+      <Setting Name="ScreenResolutionHeight" Value="1080" WarningLevel="2" />
+      <Setting Name="SystemDPIX" Value="120" WarningLevel="2" />
+      <Setting Name="SystemDPIY" Value="120" WarningLevel="2" />
+      <Setting Name="Aero" Value="1" WarningLevel="1" />
+      <Setting Name="UACEnabled" Value="1" WarningLevel="2" />
+      <Setting Name="UACPromptEnabled" Value="5" WarningLevel="1" />
+    </Group>
+    <Group Name="TechnologyManagers">
+      <Setting Name="Web" WarningLevel="1" />
+      <Setting Name="Web" WarningLevel="1" />
+      <Setting Name="Web" WarningLevel="1" />
+      <Setting Name="UIA" WarningLevel="1" />
+    </Group>
+  </Configuration>
+  <InitializeActions />
+  <ExecuteActions>
+    <LaunchApplicationAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow">
+      <ParameterName />
+      <FileName>C:\Users\Steve\Desktop\Quiz-Creator.exe</FileName>
+      <AlternateFileName>%USERPROFILE%\Desktop\Quiz-Creator.exe</AlternateFileName>
+    </LaunchApplicationAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UILoginWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="253" Y="55" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UILoginWindow.UILoginClient.UISignUpWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="225" Y="141" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxEmailWindow.UITextboxEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">teststudent@nau.edu</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SendKeysAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxEmailWindow.UITextboxEmailEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{Tab}</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxPasswordWindow.UITextboxPasswordEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="true">T8S6xVWUqrw3ItvysT8CpFT116XZ97hD</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxConfirmWindow.UITextboxConfirmEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="true">mOL/lXDUSd/hy7K5BZnJEA==</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UICreateYourAccountWindow.UICreateYourAccountClient.UIComboBoxTypeWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="305" Y="125" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYourAccountWindow.UIComboBoxTypeWindow.UIComboBoxTypeComboBox">
+      <ParameterName />
+      <Value Encoded="false">student</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UICreateYourAccountWindow.UICreateYourAccountClient.UISignUpWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="193" Y="146" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="22" Y="19" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <DragDropAction UIObjectName="UIMap.UILoginWindow.UILoginClient.UIDummydummycomWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIListViewLocalQuizzesWindow</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="363" Y="107" />
+      <StopLocation X="258" Y="254" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UILoginWindow.UIDummydummycomWindow.UITxtEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">teststudent@nau.edu</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SendKeysAction UIObjectName="UIMap.UILoginWindow.UIDummydummycomWindow.UITxtEmailEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{Tab}</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UILoginWindow.UIItem123Window.UITxtPasswordEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="true">mOL/lXDUSd/hy7K5BZnJEA==</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UILoginWindow.UILoginClient.UILoginWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="196" Y="121" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="12" Y="12" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIMakeNewLocalQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="302" Y="98" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <DragDropAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIUntitledQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIMakeaQuizWindow.UIListboxQuestionsWindow.UIListboxQuestionsList</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="499" Y="69" />
+      <StopLocation X="73" Y="37" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIUntitledQuizWindow.UITextboxTitleEdit">
+      <ParameterName />
+      <Value Encoded="false">quiz test</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <DragAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIEnterthequesitionherWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="358" Y="84" />
+      <MoveBy X="-264" Y="-2" />
+    </DragAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIEnterthequesitionherWindow.UITextboxPromptEditEdit">
+      <ParameterName />
+      <Value Encoded="false">1 + 1 ___?</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIFillintheBlankClient.UITextboxAnswerEditWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="207" Y="132" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UITextboxAnswerEditWindow.UITextboxAnswerEditEdit">
+      <ParameterName />
+      <Value Encoded="false">1</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIAddQuestionWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="165" Y="167" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIFillintheBlankWindow.UIFillintheBlankClient">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="329" Y="70" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <DragDropAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIEnterthequesitionherWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIListboxQuestionsWindow</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="349" Y="89" />
+      <StopLocation X="350" Y="107" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIEnterthequesitionherWindow.UITextboxPromptEditEdit">
+      <ParameterName />
+      <Value Encoded="false">is 1 + 1 2?</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIAddQuestionWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="182" Y="168" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIListboxQuestionsWindow.UIListboxQuestionsList">
+      <ParameterName />
+      <Value Encoded="false">is 1 + 1 2?</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIRemoveQuestionWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="150" Y="170" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UISaveQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="277" Y="72" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="41" Y="8" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIJoinaCourseWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="242" Y="161" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIJoinCourseScreenWindow.UIListViewCoursesWindow.UIListViewCoursesList">
+      <ParameterName />
+      <Value Encoded="false">Requirements Engineering</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIJoinCourseScreenWindow.UIJoinCourseScreenClient.UIJoinCourseWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="203" Y="151" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="33" Y="15" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIJoinCourseScreenWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="810" Y="85" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="Tests if the UI functions relevant to student users work as intended." MarkerInformation="StudentTest">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UILoginWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="305" Y="59" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UILoginWindow.UILoginClient.UISignUpWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="228" Y="127" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxEmailWindow.UITextboxEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">testprofessor@nau.edu</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SendKeysAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxEmailWindow.UITextboxEmailEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{Tab}</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxPasswordWindow.UITextboxPasswordEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="true">T8S6xVWUqrw3ItvysT8CpFT116XZ97hD</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UICreateYourAccountWindow.UITextboxConfirmWindow.UITextboxConfirmEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="true">mOL/lXDUSd/hy7K5BZnJEA==</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UICreateYourAccountWindow.UICreateYourAccountClient.UIComboBoxTypeWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="234" Y="127" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYourAccountWindow.UIComboBoxTypeWindow.UIComboBoxTypeComboBox">
+      <ParameterName />
+      <Value Encoded="false">teacher</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UICreateYourAccountWindow.UICreateYourAccountClient.UISignUpWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="208" Y="143" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="82" Y="15" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <DragDropAction UIObjectName="UIMap.UILoginWindow.UILoginClient.UIDummydummycomWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIListViewLocalQuizzesWindow</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="377" Y="107" />
+      <StopLocation X="185" Y="248" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UILoginWindow.UIDummydummycomWindow.UITxtEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">testprofessor@nau.edu</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SendKeysAction UIObjectName="UIMap.UILoginWindow.UIDummydummycomWindow.UITxtEmailEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="false">{Tab}</Text>
+    </SendKeysAction>
+    <SendKeysAction UIObjectName="UIMap.UILoginWindow.UIItem123Window.UITxtPasswordEdit">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Text Encoded="true">mOL/lXDUSd/hy7K5BZnJEA==</Text>
+    </SendKeysAction>
+    <MouseAction UIObjectName="UIMap.UILoginWindow.UILoginClient.UILoginWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="189" Y="117" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="12" Y="15" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIMakeNewLocalQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="309" Y="87" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <DragDropAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIUntitledQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIProgramManagerWindow.UIFolderViewWindow.UIDesktopList</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="386" Y="72" />
+      <StopLocation X="294" Y="293" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIUntitledQuizWindow.UITextboxTitleEdit">
+      <ParameterName />
+      <Value Encoded="false">quiz test 2</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <DragDropAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIEnterthequesitionherWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIMakeaQuizWindow.UIMakeaQuizClient</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="403" Y="96" />
+      <StopLocation X="442" Y="190" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIEnterthequesitionherWindow.UITextboxPromptEditEdit">
+      <ParameterName />
+      <Value Encoded="false">what is the first letter of the akphabet?</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIFillintheBlankClient.UITextboxAnswerEditWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="200" Y="130" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UITextboxAnswerEditWindow.UITextboxAnswerEditEdit">
+      <ParameterName />
+      <Value Encoded="false">A</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIAddQuestionWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="196" Y="169" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIFillintheBlankWindow.UIFillintheBlankClient">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="343" Y="69" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <DragDropAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIEnterthequesitionherWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <TargetElementName>UIMap.UIMakeaQuizWindow.UIListboxQuestionsWindow.UIListboxQuestionsList</TargetElementName>
+      <MouseButton>Left</MouseButton>
+      <StartLocation X="384" Y="87" />
+      <StopLocation X="239" Y="74" />
+    </DragDropAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIEnterthequesitionherWindow.UITextboxPromptEditEdit">
+      <ParameterName />
+      <Value Encoded="false">is B the second letter of the alphabet?</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIAddQuestionWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="210" Y="186" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIListboxQuestionsWindow.UIListboxQuestionsList">
+      <ParameterName />
+      <Value Encoded="false">what is the first letter of the akphabet?</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UIRemoveQuestionWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="188" Y="179" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UISaveQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="290" Y="59" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="32" Y="14" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIListViewLocalQuizzesWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="378" Y="245" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UITakeLocalQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="274" Y="108" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="40" Y="11" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIQuestion1Window.UIQuestion1Group.UITrueWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="140" Y="109" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UINextWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="251" Y="168" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIBackWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="220" Y="169" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UINextWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="251" Y="154" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIItemWindow.UITakerScreenWindow.UITakerScreenClient.UIComboBoxQuestionSeleWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="316" Y="64" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIItemWindow.UIItemWindow1.UIItemList.UIQuestion1ListItem">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="55" Y="15" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIItemWindow.UITakerScreenWindow.UITakerScreenClient.UIComboBoxQuestionSeleWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="312" Y="70" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIItemWindow.UIYourresponseList.UIQuestion2ListItem">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="56" Y="19" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIQuestion1Window.UIQuestion2Group.UITextBoxResponseWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="311" Y="107" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIQuestion1Window.UITextBoxResponseWindow.UITextBoxResponseEdit">
+      <ParameterName />
+      <Value Encoded="false">12</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UISubmitQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="228" Y="149" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="48" Y="10" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIItemWindow.UITakerScreenWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="766" Y="77" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIListViewLocalQuizzesWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="161" Y="244" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIDeleteLocalQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="240" Y="117" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIYesWindow.UIYesButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="55" Y="19" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIListViewLocalQuizzesWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="222" Y="224" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIWelcometoQuizCreatorWindow.UIWelcometoQuizCreatorClient.UIEditLocalQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="242" Y="99" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIFillintheBlankClient.UIItem1Window">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="274" Y="136" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <SetValueAction UIObjectName="UIMap.UIMakeaQuizWindow.UIItem1Window.UITextboxAnswerEditEdit">
+      <ParameterName />
+      <Value Encoded="false">3</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UIMakeaQuizWindow.UIMakeaQuizClient.UISaveQuizWindow">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="343" Y="76" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIOKWindow.UIOKButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="46" Y="21" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="Tests if the methods relavent to professors are working. (primarily edit quiz). " MarkerInformation="ProfessorTest">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+  </ExecuteActions>
+  <CleanupActions />
+  <OnErrorActions />
+  <Maps>
+    <UIMap Id="UIMap">
+      <TopLevelWindows>
+        <TopLevelWindow ControlType="Window" Id="UIWelcometoQuizCreatorWindow" FriendlyName="Welcome to Quiz Creator!" SpecialControlType="None" SessionId="197634">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Welcome to Quiz Creator!</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Client" Id="UIWelcometoQuizCreatorClient" FriendlyName="Welcome to Quiz Creator!" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Welcome to Quiz Creator!</PropertyCondition>
+                <PropertyCondition Name="ControlType">Client</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UILoginWindow" FriendlyName="Login" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Login</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIListViewLocalQuizzesWindow" FriendlyName="listViewLocalQuizzes" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.SysListView32</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                    <PropertyCondition Name="Instance">2</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIMakeNewLocalQuizWindow" FriendlyName="Make New Local Quiz" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Make New Local Quiz</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIJoinaCourseWindow" FriendlyName="Join a Course" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Join a Course</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UITakeLocalQuizWindow" FriendlyName="Take Local Quiz" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Take Local Quiz</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIDeleteLocalQuizWindow" FriendlyName="Delete Local Quiz" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Delete Local Quiz</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIEditLocalQuizWindow" FriendlyName="Edit Local Quiz" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Welcome to Quiz Creator!</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Edit Local Quiz</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UILoginWindow" FriendlyName="Login" SpecialControlType="None" SessionId="1443014">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Login</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Login</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Client" Id="UILoginClient" FriendlyName="Login" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Login</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Login</PropertyCondition>
+                <PropertyCondition Name="ControlType">Client</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UISignUpWindow" FriendlyName="Sign Up" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Login</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Sign Up</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.STATIC</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIDummydummycomWindow" FriendlyName="dummy@dummy.com" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Login</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">dummy@dummy.com</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.EDIT</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UILoginWindow" FriendlyName="Login" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Login</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Login</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIDummydummycomWindow" FriendlyName="dummy@dummy.com" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Login</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">txtEmail</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITxtEmailEdit" FriendlyName="txtEmail" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Login</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIItem123Window" FriendlyName="123" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Login</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">txtPassword</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITxtPasswordEdit" FriendlyName="txtPassword" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Login</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UICreateYourAccountWindow" FriendlyName="Create Your Account" SpecialControlType="None" SessionId="5702770">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Create Your Account</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Create Your Account</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Window" Id="UITextboxEmailWindow" FriendlyName="textboxEmail" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create Your Account</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxEmail</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxEmailEdit" FriendlyName="textboxEmail" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Your Account</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UITextboxPasswordWindow" FriendlyName="textboxPassword" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create Your Account</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxPassword</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxPasswordEdit" FriendlyName="textboxPassword" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Your Account</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UITextboxConfirmWindow" FriendlyName="textboxConfirm" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create Your Account</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxConfirm</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxConfirmEdit" FriendlyName="textboxConfirm" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Your Account</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Client" Id="UICreateYourAccountClient" FriendlyName="Create Your Account" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create Your Account</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Create Your Account</PropertyCondition>
+                <PropertyCondition Name="ControlType">Client</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UIComboBoxTypeWindow" FriendlyName="comboBoxType" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Your Account</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.COMBOBOX</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                    <PropertyCondition Name="Instance">2</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UISignUpWindow" FriendlyName="Sign Up" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Your Account</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Sign Up</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIComboBoxTypeWindow" FriendlyName="comboBoxType" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create Your Account</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">comboBoxType</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="ComboBox" Id="UIComboBoxTypeComboBox" FriendlyName="comboBoxType" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Your Account</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">ComboBox</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIOKWindow" FriendlyName="OK" SpecialControlType="None" SessionId="2491568">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>OK</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">OK</PropertyCondition>
+            <PropertyCondition Name="ClassName">Button</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Button" Id="UIOKButton" FriendlyName="OK" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>OK</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">OK</PropertyCondition>
+                <PropertyCondition Name="ControlType">Button</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants />
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIMakeaQuizWindow" FriendlyName="Make a Quiz" SpecialControlType="None" SessionId="1508550">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Make a Quiz</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Make a Quiz</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Client" Id="UIMakeaQuizClient" FriendlyName="Make a Quiz" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Make a Quiz</PropertyCondition>
+                <PropertyCondition Name="ControlType">Client</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UIUntitledQuizWindow" FriendlyName="Untitled Quiz" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Untitled Quiz</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.EDIT</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIEnterthequesitionherWindow" FriendlyName="Enter the quesition here" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Enter the quesition here</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.EDIT</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIAddQuestionWindow" FriendlyName="Add Question" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Add Question</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIListboxQuestionsWindow" FriendlyName="listboxQuestions" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.LISTBOX</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIRemoveQuestionWindow" FriendlyName="Remove Question" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Remove Question</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UISaveQuizWindow" FriendlyName="Save Quiz" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Save Quiz</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIListboxQuestionsWindow" FriendlyName="listboxQuestions" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">listboxQuestions</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="List" Id="UIListboxQuestionsList" FriendlyName="listboxQuestions" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">List</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIUntitledQuizWindow" FriendlyName="Untitled Quiz" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxTitle</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxTitleEdit" FriendlyName="textboxTitle" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIEnterthequesitionherWindow" FriendlyName="Enter the quesition here" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxPromptEdit</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxPromptEditEdit" FriendlyName="textboxPromptEdit" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Client" Id="UIFillintheBlankClient" FriendlyName="Fill in the Blank" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Fill in the Blank</PropertyCondition>
+                <PropertyCondition Name="ControlType">Client</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UITextboxAnswerEditWindow" FriendlyName="textboxAnswerEdit" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.EDIT</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Window" Id="UIItem1Window" FriendlyName="1" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">1</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.EDIT</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UITextboxAnswerEditWindow" FriendlyName="textboxAnswerEdit" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxAnswerEdit</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxAnswerEditEdit" FriendlyName="textboxAnswerEdit" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIFillintheBlankWindow" FriendlyName="Fill in the Blank" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">tabPageFITB</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Client" Id="UIFillintheBlankClient" FriendlyName="Fill in the Blank" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Fill in the Blank</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Client</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIItem1Window" FriendlyName="1" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Make a Quiz</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textboxAnswerEdit</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextboxAnswerEditEdit" FriendlyName="textboxAnswerEdit" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Make a Quiz</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIJoinCourseScreenWindow" FriendlyName="JoinCourseScreen" SpecialControlType="None" SessionId="1574086">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>JoinCourseScreen</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">JoinCourseScreen</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Window" Id="UIListViewCoursesWindow" FriendlyName="listViewCourses" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>JoinCourseScreen</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">listViewCourses</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="List" Id="UIListViewCoursesList" FriendlyName="listViewCourses" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>JoinCourseScreen</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">List</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Client" Id="UIJoinCourseScreenClient" FriendlyName="JoinCourseScreen" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>JoinCourseScreen</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">JoinCourseScreen</PropertyCondition>
+                <PropertyCondition Name="ControlType">Client</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UIJoinCourseWindow" FriendlyName="Join Course" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>JoinCourseScreen</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Join Course</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIProgramManagerWindow" FriendlyName="Program Manager" SpecialControlType="None" SessionId="65836">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Program Manager</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Program Manager</PropertyCondition>
+            <PropertyCondition Name="ClassName">Progman</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Window" Id="UIFolderViewWindow" FriendlyName="FolderView" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Program Manager</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlId">1</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="List" Id="UIDesktopList" FriendlyName="Desktop" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Program Manager</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Desktop</PropertyCondition>
+                    <PropertyCondition Name="ControlType">List</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIQuestion1Window" FriendlyName="Question 1" SpecialControlType="None" SessionId="2884772">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Question 1</WindowTitle>
+            <WindowTitle>Question 2</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Question 1</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Group" Id="UIQuestion1Group" FriendlyName="Question 1" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Question 1</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Question 1</PropertyCondition>
+                <PropertyCondition Name="ControlType">Group</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UITrueWindow" FriendlyName="True" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Question 1</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">True</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Group" Id="UIQuestion2Group" FriendlyName="Question 2" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Question 2</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Question 2</PropertyCondition>
+                <PropertyCondition Name="ControlType">Group</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Window" Id="UITextBoxResponseWindow" FriendlyName="textBoxResponse" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Question 2</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="AccessibleName">Your response:</PropertyCondition>
+                    <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.EDIT</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UITextBoxResponseWindow" FriendlyName="textBoxResponse" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Question 2</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">textBoxResponse</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UITextBoxResponseEdit" FriendlyName="textBoxResponse" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Question 2</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Your response:</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UINextWindow" FriendlyName="Next &gt;" SpecialControlType="None" SessionId="1377424">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Next &gt;</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Next &gt;</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants />
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIBackWindow" FriendlyName="&lt; Back" SpecialControlType="None" SessionId="2491442">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>&lt; Back</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">&lt; Back</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants />
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIItemWindow" FriendlyName="" SpecialControlType="None" SessionId="65552">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles />
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="AccessibleName">Desktop 1</PropertyCondition>
+            <PropertyCondition Name="ClassName">#32769</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Window" Id="UITakerScreenWindow" FriendlyName="TakerScreen" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles />
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.Window</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Client" Id="UITakerScreenClient" FriendlyName="TakerScreen" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles />
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Client</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="Window" Id="UIComboBoxQuestionSeleWindow" FriendlyName="comboBoxQuestionSelect" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles />
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.COMBOBOX</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Window</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIItemWindow1" FriendlyName="" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles />
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ClassName">ComboLBox</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="List" Id="UIItemList" FriendlyName="" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles />
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">List</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="ListItem" Id="UIQuestion1ListItem" FriendlyName="Question # 1" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles />
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Question # 1</PropertyCondition>
+                        <PropertyCondition Name="ControlType">ListItem</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="List" Id="UIYourresponseList" FriendlyName="Your response:" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles />
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Your response:</PropertyCondition>
+                <PropertyCondition Name="ControlType">List</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="ListItem" Id="UIQuestion2ListItem" FriendlyName="Question # 2" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles />
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">Question # 2</PropertyCondition>
+                    <PropertyCondition Name="ControlType">ListItem</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UISubmitQuizWindow" FriendlyName="Submit Quiz" SpecialControlType="None" SessionId="2688036">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Submit Quiz</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Submit Quiz</PropertyCondition>
+            <PropertyCondition Name="ClassName" Operator="Contains">WindowsForms10.BUTTON</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants />
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIYesWindow" FriendlyName="&amp;Yes" SpecialControlType="None" SessionId="2556978">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>&amp;Yes</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">&amp;Yes</PropertyCondition>
+            <PropertyCondition Name="ClassName">Button</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Button" Id="UIYesButton" FriendlyName="&amp;Yes" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>&amp;Yes</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="Name">Yes</PropertyCondition>
+                <PropertyCondition Name="ControlType">Button</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants />
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+      </TopLevelWindows>
+    </UIMap>
+  </Maps>
+  <ValueMap>
+    <ParameterList />
+  </ValueMap>
+</UITest>
