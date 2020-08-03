@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using MySql.Data.MySqlClient;
+
 
 namespace Quiz_Creator
 {
-    class Quiz
+    [Serializable]
+    public class Quiz
     {
         #region Fields
 
@@ -37,10 +42,19 @@ namespace Quiz_Creator
         public Quiz(string in_title) {
             title = in_title;
             dateModified = DateTime.Now.ToString();
-            questions = new List<Question>();
             protectedQuiz = false;
             password = "";
             questions = new List<Question>();
+        }
+
+        public Quiz(string in_title, string in_author, string in_dateModified, bool in_protectedQuiz, string in_password, List<Question> in_questions)
+        {
+            title = in_title;
+            author = in_author;
+            dateModified = in_dateModified;
+            protectedQuiz = in_protectedQuiz;
+            password = in_password;
+            questions = in_questions;
         }
 
         #endregion 
@@ -237,6 +251,53 @@ namespace Quiz_Creator
         }
 
         #endregion
+
+        #region Saving
+
+        public void SerializeQuiz()
+        {
+            Stream stream = File.Open("dbquiz.qz", FileMode.Create);
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            formatter.Serialize(stream, this);
+            stream.Close();
+        }
+
+        public Quiz DeserializeQuiz()
+        {
+                string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
+                string database = "QC_database";
+                string uid = "admin";
+                string dbpassword = "quizcreator";
+                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + dbpassword;
+
+                string sql = "SELECT * FROM quiz_obj WHERE quiz= '" + "test" + "';";
+
+                MySqlConnection conn = new MySqlConnection(connectionString);
+
+                conn.Open();
+
+                var cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                rdr.Read();
+
+                BinaryFormatter formatter = new BinaryFormatter();
+
+                Quiz deserializedData = (Quiz)formatter.Deserialize(rdr.GetStream(0));
+                conn.Close();
+
+                title = deserializedData.title;
+                author = deserializedData.author;
+                dateModified = deserializedData.dateModified;
+                protectedQuiz = deserializedData.protectedQuiz;
+                password = deserializedData.password;
+                questions = deserializedData.questions;
+
+                return deserializedData;
+        }
+
         public void AddDataFromFile(string filename, string quizDate)
         {
             XmlDocument localDoc = new XmlDocument();
@@ -288,5 +349,7 @@ namespace Quiz_Creator
                 }
             }
         }
+
+        #endregion
     }
 }

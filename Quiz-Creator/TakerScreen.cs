@@ -15,7 +15,7 @@ namespace Quiz_Creator
 {
     public partial class TakerScreen : Form
     {
-        private int currentQuestionIndex = 0;
+        private int currentQuestionIndex;
 
         private Quiz currentlyTakingQuiz;
 
@@ -34,41 +34,22 @@ namespace Quiz_Creator
             {
                 //not yet implemented
             }
-            comboBoxQuestionSelect.SelectedIndex = 0;
 
-            labelQuizTitle.Text = currentlyTakingQuiz.GetTitle();
+        }
+        public TakerScreen(Quiz courseQuiz)
+        {
+            InitializeComponent();
 
-            groupBoxQuestion.Text = "Question " + (currentQuestionIndex+1).ToString();
-
-            labelPrompt.Text = currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetPrompt();
-
-            if(currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
-            {
-                DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
-            }
-            else
-            {
-                DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
-            }
-            Manage_Buttons();
+            currentlyTakingQuiz = courseQuiz;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            // Back Button
             SaveResponse();
 
             currentQuestionIndex--;
 
-            if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
-            {
-                DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
-            }
-            else
-            {
-                DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
-            }
-            Manage_Buttons();
+            DisplayQuestion();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -78,15 +59,22 @@ namespace Quiz_Creator
 
             currentQuestionIndex++;
 
+            DisplayQuestion();
+        }
+
+        private void DisplayQuestion()
+        {
             if (currentlyTakingQuiz.GetQuestion(currentQuestionIndex).GetQuestionType() == "FITB")
             {
-                DisplayFITB(currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                DisplayFITB();
             }
             else
             {
-                DisplayMC((MCQuestion)currentlyTakingQuiz.GetQuestion(currentQuestionIndex));
+                DisplayMC();
             }
             Manage_Buttons();
+
+            comboBoxQuestionSelect.SelectedIndex = currentQuestionIndex;
         }
 
         private void buttonSubmitQuiz_Click(object sender, EventArgs e)
@@ -101,6 +89,7 @@ namespace Quiz_Creator
             for(int index = 0; index < numQuestions; index++)
             {
                 summaryString += "\nQuestion #" + (index + 1) + ": ";
+
                 if(currentlyTakingQuiz.GetQuestion(index).CorrectResponse())
                 {
                     summaryString += "Correct";
@@ -113,58 +102,6 @@ namespace Quiz_Creator
             MessageBox.Show(summaryString);
 
             // For future implementations, save quiz here
-        }
-
-        private void AddFromLocal(string quizDate)
-        {
-            XmlDocument localDoc = new XmlDocument();
-
-            localDoc.Load("LocalQuizzes.xml");
-
-            XmlNodeList quizNodes = localDoc.GetElementsByTagName("Quiz");
-
-            XmlNode selectedQuizNode = null;
-
-            foreach (XmlNode node in quizNodes)
-            {
-                if (node.Attributes[1].InnerText == quizDate)
-                {
-                    selectedQuizNode = node;
-                }
-            }
-            string quizTitle = selectedQuizNode.Attributes[0].InnerText;
-
-            currentlyTakingQuiz = new Quiz(quizTitle);
-
-            XmlNodeList questionNodes = selectedQuizNode.ChildNodes;
-
-            foreach (XmlNode questionNode in questionNodes)
-            {
-                string newQuestionType = questionNode.Attributes[0].InnerText;
-
-                string newQuestionPrompt = questionNode.ChildNodes[0].InnerText;
-
-                string newQuestionAnswer = questionNode.ChildNodes[1].InnerText;
-
-                if (newQuestionType == "MC")
-                {
-                    XmlNodeList choicesNode = questionNode.ChildNodes[2].ChildNodes;
-
-                    string[] questionChoices = new string[choicesNode.Count];
-
-                    int numChoices = choicesNode.Count;
-
-                    for(int index = 0; index < numChoices; index++)
-                    {
-                        questionChoices[index] = choicesNode[index].InnerText;
-                    }
-                    currentlyTakingQuiz.AddQuestion(new MCQuestion(questionChoices, newQuestionType, newQuestionPrompt, newQuestionAnswer));
-                }
-                else
-                {
-                    currentlyTakingQuiz.AddQuestion(new Question(newQuestionType, newQuestionPrompt, newQuestionAnswer));
-                }
-            }
         }
 
         private void SaveResponse()
@@ -187,15 +124,17 @@ namespace Quiz_Creator
             }
         }
 
-        private void DisplayFITB(Question in_question)
+        private void DisplayFITB()
         {
+            Question selectedQuestion = currentlyTakingQuiz.GetQuestion(currentQuestionIndex);
+
             groupBoxQuestion.Text = "Question " + (currentQuestionIndex + 1).ToString();
 
             //Show FITB response
             labelResponse.Visible = true;
             textBoxResponse.Visible = true;
-            textBoxResponse.Text = in_question.GetResponse();
-            labelPrompt.Text = in_question.GetPrompt();
+            textBoxResponse.Text = selectedQuestion.GetResponse();
+            labelPrompt.Text = selectedQuestion.GetPrompt();
 
             //Hide MC buttons
             radioButton1.Visible = false;
@@ -205,8 +144,10 @@ namespace Quiz_Creator
             radioButton5.Visible = false;
         }
 
-        private void DisplayMC(MCQuestion in_question)
+        private void DisplayMC()
         {
+            Question selectedQuestion = currentlyTakingQuiz.GetQuestion(currentQuestionIndex);
+
             groupBoxQuestion.Text = "Question " + (currentQuestionIndex + 1).ToString();
 
             //Hide FITB response
@@ -214,9 +155,9 @@ namespace Quiz_Creator
             textBoxResponse.Visible = false;
 
             //Show MC
-            labelPrompt.Text = in_question.GetPrompt();
+            labelPrompt.Text = selectedQuestion.GetPrompt();
 
-            int numChoices = in_question.GetNumChoices();
+            int numChoices = selectedQuestion.GetNumChoices();
 
             radioButton1.Visible = false;
             radioButton2.Visible = false;
@@ -230,28 +171,25 @@ namespace Quiz_Creator
             radioButton4.Checked = false;
             radioButton5.Checked = false;
 
+            radioButton1.Text = selectedQuestion.GetChoice(0);
+            radioButton2.Text = selectedQuestion.GetChoice(1);
+            radioButton1.Visible = true;
+            radioButton2.Visible = true;
 
-            if (numChoices > 1)
-            {
-                radioButton1.Text = in_question.GetChoice(0);
-                radioButton2.Text = in_question.GetChoice(1);
-                radioButton1.Visible = true;
-                radioButton2.Visible = true;
-            }
             if(numChoices > 2)
             {
-                radioButton3.Text = in_question.GetChoice(2);
+                radioButton3.Text = selectedQuestion.GetChoice(2);
                 radioButton3.Visible = true;
             }
             if(numChoices > 3)
             {
-                radioButton4.Text = in_question.GetChoice(3);
+                radioButton4.Text = selectedQuestion.GetChoice(3);
                 radioButton4.Visible = true;
 
             }
             if(numChoices > 4)
             {
-                radioButton5.Text = in_question.GetChoice(4);
+                radioButton5.Text = selectedQuestion.GetChoice(4);
                 radioButton5.Visible = true;
             }
             switch(currentlyTakingQuiz.GetResponse(currentQuestionIndex))
@@ -262,16 +200,49 @@ namespace Quiz_Creator
                 case "4": radioButton4.Checked = true; break;
                 case "5": radioButton5.Checked = true; break;
             }
-
         }
 
         private void Manage_Buttons()
         {
-            if (currentQuestionIndex == 0) { buttonBack.Enabled = false; }
-            else { buttonBack.Enabled = true; }
+            if (currentQuestionIndex == 0) 
+            { 
+                buttonBack.Enabled = false; 
+            }
+            else 
+            {
+                buttonBack.Enabled = true; 
+            }
 
-            if (currentQuestionIndex == currentlyTakingQuiz.GetNumQuestions()-1) { buttonNext.Enabled = false; }
-            else{ buttonNext.Enabled = true; }
+            if (currentQuestionIndex == currentlyTakingQuiz.GetNumQuestions() - 1) 
+            { 
+                buttonNext.Enabled = false; 
+            }
+            else
+            { 
+                buttonNext.Enabled = true;
+            }
+        }
+
+        private void comboBoxQuestionSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SaveResponse();
+
+            currentQuestionIndex = comboBoxQuestionSelect.SelectedIndex;
+
+            DisplayQuestion();
+        }
+
+        private void TakerScreen_Load(object sender, EventArgs e)
+        {
+            labelQuizTitle.Text = currentlyTakingQuiz.GetTitle();
+
+            for ( int iter = 1; iter < currentlyTakingQuiz.GetNumQuestions() + 1; iter++ )
+            {
+                comboBoxQuestionSelect.Items.Add("Question #" + iter);
+            }
+            currentQuestionIndex = 0;
+
+            DisplayQuestion();
         }
     }
 }

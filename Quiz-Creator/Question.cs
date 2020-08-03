@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Quiz_Creator
 {
-    class Question
+    [Serializable]
+    public class Question
     {
         private string questionType;
 
@@ -69,7 +70,7 @@ namespace Quiz_Creator
 
         public Boolean CorrectResponse()
         {
-            return answer == response;
+            return answer.ToLower() == response.ToLower();
         }
 
         public virtual int GetNumChoices()

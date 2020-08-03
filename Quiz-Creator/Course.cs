@@ -21,40 +21,17 @@ namespace Quiz_Creator
 
         List<Quiz> quizList;
 
-        public Course(string in_courseName)
+        public Course()
         {
-            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-            string database = "QC_database";
-            string uid = "admin";
-            string dbpassword = "quizcreator";
-            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + dbpassword;
+            courseName = null;
 
-            string sql = "SELECT * FROM courses WHERE course_name= '" + in_courseName + "';";
+            instructorName = null;
 
-            MySqlConnection conn = new MySqlConnection(connectionString);
+            password = null;
 
-            conn.Open();
+            hasPassword = false;
 
-            var cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            rdr.Read();
-
-            courseName = rdr.GetString("course_name");
-
-            instructorName = rdr.GetString("instructor_name");
-
-            try
-            {
-                password = rdr.GetString("password");
-
-                hasPassword = true;
-            }
-            catch
-            {
-                hasPassword = false;
-            }
+            quizList = new List<Quiz>();
         }
         public Course(string in_name, string in_instructor)
         {
@@ -63,42 +40,26 @@ namespace Quiz_Creator
             instructorName = in_instructor;
         }
 
+        public Course(string in_name, string in_instructor, string in_password, List<Quiz> in_quizzes)
+        {
+            courseName = in_name;
+
+            instructorName = in_instructor;
+
+            password = in_password;
+
+            quizList = in_quizzes;
+
+            hasPassword = true;
+        }
+
         public Boolean IsProtected()
         {
             return hasPassword;
         }
-
-        public Boolean AddStudent(int in_userID)
+        public List<Quiz> GetQuizzes()
         {
-            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-            string database = "QC_database";
-            string uid = "admin";
-            string password = "quizcreator";
-            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
-
-            string sql = "SELECT * FROM courses WHERE course_name= '" + courseName + "';";
-
-            MySqlConnection conn = new MySqlConnection(connectionString);
-
-            conn.Open();
-
-            string insertSql = "INSERT INTO course_account (account_id, course_name) ";
-            insertSql += "VALUES (" + in_userID + ", ";
-            insertSql += "'" + courseName + "');";
-
-            try
-            {
-                var insertCmd = new MySqlCommand(insertSql, conn);
-
-                insertCmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                conn.Close();
-                return false;
-            }
-            conn.Close();
-            return true;
+            return quizList;
         }
 
         public string GetName()
@@ -111,14 +72,26 @@ namespace Quiz_Creator
             return password;
         }
 
-        public void setName(string in_name)
+        public void SetName(string in_name)
         {
             courseName = in_name;
+        }
+
+        public void SetInstructorName(string in_instructorName)
+        {
+            instructorName = in_instructorName;
         }
 
         public string GetInstructorName()
         {
             return instructorName;
+        }
+
+        public void SetPassword(string in_pass)
+        {
+            password = in_pass;
+
+            hasPassword = true;
         }
     }
 }
