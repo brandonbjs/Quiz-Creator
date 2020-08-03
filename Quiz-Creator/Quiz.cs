@@ -42,7 +42,6 @@ namespace Quiz_Creator
         public Quiz(string in_title) {
             title = in_title;
             dateModified = DateTime.Now.ToString();
-            questions = new List<Question>();
             protectedQuiz = false;
             password = "";
             questions = new List<Question>();

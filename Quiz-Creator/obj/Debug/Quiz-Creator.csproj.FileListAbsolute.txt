@@ -184,3 +184,6 @@ C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creato
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCoursePasswordScreen.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCourseScreen.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.SignUpScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\bin\Debug\nunit.framework.dll
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\bin\Debug\nunit.framework.pdb
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\bin\Debug\nunit.framework.xml
