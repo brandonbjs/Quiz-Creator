@@ -14,66 +14,52 @@ namespace Quiz_Creator
 {
     public partial class CourseScreen : Form
     {
-        private User currentUser;
-
         private string courseName;
 
-        Quiz test;
-        public CourseScreen(ref User in_user, string in_courseName)
+        public CourseScreen(string in_courseName)
         {
             InitializeComponent();
 
-            currentUser = in_user;
-
             courseName = in_courseName;
 
-            test = DeserializeQuiz();
+            labelCourse.Text = "Quizzes for " + in_courseName;
         }
 
         private void CourseScreen_Load(object sender, EventArgs e)
         {
-            DisplayCourses();
+            DisplayQuizzes();
         }
 
-        public Quiz DeserializeQuiz()
+        private void DisplayQuizzes()
         {
-            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-            string database = "QC_database";
-            string uid = "admin";
-            string dbpassword = "quizcreator";
-            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + dbpassword;
+            listBoxQuizzes.Items.Clear();
 
-            string sql = "SELECT * FROM quiz_obj WHERE quiz= '" + "test" + "';";
-
-            MySqlConnection conn = new MySqlConnection(connectionString);
-
-            conn.Open();
-
-            var cmd = new MySqlCommand(sql, conn);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            rdr.Read();
-
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            Quiz deserializedData = (Quiz)formatter.Deserialize(rdr.GetStream(0));
-
-            conn.Close();
-
-            return deserializedData;
-        }
-        private void DisplayCourses()
-        {
-            listViewCourseQuizzes.Items.Clear();
-
-            List<Quiz> quizList = currentUser.GetCourseByName(courseName).GetQuizzes();
-
-            foreach (Quiz quiz in quizList)
+            foreach (string quizTitle in Database.GetCourseQuizTitles(courseName))
             {
-                string[] row = { quiz.GetTitle(), quiz.GetModifiedDate() };
-                ListViewItem listViewItem = new ListViewItem(row);
-                listViewCourseQuizzes.Items.Add(listViewItem);
+                listBoxQuizzes.Items.Add(quizTitle);
+            }
+        }
+
+        private void buttonTakeQuiz_Click(object sender, EventArgs e)
+        {
+            string quizName = listBoxQuizzes.SelectedItem.ToString();
+
+            int quizID = Database.GetQuizID(quizName);
+
+            TakerScreen takerScreen = new TakerScreen(Database.GetQuiz(quizID, quizName));
+
+            takerScreen.Show();
+        }
+
+        private void listBoxQuizzes_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (listBoxQuizzes.SelectedItem != null)
+            {
+                buttonTakeQuiz.Enabled = true;
+            }
+            else
+            {
+                buttonTakeQuiz.Enabled = false;
             }
         }
     }

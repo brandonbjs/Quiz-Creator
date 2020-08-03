@@ -362,6 +362,7 @@
             this.Controls.Add(this.textboxTitle);
             this.Controls.Add(this.listboxQuestions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "MakerScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make a Quiz";
