@@ -10,6 +10,8 @@ namespace Quiz_Creator
 {
     public class User
     {
+        private static User user_instance = null;
+
         private string email;
 
         private string password;
@@ -24,24 +26,24 @@ namespace Quiz_Creator
 
         private List<Course> courseList;
 
-        public User()
+        private User()
         {
             isLoggedIn = false;
 
             courseList = new List<Course>();
         }
 
-        public User(string in_email, string in_pass, string in_userType, string in_org, int in_id)
+        public static User getInstance()
         {
-            email = in_email;
+            if (user_instance == null)
+                user_instance = new User();
 
-            password = in_pass;
+            return user_instance;
+        }
 
-            userType = in_userType;
-
-            org = in_org;
-
-            id = in_id;
+        public static void resetInstance()
+        {
+            user_instance = null;
         }
 
         public void AddToCourseList(Course in_course)

@@ -15,11 +15,11 @@ namespace Quiz_Creator
     public partial class LoginScreen : Form
     {
         private User currentUser;
-        public LoginScreen(ref User refCurrentUser)
+        public LoginScreen()
         {
             InitializeComponent();
 
-            currentUser = refCurrentUser;
+            currentUser = User.getInstance();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -31,104 +31,18 @@ namespace Quiz_Creator
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            try
+            if(Database.AddAccountToUserObject(txtEmail.Text, txtPassword.Text))
             {
-                string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-                string database = "QC_database";
-                string uid = "admin";
-                string password = "quizcreator";
-                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
+                Database.AddUserCourses();
 
-                MySqlConnection conn = new MySqlConnection(connectionString);
-
-                conn.Open();
-
-                string sql = "SELECT * FROM accounts WHERE acc_email= '" + txtEmail.Text + "' AND acc_password='" + txtPassword.Text + "';";
-
-                var cmd = new MySqlCommand(sql, conn);
-
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                if (!rdr.Read())
-                {
-                    MessageBox.Show("Account not found.");
-
-                    return;
-                }
-                else
-                {
-                    currentUser.SetEmail(rdr.GetString("acc_email"));
-
-                    currentUser.setLoginStatus(true);
-
-                    currentUser.SetID(rdr.GetInt32(0));
-
-                    conn.Close();
-
-                    conn.Open();
-
-                    string sqlCourseSelect = "SELECT * FROM QC_database.course_account WHERE account_id= " + currentUser.getID() + ";";
-
-                    var cmdGetCourses = new MySqlCommand(sqlCourseSelect, conn);
-
-                    MySqlDataReader rdrGetCourses = cmdGetCourses.ExecuteReader();
-
-                    List<string> extractedCourses = new List<string>(0);
-
-                    while (rdrGetCourses.Read())
-                    {
-                        extractedCourses.Add(rdrGetCourses.GetString("course_name"));
-                    }
-                    conn.Close();
-
-                    conn.Open();
-                    string sqlInstructorSelect = "SELECT * FROM courses WHERE course_name IN ('";
-
-                    for(int index = 0; index < extractedCourses.Count; index++)
-                    {
-                        if (index == extractedCourses.Count -1)
-                        {
-                            sqlInstructorSelect += extractedCourses[index] + "');";
-                        }
-                        else
-                        {
-                            sqlInstructorSelect += extractedCourses[index] + "', '";
-                        }
-                    }
-                    if(extractedCourses.Count > 0)
-                    {
-                        var cmdGetInstructors = new MySqlCommand(sqlInstructorSelect, conn);
-
-                        MySqlDataReader rdrGetInstructors = cmdGetInstructors.ExecuteReader();
-
-                        for (int i = 0; rdrGetInstructors.Read(); i++)
-                        {
-                            Course newCourse = new Course(extractedCourses[i], rdrGetInstructors.GetString("instructor_name"));
-
-                            currentUser.AddToCourseList(newCourse);
-                        }
-                    }
-                    MessageBox.Show("Welcome, " + currentUser.GetEmail() + "!");
-                }
-                conn.Close();
+                MessageBox.Show("Welcome, " + currentUser.GetEmail() + "!");
 
                 Close();
-
             }
-            catch
+            else
             {
-                MessageBox.Show("Error connecting to database");
+                MessageBox.Show("Account not found.");
             }
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassword_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

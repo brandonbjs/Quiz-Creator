@@ -178,3 +178,9 @@ C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creato
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCoursePasswordScreen.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseQuizzesList.resources
 C:\Users\Bryan\Desktop\NAU\CS386\Quiz-Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\bin\Debug\LocalQuizzes.xml
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.CourseSelectScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCoursePasswordScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.JoinCourseScreen.resources
+C:\Users\Bryan\Desktop\NAU\CS386\Quiz Creator\Quiz-Creator\obj\Debug\Quiz_Creator.SignUpScreen.resources

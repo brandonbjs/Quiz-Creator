@@ -18,43 +18,19 @@ namespace Quiz_Creator
             InitializeComponent();
 
             comboBoxOrg.SelectedIndex = 0;
+            comboBoxType.SelectedIndex = 0;
         }
 
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
             if(AcceptableFields())
             {
-                try
+                if (Database.AddAccount(textboxEmail.Text, textboxPassword.Text, comboBoxOrg.Text, comboBoxType.Text)
+                    && Database.AddAccountToUserObject(textboxEmail.Text, textboxPassword.Text))
                 {
-                    //Build connection string to remote database
-                    string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-                    string database = "QC_database";
-                    string uid = "admin";
-                    string password = "quizcreator";
-                    string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
-
-                    MySqlConnection conn = new MySqlConnection(connectionString);
-
-                    conn.Open();
-
-                    //build sql command
-                    string sql = "INSERT INTO accounts (acc_email, acc_password, acc_org, acc_role) ";
-                    sql += "VALUES ('" + textboxEmail.Text + "', ";
-                    sql += "'" + textboxPassword.Text + "', ";
-                    sql += "'" + comboBoxOrg.Text + "', ";
-                    sql += "'" + comboBoxType.Text + "');";
-
-                    var cmd = new MySqlCommand(sql, conn);
-                    cmd.ExecuteNonQuery();
-
-                    conn.Close();
-
+                    Database.AddUserCourses();
                     MessageBox.Show("Account created successfully!");
                     Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Error connecting to database");
                 }
             }
         }
@@ -63,16 +39,19 @@ namespace Quiz_Creator
             if(textboxPassword.TextLength == 0 || textboxEmail.TextLength == 0 || comboBoxType.SelectedItem == null)
             {
                 MessageBox.Show("One or more of your fields are blank");
+
                 return false;
             }
             if(!(textboxEmail.Text.Contains(".") && textboxEmail.Text.Contains("@")))
             {
                 MessageBox.Show("Invalid Email Address");
+
                 return false;
             }
             if (textboxPassword.Text != textboxConfirm.Text)
             {
                 MessageBox.Show("Your passwords do not match");
+
                 return false;
             }
             return true;

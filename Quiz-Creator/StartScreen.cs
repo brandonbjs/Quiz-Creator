@@ -23,11 +23,7 @@ namespace Quiz_Creator
         {
             InitializeComponent();
 
-            currentUser = new User();
-        }
-
-        public StartScreen(User in_User)
-        {
+            currentUser = User.getInstance();
         }
 
         private void buttonMakeLocal_Click(object sender, EventArgs e)
@@ -40,17 +36,29 @@ namespace Quiz_Creator
 
         private void buttonTakeLocal_Click(object sender, EventArgs e)
         {
-            // Launch TakerScreen and open quiz
-            var TakerScreen1 = new TakerScreen(GetSelectedQuizDate(), true);
+            if (listViewLocalQuizzes.SelectedItems.Count != 0)
+            {
+                new TakerScreen(GetSelectedQuizDate(), true).Show();
+            }
+            else
+            {
+                MessageBox.Show("Select a quiz to take!");
+            }
 
-            TakerScreen1.Show();
         }
 
         private void buttonEditLocal_Click(object sender, EventArgs e)
         {
-            var MakerScreen1 = new MakerScreen(GetSelectedQuizDate());
+            if(listViewLocalQuizzes.SelectedItems.Count != 0)
+            {
+                var MakerScreen1 = new MakerScreen(GetSelectedQuizDate());
 
-            MakerScreen1.Show();
+                MakerScreen1.Show();
+            }
+            else
+            {
+                MessageBox.Show("Select a quiz to edit!");
+            }
         }
 
         private string GetSelectedQuizDate()
@@ -69,9 +77,6 @@ namespace Quiz_Creator
         private void StartScreen_Load(object sender, EventArgs e)
         {
             LoadLocalQuizzes();
-
-            buttonJoinCourse.Enabled = false;
-            buttonCourseSelect.Enabled = false;
         }
 
         private void LoadLocalQuizzes()
@@ -94,7 +99,6 @@ namespace Quiz_Creator
             }
         }
 
-        //Adds name and date to specified list box
         private void AddListItem(string in_name, string in_date, ListView in_ListView)
         {
             ListViewItem newItem = new ListViewItem(in_name);
@@ -104,59 +108,47 @@ namespace Quiz_Creator
             in_ListView.Items.Add(newItem);
         }
 
-        private void listViewLocalQuizzes_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            if (listViewLocalQuizzes.SelectedItems.Count > 0)
-            {
-                buttonEditLocal.Enabled = true;
-
-                buttonTakeLocal.Enabled = true;
-
-                buttonDeleteLocal.Enabled = true;
-            }
-            else
-            {
-                buttonEditLocal.Enabled = false;
-
-                buttonTakeLocal.Enabled = false;
-
-                buttonDeleteLocal.Enabled = false;
-            }
-        }
-
         private void StartScreen_Activated(object sender, EventArgs e)
         {
             LoadLocalQuizzes();
 
-            buttonEditLocal.Enabled = false;
+            labelHideCourses.Visible = true;
+            buttonCourseSelect.Enabled = false;
+            buttonJoinCourse.Enabled = false;
 
-            buttonDeleteLocal.Enabled = false;
-
-            buttonTakeLocal.Enabled = false;
-
-            if(currentUser.getLoginStatus())
+            if (currentUser.getLoginStatus())
             {
                 DisplayCourses();
 
-                buttonJoinCourse.Enabled = true;
+                buttonLoginOrSignout.Text = "Sign Out";
+
+                labelHideCourses.Visible = false;
 
                 buttonCourseSelect.Enabled = true;
+                buttonJoinCourse.Enabled = true;
             }
         }
 
         private void buttonDeleteLocal_Click(object sender, EventArgs e)
         {
-            string selectedQuizDate = GetSelectedQuizDate();
-
-            if (MessageBox.Show("Are you sure you want to delete this quiz?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (listViewLocalQuizzes.SelectedItems.Count != 0)
             {
-                XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
+                string selectedQuizDate = GetSelectedQuizDate();
 
-                xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == selectedQuizDate).Remove();
+                if (MessageBox.Show("Are you sure you want to delete this quiz?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    XDocument xmlDoc = XDocument.Load("LocalQuizzes.xml");
 
-                xmlDoc.Save("LocalQuizzes.xml");
+                    xmlDoc.Root.Elements().Where(x => x.Attribute("date").Value == selectedQuizDate).Remove();
 
-                LoadLocalQuizzes();
+                    xmlDoc.Save("LocalQuizzes.xml");
+
+                    LoadLocalQuizzes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select a quiz to delete!");
             }
         }
 
@@ -164,27 +156,29 @@ namespace Quiz_Creator
         {
             if(currentUser.getLoginStatus())
             {
-                MessageBox.Show("You are already logged in!");
+                string email = currentUser.GetEmail();
 
-                return;
+                User.resetInstance();
+
+                currentUser = User.getInstance();
+
+                buttonLoginOrSignout.Text = "Login";
+
+                listViewCourses.Items.Clear();
+
+                MessageBox.Show("Signed out of " + email);
             }
+            else
+            {
+                LoginScreen loginScreen1 = new LoginScreen();
 
-            LoginScreen loginScreen1 = new LoginScreen(ref currentUser);
-
-            loginScreen1.Show(this);
-        }
-
-        private void CourseSelectButton_Click(object sender, EventArgs e)
-        {
-            // Launch MakerScreen to make local
-            var CourseSelectScreen1 = new CourseSelectScreen();
-
-            CourseSelectScreen1.Show();
+                loginScreen1.Show(this);
+            }
         }
 
         private void buttonJoinCourse_Click(object sender, EventArgs e)
         {
-            JoinCourseScreen joinCourseScreen = new JoinCourseScreen(ref currentUser);
+            JoinCourseScreen joinCourseScreen = new JoinCourseScreen();
 
             joinCourseScreen.Show();
         }
@@ -198,16 +192,25 @@ namespace Quiz_Creator
             foreach(Course course in courseList)
             {
                 string[] row = { course.GetName(), course.GetInstructorName() };
+
                 ListViewItem listViewItem = new ListViewItem(row);
+
                 listViewCourses.Items.Add(listViewItem);
             }
         }
 
         private void buttonCourseSelect_Click(object sender, EventArgs e)
         {
-            CourseScreen courseScreen = new CourseScreen(ref currentUser, listViewCourses.SelectedItems[0].Text);
+            if(listViewCourses.SelectedItems.Count != 0)
+            {
+                CourseScreen courseScreen = new CourseScreen(listViewCourses.SelectedItems[0].Text);
 
-            courseScreen.Show();
+                courseScreen.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a course!");
+            }
         }
 
         private void listViewCourses_Click(object sender, MouseEventArgs e)
@@ -217,11 +220,10 @@ namespace Quiz_Creator
                 var rectangle = listViewCourses.GetItemRect(i);
                 if (rectangle.Contains(e.Location))
                 {
-                    var CourseQuizzesListScreen1 = new CourseQuizzesList();
-                    CourseQuizzesListScreen1.Show();
+                    //var CourseQuizzesListScreen1 = new CourseQuizzesList();
+                    //CourseQuizzesListScreen1.Show();
                 }
             }
         }
-
     }
 }

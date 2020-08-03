@@ -70,7 +70,7 @@ namespace Quiz_Creator
 
         public Boolean CorrectResponse()
         {
-            return answer == response;
+            return answer.ToLower() == response.ToLower();
         }
 
         public virtual int GetNumChoices()

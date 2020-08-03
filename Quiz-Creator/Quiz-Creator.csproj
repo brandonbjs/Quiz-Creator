@@ -48,12 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Course.cs" />
-    <Compile Include="CourseQuizzesList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CourseQuizzesList.Designer.cs">
-      <DependentUpon>CourseQuizzesList.cs</DependentUpon>
-    </Compile>
     <Compile Include="CourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,12 +60,7 @@
     <Compile Include="CourseSelectScreen.Designer.cs">
       <DependentUpon>CourseSelectScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateScreen.Designer.cs">
-      <DependentUpon>CreateScreen.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="JoinCoursePasswordScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,9 +110,6 @@
       <DependentUpon>TakerScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="CourseQuizzesList.resx">
-      <DependentUpon>CourseQuizzesList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CourseScreen.resx">
       <DependentUpon>CourseScreen.cs</DependentUpon>
     </EmbeddedResource>

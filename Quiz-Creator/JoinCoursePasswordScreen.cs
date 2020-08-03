@@ -38,7 +38,7 @@ namespace Quiz_Creator
         {
             if(txtPassword.Text == selectedCourse.GetPassword())
             {
-                if (selectedCourse.AddStudent(currentUser.getID()))
+                if (Database.AddStudentToCourse(courseName, currentUser.getID()))
                 {
                     currentUser.AddToCourseList(selectedCourse);
 
