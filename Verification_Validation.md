@@ -10,22 +10,22 @@
 
 ## 2. Verification (Tests) 
 
-### 2.1 Unit Test
+## 2.1 Unit Test
 
-### 2.2 Integration Test
+## 2.2 Integration Test
 
-##2.2.1 
+#### 2.2.1 
 For our integration tests we used the Nunit test framework in visual studio.
 
-##2.2.2
+#### 2.2.2
 [link to location of tests](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/IntegrationTest.cs)
 
-##2.2.3
+#### 2.2.3
 Our first test verifies our Database class's ability to load the information of a given course and store that 
 information into a course object. The success of this test means Database.cs and Course.cs are successfully integrated.
 [link to test location](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/IntegrationTest.cs)
 
-##2.2.4
+#### 2.2.4
 [link to test execution](https://github.com/brandonbjs/Quiz-Creator/blob/master/IntegrationTestsResults.png)
 
 ### 2.3 Acceptance
