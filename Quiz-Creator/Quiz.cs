@@ -17,6 +17,12 @@ namespace Quiz_Creator
     {
         #region Fields
 
+        private const string defaultTitle = "Untitled Quiz";
+        private const string defaultAuthor = "No Author";
+        private const bool defaultProtection = false;
+        private const string defaultPassword = "";
+        private readonly List<Question> defaultQuestions = new List<Question>();
+
         private string title;
         private string author;
         private string dateModified;
@@ -31,20 +37,19 @@ namespace Quiz_Creator
 
         public Quiz()
         {
-            title = "Untitled Quiz";
-            author = "No Author";
-            dateModified = DateTime.Now.ToString();
-            protectedQuiz = false;
-            password = "";
-            questions = new List<Question>();
+            setDefaults();
         }
 
         public Quiz(string in_title) {
+            setDefaults();
             title = in_title;
-            dateModified = DateTime.Now.ToString();
-            protectedQuiz = false;
-            password = "";
-            questions = new List<Question>();
+        }
+
+        public Quiz(string in_title, string in_author)
+        {
+            setDefaults();
+            title = in_title;
+            author = in_author;
         }
 
         public Quiz(string in_title, string in_author, string in_dateModified, bool in_protectedQuiz, string in_password, List<Question> in_questions)
@@ -55,6 +60,16 @@ namespace Quiz_Creator
             protectedQuiz = in_protectedQuiz;
             password = in_password;
             questions = in_questions;
+        }
+
+        private void setDefaults()
+        {
+            title = defaultTitle;
+            author = defaultAuthor;
+            dateModified = DateTime.Now.ToString();
+            protectedQuiz = defaultProtection;
+            password = defaultPassword;
+            questions = defaultQuestions;
         }
 
         #endregion 
