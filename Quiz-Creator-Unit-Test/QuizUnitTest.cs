@@ -18,8 +18,11 @@ namespace Quiz_Creator_Unit_Test
         private readonly List<Question> defaultQuestions = new List<Question>();
 
 
-        public string title;
-        public string author;
+        private string title;
+        private string author;
+        private string date;
+        private bool protection;
+        private string password;
 
         private string prompt;
 
@@ -32,6 +35,8 @@ namespace Quiz_Creator_Unit_Test
         private string[] mcChoices;
         private MCQuestion mcQuestion;
 
+        private List<Question> questions;
+
         private Quiz quiz;
 
         [TestInitialize]
@@ -40,6 +45,10 @@ namespace Quiz_Creator_Unit_Test
 
             title = "Universe Quiz";
             author = "John Doe";
+            date = DateTime.Now.ToString();
+            protection = true;
+            password = "1234";
+
 
             prompt = "What is The Answer to the Ultimate Question of Life, The Universe, and Everything?";
 
@@ -50,9 +59,17 @@ namespace Quiz_Creator_Unit_Test
             mcType = "MC";
             mcAnswer = "2";
             mcChoices = new string[] { "41", "42", "43", "44", "45"};
+            mcQuestion = new MCQuestion(mcChoices, mcType, prompt, mcAnswer);
+
+            questions = new List<Question>();
+
+            questions.Add(fitbQuestion);
+            questions.Add(mcQuestion);
 
             quiz = new Quiz();
         }
+
+        #region Constructor Tests
 
         [TestMethod]
         public void DefaultConstructor_Test()
@@ -84,6 +101,22 @@ namespace Quiz_Creator_Unit_Test
             Assert.AreEqual(defaultProtection, quiz.IsProtected());
             Assert.AreEqual(defaultQuestions.Count, quiz.GetNumQuestions());
         }
+
+        [TestMethod]
+        public void AllFieldsConstructor_Test()
+        {
+            quiz = new Quiz(title, author, date, protection, password, questions);
+
+            Assert.AreEqual(title, quiz.GetTitle());
+            Assert.AreEqual(author, quiz.GetAuthor());
+            Assert.AreEqual(protection, quiz.IsProtected());
+            Assert.AreEqual(questions.Count, quiz.GetNumQuestions());
+
+            Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
+            Assert.AreEqual(mcQuestion, quiz.GetQuestion(1));
+        }
+
+        #endregion
 
         [TestMethod]
         public void SetTitle_Test()
