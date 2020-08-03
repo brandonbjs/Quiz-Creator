@@ -33,12 +33,24 @@ namespace Quiz_Creator
 
             quizList = new List<Quiz>();
         }
-
         public Course(string in_name, string in_instructor)
         {
             courseName = in_name;
 
             instructorName = in_instructor;
+        }
+
+        public Course(string in_name, string in_instructor, string in_password, List<Quiz> in_quizzes)
+        {
+            courseName = in_name;
+
+            instructorName = in_instructor;
+
+            password = in_password;
+
+            quizList = in_quizzes;
+
+            hasPassword = true;
         }
 
         public Boolean IsProtected()
