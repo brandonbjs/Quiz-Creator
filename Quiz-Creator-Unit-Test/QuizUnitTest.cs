@@ -126,6 +126,13 @@ namespace Quiz_Creator_Unit_Test
         }
 
         [TestMethod]
+        public void SetAuthor_Test()
+        {
+            quiz.SetAuthor(author);
+            Assert.AreEqual(author, quiz.GetAuthor());
+        }
+
+        [TestMethod]
         public void AddFitbQuestion_Test()
         {
             quiz.AddQuestion(fitbQuestion);
