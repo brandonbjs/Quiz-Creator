@@ -18,8 +18,38 @@ We used the MSTest framework built into Visual Studio for our unit tests.
 #### 2.2.2 - Link to Unit Test Folder in GitHub
 [/Quiz-Creator-Unit-Test](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator-Unit-Test)
 
-#### 2.2.3 - Example Test Case: 
-Adding Test Case Here...
+#### 2.2.3 - Example Test Case
+This is all-fields constructor in the [quiz class](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs).  
+It is used to set all fields of a new quiz object, typically when opening an already made quiz.
+```c#
+public Quiz(string in_title, string in_author, string in_dateModified, bool in_protectedQuiz, string in_password, List<Question> in_questions)
+{
+    title = in_title;
+    author = in_author;
+    dateModified = in_dateModified;
+    protectedQuiz = in_protectedQuiz;
+    password = in_password;
+    questions = in_questions;
+}
+```
+This is the [unit test](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator-Unit-Test/QuizUnitTest.cs) 
+method that makes sure all fields have been set correctly.
+```c#
+[TestMethod]
+public void AllFieldsConstructor_Test()
+{
+    quiz = new Quiz(title, author, date, protection, password, questions);
+
+    Assert.AreEqual(title, quiz.GetTitle());
+    Assert.AreEqual(author, quiz.GetAuthor());
+    Assert.AreEqual(protection, quiz.IsProtected());
+    Assert.AreEqual(questions.Count, quiz.GetNumQuestions());
+    Assert.AreEqual(date, quiz.GetModifiedDate());
+
+    Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
+    Assert.AreEqual(mcQuestion, quiz.GetQuestion(1));
+}
+```
 
 #### 2.2.4 - Screenshot
 [Test Results](https://github.com/brandonbjs/Quiz-Creator/blob/master/UnitTestScreenshotVS.PNG)
