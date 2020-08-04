@@ -111,6 +111,7 @@ namespace Quiz_Creator_Unit_Test
             Assert.AreEqual(author, quiz.GetAuthor());
             Assert.AreEqual(protection, quiz.IsProtected());
             Assert.AreEqual(questions.Count, quiz.GetNumQuestions());
+            Assert.AreEqual(date, quiz.GetModifiedDate());
 
             Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
             Assert.AreEqual(mcQuestion, quiz.GetQuestion(1));
@@ -140,9 +141,92 @@ namespace Quiz_Creator_Unit_Test
             Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
         }
 
+        [TestMethod]
         public void AddMcQuestion_Test()
         {
             quiz.AddQuestion(mcQuestion);
+            Assert.AreEqual(mcQuestion, quiz.GetQuestion(0));
+        }
+
+        [TestMethod]
+        public void SetQuestion_Test()
+        {
+            quiz.AddQuestion(fitbQuestion);
+            Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
+            quiz.SetQuestion(0, mcQuestion);
+            Assert.AreEqual(mcQuestion, quiz.GetQuestion(0));
+        }
+
+        [TestMethod]
+        public void RemoveQuestion_Test()
+        {
+            int numInitialQuestions = 2;
+            protection = false;
+            password = "";
+
+            quiz = new Quiz(title, author, date, protection, password, questions);
+            Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
+            Assert.AreEqual(mcQuestion, quiz.GetQuestion(1));
+
+            quiz.RemoveQuestion(0);
+            Assert.AreEqual(mcQuestion, quiz.GetQuestion(0));
+
+
+            questions = new List<Question>();
+            questions.Add(fitbQuestion);
+            questions.Add(mcQuestion);
+
+            quiz = new Quiz(title, author, date, protection, password, questions);
+            Assert.AreEqual(numInitialQuestions, quiz.GetNumQuestions());
+
+            quiz.RemoveQuestion(1);
+            Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
+            Assert.AreEqual(numInitialQuestions - 1, quiz.GetNumQuestions());
+
+            quiz.RemoveQuestion(0);
+            Assert.AreEqual(numInitialQuestions - 2, quiz.GetNumQuestions());
+        }
+
+        [TestMethod]
+        public void InsertQuestionTest()
+        {
+            int numInitialQuestions = 2;
+            protection = false;
+            password = "";
+            Question insQuestion = new Question("FITB", "Which planet is closest to the Sun?", "Mercury");
+
+            quiz = new Quiz(title, author, date, protection, password, questions);
+            Assert.AreEqual(numInitialQuestions, quiz.GetNumQuestions());
+
+            quiz.InsertQuestion(1, insQuestion);
+            Assert.AreEqual(numInitialQuestions + 1, quiz.GetNumQuestions());
+            Assert.AreEqual(fitbQuestion, quiz.GetQuestion(0));
+            Assert.AreEqual(insQuestion, quiz.GetQuestion(1));
+            Assert.AreEqual(mcQuestion, quiz.GetQuestion(2));
+        }
+
+        [TestMethod]
+        public void SetProtection_Test()
+        {
+            Assert.IsFalse(quiz.IsProtected());
+
+            quiz.SetProtection(protection, password);
+            Assert.IsTrue(quiz.IsProtected());
+
+            quiz.SetProtection(defaultProtection, "Wrong Password");
+            Assert.IsTrue(quiz.IsProtected());
+
+            quiz.SetProtection(defaultProtection, password);
+            Assert.IsFalse(quiz.IsProtected());
+        }
+
+        [TestMethod]
+        public void Response_Test()
+        {
+            string response = "115";
+            quiz.AddQuestion(fitbQuestion);
+            quiz.SetResponse(0, response);
+            Assert.AreEqual(response, quiz.GetResponse(0));
         }
     }
 }
