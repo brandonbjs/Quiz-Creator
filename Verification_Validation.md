@@ -22,6 +22,7 @@ We used the MSTest framework built into Visual Studio for our unit tests.
 This is all-fields constructor in the [quiz class](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs).  
 It is used to set all fields of a new quiz object, typically when opening an already made quiz.
 ```c#
+// Quis.cs line 56
 public Quiz(string in_title, string in_author, string in_dateModified, bool in_protectedQuiz, string in_password, List<Question> in_questions)
 {
     title = in_title;
@@ -35,6 +36,7 @@ public Quiz(string in_title, string in_author, string in_dateModified, bool in_p
 This is the [unit test](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator-Unit-Test/QuizUnitTest.cs) 
 method that makes sure all fields have been set correctly.
 ```c#
+// QuizUnitTest.cs line 105
 [TestMethod]
 public void AllFieldsConstructor_Test()
 {
@@ -51,7 +53,7 @@ public void AllFieldsConstructor_Test()
 }
 ```
 
-#### 2.2.4 - Screenshot
+#### 2.2.4 - Screenshot of Test Results: Visual Studio Test Explorer (Left Pane) 
 ![Test Results](https://github.com/brandonbjs/Quiz-Creator/blob/master/UnitTestScreenshotVS.PNG)
 
 ## 2.2 Integration Test
