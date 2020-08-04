@@ -12,13 +12,13 @@
 
 ## 2.1 Unit Test
 
-#### 2.2.1 - Framework: MSTest
+### 2.2.1 - Framework: MSTest
 We used the MSTest framework built into Visual Studio for our unit tests.
 
-#### 2.2.2 - Link to Unit Test Folder in GitHub
+### 2.2.2 - Link to Unit Test Folder in GitHub
 [/Quiz-Creator-Unit-Test](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator-Unit-Test)
 
-#### 2.2.3 - Example Test Case
+### 2.2.3 - Example Test Case
 This is all-fields constructor in the [quiz class](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/Quiz.cs).  
 It is used to set all fields of a new quiz object, typically when opening an already made quiz.
 ```c#
@@ -53,26 +53,26 @@ public void AllFieldsConstructor_Test()
 }
 ```
 
-#### 2.2.4 - Screenshot of Test Results: Visual Studio Test Explorer (Left Pane) 
+### 2.2.4 - Screenshot of Test Results: Visual Studio Test Explorer (Left Pane) 
 ![Test Results](https://github.com/brandonbjs/Quiz-Creator/blob/master/UnitTestScreenshotVS.PNG)
 
 ## 2.2 Integration Test
 
-#### 2.2.1 
+### 2.2.1 
 For our integration tests we used the Nunit test framework in visual studio.
 
-#### 2.2.2
+### 2.2.2
 [link to location of tests](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/IntegrationTest.cs)
 
-#### 2.2.3
+### 2.2.3
 Our first test verifies our Database class's ability to load the information of a given course and store that 
 information into a course object. The success of this test means Database.cs and Course.cs are successfully integrated.
 [link to test location](https://github.com/brandonbjs/Quiz-Creator/blob/master/Quiz-Creator/IntegrationTest.cs)
 
-#### 2.2.4
+### 2.2.4
 [link to test execution](https://github.com/brandonbjs/Quiz-Creator/blob/master/IntegrationTestsResults.png)
 
-### 2.3 Acceptance
+## 2.3 Acceptance
 
 ### 2.3.1 The test framework used was Coded UI Tests for Visual Studio
 
