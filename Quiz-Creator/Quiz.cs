@@ -17,6 +17,12 @@ namespace Quiz_Creator
     {
         #region Fields
 
+        private const string defaultTitle = "Untitled Quiz";
+        private const string defaultAuthor = "No Author";
+        private const bool defaultProtection = false;
+        private const string defaultPassword = "";
+        private readonly List<Question> defaultQuestions = new List<Question>();
+
         private string title;
         private string author;
         private string dateModified;
@@ -31,20 +37,20 @@ namespace Quiz_Creator
 
         public Quiz()
         {
-            title = "Untitled Quiz";
-            author = "No Author";
-            dateModified = DateTime.Now.ToString();
-            protectedQuiz = false;
-            password = "";
-            questions = new List<Question>();
+            setDefaults();
         }
 
-        public Quiz(string in_title) {
+        public Quiz(string in_title)
+        {
+            setDefaults();
             title = in_title;
-            dateModified = DateTime.Now.ToString();
-            protectedQuiz = false;
-            password = "";
-            questions = new List<Question>();
+        }
+
+        public Quiz(string in_title, string in_author)
+        {
+            setDefaults();
+            title = in_title;
+            author = in_author;
         }
 
         public Quiz(string in_title, string in_author, string in_dateModified, bool in_protectedQuiz, string in_password, List<Question> in_questions)
@@ -57,13 +63,23 @@ namespace Quiz_Creator
             questions = in_questions;
         }
 
+        private void setDefaults()
+        {
+            title = defaultTitle;
+            author = defaultAuthor;
+            dateModified = DateTime.Now.ToString();
+            protectedQuiz = defaultProtection;
+            password = defaultPassword;
+            questions = defaultQuestions;
+        }
+
         #endregion 
 
         #region Questions
 
         public Question GetQuestion(int index)
         {
-            if(index < questions.Count)
+            if (index < questions.Count)
             {
                 return questions[index];
             }
@@ -123,7 +139,7 @@ namespace Quiz_Creator
             int indexTracker = 0;
             foreach (var q in questions)
             {
-                if ( q.GetPrompt().Contains(keyword) )
+                if (q.GetPrompt().Contains(keyword))
                 {
                     relatedQuestionsFound.Add(indexTracker);
                     return relatedQuestionsFound;
@@ -265,37 +281,37 @@ namespace Quiz_Creator
 
         public Quiz DeserializeQuiz()
         {
-                string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
-                string database = "QC_database";
-                string uid = "admin";
-                string dbpassword = "quizcreator";
-                string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + dbpassword;
+            string server = "quizcreatordb.ctvd1ztjykvr.us-east-1.rds.amazonaws.com";
+            string database = "QC_database";
+            string uid = "admin";
+            string dbpassword = "quizcreator";
+            string connectionString = "Server=" + server + "; Port=3306; Database=" + database + "; Uid=" + uid + "; Pwd=" + dbpassword;
 
-                string sql = "SELECT * FROM quiz_obj WHERE quiz= '" + "test" + "';";
+            string sql = "SELECT * FROM quiz_obj WHERE quiz= '" + "test" + "';";
 
-                MySqlConnection conn = new MySqlConnection(connectionString);
+            MySqlConnection conn = new MySqlConnection(connectionString);
 
-                conn.Open();
+            conn.Open();
 
-                var cmd = new MySqlCommand(sql, conn);
+            var cmd = new MySqlCommand(sql, conn);
 
-                MySqlDataReader rdr = cmd.ExecuteReader();
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
-                rdr.Read();
+            rdr.Read();
 
-                BinaryFormatter formatter = new BinaryFormatter();
+            BinaryFormatter formatter = new BinaryFormatter();
 
-                Quiz deserializedData = (Quiz)formatter.Deserialize(rdr.GetStream(0));
-                conn.Close();
+            Quiz deserializedData = (Quiz)formatter.Deserialize(rdr.GetStream(0));
+            conn.Close();
 
-                title = deserializedData.title;
-                author = deserializedData.author;
-                dateModified = deserializedData.dateModified;
-                protectedQuiz = deserializedData.protectedQuiz;
-                password = deserializedData.password;
-                questions = deserializedData.questions;
+            title = deserializedData.title;
+            author = deserializedData.author;
+            dateModified = deserializedData.dateModified;
+            protectedQuiz = deserializedData.protectedQuiz;
+            password = deserializedData.password;
+            questions = deserializedData.questions;
 
-                return deserializedData;
+            return deserializedData;
         }
 
         public void AddDataFromFile(string filename, string quizDate)

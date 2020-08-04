@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace Quiz_Creator
 {
     [Serializable]
-    class MCQuestion : Question
+    public class MCQuestion : Question
     {
         public string[] choices;
 
