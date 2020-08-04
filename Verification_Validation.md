@@ -52,7 +52,7 @@ public void AllFieldsConstructor_Test()
 ```
 
 #### 2.2.4 - Screenshot
-[Test Results](https://github.com/brandonbjs/Quiz-Creator/blob/master/UnitTestScreenshotVS.PNG)
+![Test Results](https://github.com/brandonbjs/Quiz-Creator/blob/master/UnitTestScreenshotVS.PNG)
 
 ## 2.2 Integration Test
 
