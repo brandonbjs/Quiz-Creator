@@ -109,7 +109,7 @@ involve mirroring features that Quizlet already has.
 
 Question: If we could make one improvement to our application, what would you like to see?
 
-Answer: View course button doesn't work. Make it work. Monkey. I also think the GUI needs to be 'prettified'. Doing this same type of thing on a 
+Answer: View course button doesn't work. I also think the GUI needs to be 'prettified'. Doing this same type of thing on a 
 web application would be highly more effective than downloading something locally - that's just the way the world is going. Schools utilize 
 chromebooks that rely on things like the cloud, or virtual sites like Quizlet and that's just the way things are going. 
 
